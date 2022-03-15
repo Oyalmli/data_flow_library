@@ -16616,11 +16616,7 @@ void ConsoleReporter::lazyPrintWithoutClosingBenchmarkTable() {
     }
 }
 void ConsoleReporter::lazyPrintRunInfo() {
-    stream << '\n' << getLineOfChars<'~'>() << '\n';
-    Colour colour(Colour::SecondaryText);
-    stream << currentTestRunInfo->name
-        << " is a Catch v" << libraryVersion() << " host application.\n"
-        << "Run with -? for options\n\n";
+    stream << '\n';
 
     if (m_config->rngSeed() != 0)
         stream << "Randomness seeded to: " << m_config->rngSeed() << "\n\n";
