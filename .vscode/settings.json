@@ -1,0 +1,26 @@
+{
+    "comments": {
+        "reloadButton":"$(debug-restart)",
+    },
+    "actionButtons": {
+        "defaultColor": "#969dac",
+        "reloadButton": null,
+        "loadNpmCommands":false,
+        "commands": [
+            {   
+                "cwd": "${workspaceFolder}",
+                "name": "Build $(tools)",
+                "singleInstance": true,
+                "command": "mkdir -p build && cmake --build build",
+                "tooltip": "builds project from root folder",
+            },
+            {
+               "name": "Test $(checklist)",
+               "cwd": "${workspaceFolder}/build",
+               "tooltip": "tests build in build folder",
+               "singleInstance": true,
+               "command": "ctest --output-on-failure"
+            }
+        ]
+    }
+}
