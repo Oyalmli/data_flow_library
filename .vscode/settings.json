@@ -6,20 +6,20 @@
         "commands": [
             {   
                 "cwd": "${workspaceFolder}",
-                "name": "Make build folder$(file-directory-create)",
+                "name": "Make build folder $(file-directory-create)",
                 "singleInstance": true,
                 "command": "cmake -Bbuild-cmake -H. -GNinja",
                 "tooltip": "creates build folder",
             },
             {   
                 "cwd": "${workspaceFolder}/build-cmake",
-                "name": "Build$(tools)",
+                "name": "Build $(tools)",
                 "singleInstance": true,
                 "command": "cmake --build .",
                 "tooltip": "builds project",
             },
             {
-               "name": "Test$(checklist)",
+               "name": "Test $(checklist)",
                "cwd": "${workspaceFolder}/build-cmake/tests",
                "tooltip": "tests build in build folder",
                "singleInstance": true,
