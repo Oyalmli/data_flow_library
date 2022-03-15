@@ -4,7 +4,7 @@
 ##### Value generators
 | Name 	| Function | argument | Input | Output | Impl |
 | -----	| -------- | -------- | ----- | ------ | ---: |
-| Sensor | Creates a generator from a sensor | <nobr>polling rate: Num</nobr><br><nobr>Args...: [Key, Arg] </nobr><br> | | [Val] | - [ ] impl |  
+| Sensor | Creates a generator from a sensor | <nobr>polling rate: Num</nobr><br><nobr>Args...: [Key, Arg] </nobr><br> | | [Val] | :black_square_button: |  
 | File  | Takes a file pointer, iterates throught the values in the file | FILE* | | [Num] [Char] | - [ ] |
 | Value generator | Repeats a value | Value to repeat | value |  | - [ ] |
 | Sine generator | Generates a sine wave | <nobr>Amp: Num</nobr><br><nobr>Freq: Num</nobr><br><nobr>Phase: Num</nobr> | | [Num] | - [ ] |
