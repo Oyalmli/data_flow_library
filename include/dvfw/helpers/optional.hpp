@@ -2,7 +2,6 @@
 #define DVFW_OPTIONAL_HPP
 
 #include <optional>
-#include <type_traits>
 
 namespace dvfw {
 namespace detail {

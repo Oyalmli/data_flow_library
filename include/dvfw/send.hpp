@@ -9,7 +9,7 @@ namespace dvfw
 {
     namespace detail
     {
-        template<size_t>
+        template<std::size_t>
         struct send_tag{};
         
         template<typename Pipeline, typename... Ts>
@@ -18,7 +18,7 @@ namespace dvfw
             pipeline.onReceive(FWD(values)...);
         }
         
-        template<typename... ValuesThenPipeline, size_t... ValuesIndexes>
+        template<typename... ValuesThenPipeline, std::size_t... ValuesIndexes>
         void send(send_tag<0>, std::tuple<ValuesThenPipeline...> valuesThenPipeline, std::index_sequence<ValuesIndexes...>)
         {
             auto constexpr pipelineIndex = sizeof...(ValuesThenPipeline) - 1;
@@ -41,7 +41,7 @@ namespace dvfw
     
     namespace detail
     {
-        template<typename... Ts, typename Pipeline, size_t... Is>
+        template<typename... Ts, typename Pipeline, std::size_t... Is>
         void sendTupleValues(std::tuple<Ts...> const& tuple, Pipeline& pipeline, std::index_sequence<Is...>)
         {
             send(std::get<Is>(tuple)..., pipeline);

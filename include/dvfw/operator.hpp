@@ -9,33 +9,49 @@
 namespace dvfw {
 
 // range >>= pipeline (rvalue ranges)
-
-template <typename Range, typename Pipeline, detail::IsARange<Range> = true, detail::IsAPipeline<Pipeline> = true>
-std::enable_if_t<!std::is_lvalue_reference<Range>::value> operator>>=(Range&& range, Pipeline&& pipeline) {
-    using std::begin;
-    using std::end;
-    std::copy(std::make_move_iterator(begin(range)), std::make_move_iterator(end(range)), pipeline);
+template <
+    typename Range,
+    typename Pipeline,
+    detail::IsARange<Range> = true,
+    detail::IsAPipeline<Pipeline> = true>
+std::enable_if_t<!std::is_lvalue_reference_v<Range>>
+operator>>=(Range&& range, Pipeline&& pipeline) {
+    std::copy(
+        std::make_move_iterator(std::begin(range)),
+        std::make_move_iterator(std::end(range)),
+        pipeline);
 }
 
 // range >>= pipeline (lvalue ranges)
-
-template <typename Range, typename Pipeline, detail::IsARange<Range> = true, detail::IsAPipeline<Pipeline> = true>
-std::enable_if_t<std::is_lvalue_reference<Range>::value> operator>>=(Range&& range, Pipeline&& pipeline) {
-    using std::begin;
-    using std::end;
-    std::copy(begin(range), end(range), pipeline);
+template <
+    typename Range,
+    typename Pipeline,
+    detail::IsARange<Range> = true,
+    detail::IsAPipeline<Pipeline> = true>
+std::enable_if_t<std::is_lvalue_reference_v<Range>>
+operator>>=(Range&& range, Pipeline&& pipeline) {
+    std::copy(
+        std::begin(range), 
+        std::end(range),
+        pipeline);
 }
 
 // pipe >>= pipe
-
-template <typename Pipe1, typename Pipe2, detail::IsAPipe<Pipe1> = true, detail::IsAPipe<Pipe2> = true>
+template <
+    typename Pipe1,
+    typename Pipe2,
+    detail::IsAPipe<Pipe1> = true,
+    detail::IsAPipe<Pipe2> = true>
 auto operator>>=(Pipe1&& pipe1, Pipe2&& pipe2) {
     return detail::CompositePipe<std::decay_t<Pipe1>, std::decay_t<Pipe2>>(FWD(pipe1), FWD(pipe2));
 }
 
 // pipe >>= pipeline
-
-template <typename Pipe, typename Pipeline, detail::IsAPipe<Pipe> = true, detail::IsAPipeline<Pipeline> = true>
+template <
+    typename Pipe,
+    typename Pipeline,
+    detail::IsAPipe<Pipe> = true,
+    detail::IsAPipeline<Pipeline> = true>
 auto operator>>=(Pipe&& pipe, Pipeline&& pipeline) {
     return make_generic_pipeline(pipe, pipeline);
 }
