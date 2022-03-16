@@ -2,6 +2,7 @@ add_executable(dvfw_test
     main.cpp
     take.cpp
     drop.cpp
+    hole.cpp
     transform.cpp
 )
 add_test(NAME dvfw_test COMMAND dvfw_test)
