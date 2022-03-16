@@ -6,7 +6,7 @@
 namespace dvfw
 {
     
-    class hole : public pipeline_base<hole>
+    class _ : public pipeline_base<_>
     {
     public:
         template<typename T>
