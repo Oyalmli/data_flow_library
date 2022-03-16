@@ -3,16 +3,14 @@
 
 #include "dvfw/base.hpp"
 
-namespace dvfw
-{
-    
-    class _ : public pipeline_base<_>
-    {
-    public:
-        template<typename T>
-        void onReceive(T&&){}
-    };
-    
-} // namespace fluent
+namespace dvfw {
+
+class _ : public pipeline_base<_> {
+   public:
+    template <typename T>
+    void onReceive(T&&) {}
+};
+
+}  // namespace dvfw
 
 #endif /* DVFW_HOLE_HPP */
