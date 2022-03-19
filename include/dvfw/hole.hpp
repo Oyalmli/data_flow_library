@@ -5,7 +5,7 @@
 
 namespace dvfw {
 
-class _ : public pipeline_base<_> {
+class hole : public pipeline_base<hole> {
    public:
     template <typename T>
     void onReceive(T&&) {}

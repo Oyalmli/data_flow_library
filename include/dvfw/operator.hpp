@@ -8,6 +8,16 @@
 
 namespace dvfw {
 
+// val >>= pipeline
+template <
+    typename Val,
+    typename Pipeline,
+    detail::IsAPipeline<Pipeline> = true>
+std::enable_if_t<std::is_arithmetic_v<Val>>
+operator>>=(Val& val, Pipeline&& pipeline) {
+    dvfw::send(val, pipeline);
+}
+
 // range >>= pipeline (rvalue ranges)
 template <
     typename Range,
@@ -31,7 +41,7 @@ template <
 std::enable_if_t<std::is_lvalue_reference_v<Range>>
 operator>>=(Range&& range, Pipeline&& pipeline) {
     std::copy(
-        std::begin(range), 
+        std::begin(range),
         std::end(range),
         pipeline);
 }

@@ -25,7 +25,7 @@ TEST_CASE(prefix + "able to set part of state")
     State expected_state = { .val=10 };
     input 
         >>= dvfw::set_state(max<int>, init_state)
-        >>= dvfw::_();
+        >>= dvfw::hole();
     REQUIRE(init_state.val == expected_state.val);
 }
 
