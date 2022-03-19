@@ -5,6 +5,8 @@
 #include "dvfw/helpers/crtp.hpp"
 #include "dvfw/send.hpp"
 
+#include <iterator>
+
 namespace dvfw {
 struct dvfw_base {};
 

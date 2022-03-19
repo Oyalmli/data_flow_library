@@ -16,7 +16,7 @@ target_include_directories(${PROJECT_NAME}
                             $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
                             $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_20)
+target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
 
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}_Targets
@@ -51,3 +51,7 @@ include(CTest)
 if(BUILD_TESTING)
     add_subdirectory(tests)
 endif()
+
+# Create example executabel using the framework
+add_executable(main src/main.cpp)
+target_link_libraries(main PRIVATE dvfw)

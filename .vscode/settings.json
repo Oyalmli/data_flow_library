@@ -24,7 +24,14 @@
                "tooltip": "tests build in build folder",
                "singleInstance": true,
                "command": "./dvfw_test"
-            }
+            },
+            {
+                "name": "Run main $(play)",
+                "cwd": "${workspaceFolder}/build-cmake",
+                "tooltip": "tests build in build folder",
+                "singleInstance": true,
+                "command": "./main"
+             }
         ]
     },
     "files.associations": {
