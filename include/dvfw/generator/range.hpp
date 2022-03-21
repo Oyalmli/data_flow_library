@@ -21,13 +21,6 @@ class range : public base_generator<T> {
         _curr += _step;
         return temp;
     }
-
-    template <typename Pipeline>
-    void operator>>=(Pipeline&& pipeline) {
-        while (hasNext()) {
-            dvfw::send(next(), pipeline);
-        }
-    }
 };
 }  // namespace gen
 }  // namespace dvfw

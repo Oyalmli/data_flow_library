@@ -5,7 +5,6 @@
 #include "dvfw/generator/gen.hpp"
 
 int main() {
-    std::vector<std::string> res;
-    auto input_gen = dvfw::gen::file<std::string>(stdin);
-    input_gen >>= dvfw::for_each([](std::string str){ printf("%s\n", str.c_str()); });
+    auto input_gen = dvfw::gen::file<int>(stdin);
+    input_gen >>= dvfw::for_each([](int c){ printf("ye: %d\n", c); });
 }

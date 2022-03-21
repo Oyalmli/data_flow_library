@@ -5,17 +5,22 @@
 #include <ctime>
 #include <thread>
 
+#include "../dvfw.hpp"
+
 namespace dvfw {
 namespace gen {
 template <typename T>
 class base_generator {
    public:
-    bool hasNext();
-
-    T next();
+    virtual bool hasNext() = 0;
+    virtual T next() = 0;
 
     template <typename Pipeline>
-    void operator>>=(Pipeline&& pipeline);
+    void operator>>=(Pipeline&& pipeline) {
+        while (hasNext()) {
+            dvfw::send(next(), pipeline);
+        }
+    }
 
     void wait(int delay) {
         std::this_thread::sleep_for(std::chrono::milliseconds(delay));

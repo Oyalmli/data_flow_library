@@ -7,7 +7,7 @@
 namespace dvfw {
 namespace gen {
 template <typename T, bool word = true>
-class file : public dvfw::gen::base_generator<T> {
+class file : public base_generator<T> {
    private:
     Reader _reader;
 
@@ -22,15 +22,8 @@ class file : public dvfw::gen::base_generator<T> {
     bool hasNext() {
         return _reader.hasNext();
     }
-
-    template <typename Pipeline>
-    void operator>>=(Pipeline&& pipeline) {
-        while (hasNext()) {
-            dvfw::send(next(), pipeline);
-        }
-    }
 };
 }  // namespace gen
 }  // namespace dvfw
 
-#endif //GEN_FILE_HPP
+#endif  // GEN_FILE_HPP

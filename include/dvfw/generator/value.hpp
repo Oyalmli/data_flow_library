@@ -15,13 +15,6 @@ class value : public dvfw::gen::base_generator<T> {
     T next() {
         return _value;
     }
-
-    template <typename Pipeline>
-    void operator>>=(Pipeline&& pipeline) {
-        while (hasNext()) {
-            dvfw::send(next(), pipeline);
-        }
-    }
 };
 }  // namespace gen
 }  // namespace dvfw

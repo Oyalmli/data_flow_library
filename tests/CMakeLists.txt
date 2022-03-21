@@ -10,6 +10,8 @@ add_executable(dvfw_test
     tee.cpp
     fork.cpp
     transform.cpp
+    generators/file.cpp
+    generators/impl_generator.cpp
 )
 add_test(NAME dvfw_test COMMAND dvfw_test)
 
