@@ -115,6 +115,9 @@ class Reader {
 
     template <typename T, bool word>
     constexpr T next() {
+        if constexpr (std::is_same_v<T, char>) {
+            return _read();
+        }
         if constexpr ( std::is_unsigned_v<T> && std::is_integral_v<T>) { 
             return _readUnsignedInteger<T>();
         }
@@ -132,5 +135,6 @@ class Reader {
             }
             
         }
+        return _read();
     }
 };
