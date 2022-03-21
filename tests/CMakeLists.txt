@@ -4,7 +4,11 @@ add_executable(dvfw_test
     drop.cpp
     scanl.cpp
     hole.cpp
+    drop_while.cpp
+    filter.cpp
     set_state.cpp
+    tee.cpp
+    fork.cpp
     transform.cpp
 )
 add_test(NAME dvfw_test COMMAND dvfw_test)
