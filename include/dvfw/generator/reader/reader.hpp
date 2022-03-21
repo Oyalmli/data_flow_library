@@ -113,16 +113,24 @@ class Reader {
         for (; !std::isspace(c); c = _read());
     }
 
-    template <typename T>
+    template <typename T, bool word>
     constexpr T next() {
-        if constexpr ( std::is_unsigned<T>::value && std::is_integral<T>::value ) { 
+        if constexpr ( std::is_unsigned_v<T> && std::is_integral_v<T>) { 
             return _readUnsignedInteger<T>();
         }
-        if constexpr ( std::is_integral<T>::value ) { 
+        if constexpr ( std::is_integral_v<T> ) { 
             return _readInteger<T>(); 
         }
-        if constexpr ( std::is_floating_point<T>::value ) { 
+        if constexpr ( std::is_floating_point_v<T>) { 
             return _readFloating<T>(); 
+        }
+        if constexpr (std::is_same_v<T, std::string>) {
+            if constexpr (word) {
+                return _readWord();
+            } else {
+                return _readLine();
+            }
+            
         }
     }
 };

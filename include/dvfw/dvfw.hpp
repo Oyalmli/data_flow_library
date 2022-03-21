@@ -3,7 +3,6 @@
 
 #include "dvfw/drop.hpp"
 #include "dvfw/for_each.hpp"
-#include "dvfw/generator.hpp"
 #include "dvfw/hole.hpp"
 #include "dvfw/operator.hpp"
 #include "dvfw/push_back.hpp"

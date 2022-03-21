@@ -107,7 +107,10 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "strstream": "cpp",
+        "shared_mutex": "cpp",
+        "span": "cpp"
     },
     "cmake.configureOnOpen": false,
     "cmake.configureOnEdit": false

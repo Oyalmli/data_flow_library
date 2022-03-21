@@ -33,4 +33,4 @@
 
 build
 build-cmake
-inp_test.txt
+inp_test*.txt
