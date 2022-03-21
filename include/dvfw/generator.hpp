@@ -1,10 +1,9 @@
 #ifndef DVFW_GENERATOR_HPP
 #define DVFW_GENERATOR_HPP
 
-#include <chrono>
 #include <cstdlib>
-#include <ctime>
 #include <thread>
+#include <ctime>
 
 #include "reader/reader.hpp"
 
@@ -49,7 +48,7 @@ class file : public base_generator<T> {
     void operator>>=(Pipeline&& pipeline) {
         while (hasNext()) {
             dvfw::send(next(), pipeline);
-                }
+        }
     }
 };
 

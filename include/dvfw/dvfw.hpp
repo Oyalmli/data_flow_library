@@ -7,6 +7,7 @@
 #include "dvfw/hole.hpp"
 #include "dvfw/operator.hpp"
 #include "dvfw/push_back.hpp"
+#include "dvfw/scanl.hpp"
 #include "dvfw/set_state.hpp"
 #include "dvfw/take.hpp"
 #include "dvfw/to_out_stream.hpp"

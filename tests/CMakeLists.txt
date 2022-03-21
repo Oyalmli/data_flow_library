@@ -2,6 +2,7 @@ add_executable(dvfw_test
     main.cpp
     take.cpp
     drop.cpp
+    scanl.cpp
     hole.cpp
     set_state.cpp
     transform.cpp

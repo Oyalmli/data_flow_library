@@ -1,20 +1,18 @@
-#include <deque>
-#include <iostream>
-#include <vector>
-#include <numeric>
-#include <string>
-#include <chrono>
-
 #include "dvfw/dvfw.hpp"
 
 int main() {
-    //221ms
-    auto generator = dvfw::gen::range(1, 1000000);
-    generator >>= dvfw::for_each([](int i){ printf("hello: %d\n", i); });
+    long long min_found = __LONG_LONG_MAX__;
 
-    //207ms
-    for (int i = 0; i < 1000000; i++) {
-        printf("hello: %d\n", i);
-    }
+    auto input_gen = dvfw::gen::file<long long>(stdin);
+
+    auto pipeline 
+    =   dvfw::drop(1)
+    >>= dvfw::scanl([](long long curr, long long& acc){ return curr + acc; }, 0LL)
+    >>= dvfw::set_state([](long long i, long long& min){ min = i < min ? i : min; }, min_found)
+    >>= dvfw::hole();
+
+    input_gen >>= pipeline;
+
+    printf("result: %lld\n", std::max(0LL, -min_found));
 }
 
