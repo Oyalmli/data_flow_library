@@ -1,4 +1,6 @@
-#pragma once
+#ifndef READER_HPP
+#define READER_HPP
+
 #include <string>
 #include <type_traits>
 
@@ -115,6 +117,14 @@ class Reader {
 
     template <typename T, bool word>
     constexpr T next() {
+        if constexpr (std::is_same_v<T, std::string>) {
+            if constexpr (word) {
+                return _readWord();
+            } else {
+                return _readLine();
+            }
+            
+        }
         if constexpr (std::is_same_v<T, char>) {
             return _read();
         }
@@ -127,14 +137,7 @@ class Reader {
         if constexpr ( std::is_floating_point_v<T>) { 
             return _readFloating<T>(); 
         }
-        if constexpr (std::is_same_v<T, std::string>) {
-            if constexpr (word) {
-                return _readWord();
-            } else {
-                return _readLine();
-            }
-            
-        }
-        return _read();
     }
 };
+
+#endif // READER_HPP

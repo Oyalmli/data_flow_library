@@ -16,5 +16,6 @@
 #include "dvfw/filter.hpp"
 #include "dvfw/tee.hpp"
 #include "dvfw/fork.hpp"
+#include "dvfw/chunks.hpp"
 
 #endif /* DVFW_HPP */

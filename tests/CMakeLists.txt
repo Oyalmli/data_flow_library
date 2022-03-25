@@ -1,5 +1,6 @@
 add_executable(dvfw_test
     main.cpp
+    chunks.cpp
     take.cpp
     drop.cpp
     scanl.cpp
