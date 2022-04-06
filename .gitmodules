@@ -1,3 +1,0 @@
-[submodule "include/pipes"]
-	path = include/pipes
-	url = git@github.com:joboccara/pipes.git

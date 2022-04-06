@@ -1,6 +1,8 @@
 #ifndef DVFW_HPP
 #define DVFW_HPP
 
+#include "pipes/include/pipes/pipes.hpp"
+
 #include "dvfw/drop.hpp"
 #include "dvfw/for_each.hpp"
 #include "dvfw/hole.hpp"
@@ -17,5 +19,6 @@
 #include "dvfw/tee.hpp"
 #include "dvfw/fork.hpp"
 #include "dvfw/chunks.hpp"
+#include "dvfw/printf.hpp"
 
 #endif /* DVFW_HPP */
