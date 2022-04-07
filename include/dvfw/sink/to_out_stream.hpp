@@ -25,7 +25,7 @@ template <typename OutStream>
 to_out_stream_pipeline<OutStream> to_out_stream(OutStream& outStream) {
     return to_out_stream_pipeline<OutStream>(outStream);
 }
-}
+}  // namespace sink
 }  // namespace dvfw
 
 #endif /* TO_OUT_STREAM_HPP */

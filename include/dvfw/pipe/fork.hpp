@@ -25,7 +25,7 @@ template <typename... TailPipelines>
 fork_pipeline<TailPipelines...> fork(TailPipelines const&... tailPipelines) {
     return fork_pipeline<TailPipelines...>(tailPipelines...);
 }
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* DVFW_FORK_HPP */

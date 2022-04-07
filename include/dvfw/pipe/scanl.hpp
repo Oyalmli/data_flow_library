@@ -29,7 +29,7 @@ template <typename Function, typename State>
 scanl_pipe<Function, State> scanl(Function&& function, State initState) {
     return scanl_pipe<Function, State>{function, initState};
 }
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* DVFW_SCANL_HPP */

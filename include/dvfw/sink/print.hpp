@@ -1,15 +1,15 @@
 #ifndef PRINT_HPP
 #define PRINT_HPP
 
+#include <string>
+
 #include "dvfw/base.hpp"
 #include "writer/writer.hpp"
-
-#include <string>
 
 namespace dvfw {
 namespace sink {
 
-template<typename Sep>
+template <typename Sep>
 class print_pipeline : public pipeline_base<print_pipeline<Sep>> {
    public:
     template <typename T>
@@ -24,12 +24,12 @@ class print_pipeline : public pipeline_base<print_pipeline<Sep>> {
     Writer _writer;
 };
 
-template<typename Sep>
+template <typename Sep>
 print_pipeline<Sep> print(Sep sep) {
     return print_pipeline(sep);
 }
 
-template<typename Sep>
+template <typename Sep>
 print_pipeline<Sep> print(Sep sep, FILE* outStream) {
     return print_pipeline(sep, outStream);
 }

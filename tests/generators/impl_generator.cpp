@@ -3,7 +3,7 @@
 #include "../catch.hpp"
 #include "dvfw/dvfw.hpp"
 
-template<typename T>
+template <typename T>
 class range_gen : public dvfw::gen::base_generator<T> {
    private:
     T _min, _max, _step, _curr;
@@ -26,13 +26,12 @@ class range_gen : public dvfw::gen::base_generator<T> {
 const std::string prefix = "[IMPL_GENERATOR]: ";
 
 TEST_CASE(prefix + "able to create own generator") {
-    std::vector<int> expected = {1,2,3,4,5};
+    std::vector<int> expected = {1, 2, 3, 4, 5};
     std::vector<int> res = {};
-    
 
-    auto range_generator = range_gen(1,6);
+    auto range_generator = range_gen(1, 6);
 
     range_generator >>= dvfw::sink::push_back(res);
-    
+
     REQUIRE(res == expected);
 }

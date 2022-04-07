@@ -30,4 +30,4 @@ class noise : public base_generator {
 }  // namespace gen
 }  // namespace dvfw
 
-#endif //GEN_MOD_NOISE_HPP
+#endif  // GEN_MOD_NOISE_HPP

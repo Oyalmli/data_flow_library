@@ -10,7 +10,7 @@ class hole : public pipeline_base<hole> {
     template <typename T>
     void onReceive(T&&) {}
 };
-}
+}  // namespace sink
 }  // namespace dvfw
 
 #endif /* DVFW_HOLE_HPP */

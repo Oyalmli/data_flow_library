@@ -19,7 +19,8 @@ TEST_CASE(prefix + "transforming a vector of ints") {
     }
 
     SECTION("input from STL algorithm") {
-        std::copy(begin(input), end(input), pipe::transform([](int i) { return i * 2; }) >>= sink::push_back(result));
+        std::copy(begin(input), end(input), pipe::transform([](int i) { return i * 2; }) 
+        >>= sink::push_back(result));
         REQUIRE(result == expected);
     }
 }

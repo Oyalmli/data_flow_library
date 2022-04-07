@@ -1,11 +1,11 @@
 #ifndef DVFW_OUTPUT_ITERATOR_HPP
 #define DVFW_OUTPUT_ITERATOR_HPP
 
+#include <iterator>
+
 #include "dvfw/helpers/FWD.hpp"
 #include "dvfw/helpers/crtp.hpp"
 #include "dvfw/send.hpp"
-
-#include <iterator>
 
 namespace dvfw {
 struct dvfw_base {};

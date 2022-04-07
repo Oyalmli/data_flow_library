@@ -25,7 +25,7 @@ template <typename Fmt>
 printf_pipeline<Fmt> printf(Fmt* fmt) {
     return printf_pipeline<Fmt>(fmt);
 }
-}
+}  // namespace sink
 }  // namespace dvfw
 
 #endif /* DVFW_PRINTF_HPP */

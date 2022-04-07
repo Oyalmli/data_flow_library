@@ -58,4 +58,4 @@ target_link_libraries(main PRIVATE dvfw)
 target_compile_options(main PRIVATE -O3 -Wall)
 
 # Generate assembly
-#set_target_properties(main PROPERTIES COMPILE_FLAGS "-save-temps -fverbose-asm -O3")
+set_target_properties(main PROPERTIES COMPILE_FLAGS "-save-temps -fverbose-asm -O3")

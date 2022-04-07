@@ -26,7 +26,7 @@ template <typename Container>
 push_back_pipeline<Container> push_back(Container& container) {
     return push_back_pipeline<Container>(container);
 }
-}
+}  // namespace sink
 }  // namespace dvfw
 
 #endif /* PUSH_BACK_HPP */

@@ -22,7 +22,7 @@ class take : public dvfw_base {
     std::size_t nbToTake_;
     std::size_t nbTaken_;
 };
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* PIPES_TAKE_HPP */

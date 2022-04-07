@@ -25,7 +25,7 @@ template <typename InsertFunction>
 for_each_pipeline<InsertFunction> for_each(InsertFunction insertFunction) {
     return for_each_pipeline<InsertFunction>(insertFunction);
 }
-}
+}  // namespace sink
 }  // namespace dvfw
 
 #endif /* DVFW_CUSTOM_INSERTER_HPP */

@@ -7,7 +7,7 @@
 class Reader {
    private:
     FILE* _fp = stdin;
-    
+
     static const unsigned int BUFFER_SIZE = 256;
     unsigned char buffer[BUFFER_SIZE];
     int bufferPointer = 0, bytesRead = 0;
@@ -27,7 +27,8 @@ class Reader {
     constexpr T _readUnsignedInteger() {
         T ret = 0;
         char c = _read();
-        for (; (c < '0' || c > '9') && c != '\0'; c = _read());
+        for (; (c < '0' || c > '9') && c != '\0'; c = _read())
+            ;
         for (; c >= '0' && c <= '9'; c = _read()) {
             ret = ret * 10 + (c - '0');
         }
@@ -111,8 +112,10 @@ class Reader {
 
     void skipToken() {
         unsigned c = _read();
-        for (; std::isspace(c) && c != '\0'; c = _read());
-        for (; !std::isspace(c); c = _read());
+        for (; std::isspace(c) && c != '\0'; c = _read())
+            ;
+        for (; !std::isspace(c); c = _read())
+            ;
     }
 
     template <typename T, bool word>
@@ -123,21 +126,20 @@ class Reader {
             } else {
                 return _readLine();
             }
-            
         }
         if constexpr (std::is_same_v<T, char>) {
             return _read();
         }
-        if constexpr ( std::is_unsigned_v<T> && std::is_integral_v<T>) { 
+        if constexpr (std::is_unsigned_v<T> && std::is_integral_v<T>) {
             return _readUnsignedInteger<T>();
         }
-        if constexpr ( std::is_integral_v<T> ) { 
-            return _readInteger<T>(); 
+        if constexpr (std::is_integral_v<T>) {
+            return _readInteger<T>();
         }
-        if constexpr ( std::is_floating_point_v<T>) { 
-            return _readFloating<T>(); 
+        if constexpr (std::is_floating_point_v<T>) {
+            return _readFloating<T>();
         }
     }
 };
 
-#endif // READER_HPP
+#endif  // READER_HPP

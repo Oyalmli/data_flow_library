@@ -23,7 +23,7 @@ class drop : public dvfw_base {
     std::size_t nbToDrop_;
     std::size_t nbDropped_;
 };
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* PIPES_DROP_HPP */

@@ -31,4 +31,4 @@ class random_err : public base_generator {
 }  // namespace gen
 }  // namespace dvfw
 
-#endif //GEN_MOD_RANDOM_ERR_HPP
+#endif  // GEN_MOD_RANDOM_ERR_HPP

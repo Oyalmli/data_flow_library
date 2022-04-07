@@ -6,7 +6,7 @@
 
 namespace dvfw {
 namespace pipe {
-template<typename T>
+template <typename T>
 class chunks : public dvfw_base {
    public:
     template <typename... Values, typename TailPipeline>
@@ -22,12 +22,11 @@ class chunks : public dvfw_base {
         _curr_chunk = {};
     }
 
-   private:    
+   private:
     std::size_t _chunk_size;
     std::vector<T> _curr_chunk;
-    
 };
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* PIPES_CHUNKS_HPP */

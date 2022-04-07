@@ -8,7 +8,7 @@ class Writer {
    private:
     FILE* _fp = stdout;
     char _sep = '\n';
-    
+
     static const unsigned int BUFFER_SIZE = 1024;
     unsigned char buffer[BUFFER_SIZE];
     int bufferPointer = 0;
@@ -46,8 +46,8 @@ class Writer {
         _flushBuffer();
     }
 
-    template<typename T>
-    void write(T val){
+    template <typename T>
+    void write(T val) {
         if constexpr (std::is_same_v<T, std::string>) {
             _writeStr(val);
             _write(_sep);
@@ -61,4 +61,4 @@ class Writer {
     }
 };
 
-#endif // WRITER_HPP
+#endif  // WRITER_HPP

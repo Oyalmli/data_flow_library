@@ -27,7 +27,7 @@ template <typename Predicate>
 auto filter(Predicate&& predicate) {
     return filter_pipe<std::decay_t<Predicate>>{predicate};
 }
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* DVFW_FILTER_HPP */

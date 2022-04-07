@@ -1,8 +1,8 @@
 #ifndef DVFW_SET_STATE_HPP
 #define DVFW_SET_STATE_HPP
 
-#include <type_traits>
 #include <iostream>
+#include <type_traits>
 
 #include "dvfw/base.hpp"
 #include "dvfw/helpers/FWD.hpp"
@@ -31,7 +31,7 @@ template <typename Function, typename State>
 set_state_pipe<Function, State> set_state(Function&& function, State&& state) {
     return set_state_pipe<Function, State>{function, state};
 }
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* DVFW_SET_STATE_HPP */

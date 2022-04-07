@@ -32,7 +32,7 @@ template <typename Predicate>
 drop_while_pipe<Predicate> drop_while(Predicate&& predicate) {
     return drop_while_pipe<Predicate>(FWD(predicate));
 }
-}
+}  // namespace pipe
 }  // namespace dvfw
 
 #endif /* DVFW_DROP_WHILE_HPP */
