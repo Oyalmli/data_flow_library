@@ -5,7 +5,8 @@
 
 #include "dvfw/helpers/FWD.hpp"
 #include "dvfw/helpers/crtp.hpp"
-#include "dvfw/send.hpp"
+#include "dvfw/helpers/assignable.hpp"
+#include "dvfw/impl/send.hpp"
 
 namespace dvfw {
 struct dvfw_base {};

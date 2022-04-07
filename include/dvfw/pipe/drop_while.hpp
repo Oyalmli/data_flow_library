@@ -1,10 +1,6 @@
 #ifndef DVFW_DROP_WHILE_HPP
 #define DVFW_DROP_WHILE_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-#include "dvfw/helpers/assignable.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename Predicate>

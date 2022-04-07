@@ -1,9 +1,6 @@
 #ifndef DVFW_DROP_HPP
 #define DVFW_DROP_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-
 namespace dvfw {
 namespace pipe {
 class drop : public dvfw_base {

@@ -1,12 +1,6 @@
 #ifndef DVFW_SCANL_HPP
 #define DVFW_SCANL_HPP
 
-#include <type_traits>
-
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-#include "dvfw/helpers/invoke.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename Function, typename State>

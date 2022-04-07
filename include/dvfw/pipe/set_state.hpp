@@ -1,14 +1,6 @@
 #ifndef DVFW_SET_STATE_HPP
 #define DVFW_SET_STATE_HPP
 
-#include <iostream>
-#include <type_traits>
-
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-#include "dvfw/helpers/assignable.hpp"
-#include "dvfw/helpers/invoke.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename Function, typename State>

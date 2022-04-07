@@ -3,7 +3,7 @@
 
 #include <type_traits>
 
-#include "dvfw/base.hpp"
+#include "dvfw/impl/base.hpp"
 #include "dvfw/helpers/detect.hpp"
 
 namespace dvfw {

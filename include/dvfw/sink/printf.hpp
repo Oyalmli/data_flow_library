@@ -3,8 +3,6 @@
 
 #include <functional>
 
-#include "dvfw/base.hpp"
-
 namespace dvfw {
 namespace sink {
 template <typename Fmt>

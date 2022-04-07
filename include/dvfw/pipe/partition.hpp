@@ -1,10 +1,6 @@
 #ifndef DVFW_PARTITION_HPP
 #define DVFW_PARTITION_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-#include "dvfw/helpers/assignable.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename OutputPipeTrue, typename OutputPipeFalse, typename Predicate>

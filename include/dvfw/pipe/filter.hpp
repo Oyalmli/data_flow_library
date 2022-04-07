@@ -1,10 +1,6 @@
 #ifndef DVFW_FILTER_HPP
 #define DVFW_FILTER_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/assignable.hpp"
-#include "dvfw/operator.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename Predicate>

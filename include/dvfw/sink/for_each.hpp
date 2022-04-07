@@ -1,10 +1,6 @@
 #ifndef DVFW_CUSTOM_INSERTER_HPP
 #define DVFW_CUSTOM_INSERTER_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/assignable.hpp"
-#include "dvfw/operator.hpp"
-
 namespace dvfw {
 namespace sink {
 template <typename Function>

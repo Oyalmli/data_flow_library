@@ -2,8 +2,6 @@
 #define PRINT_HPP
 
 #include <string>
-
-#include "dvfw/base.hpp"
 #include "writer/writer.hpp"
 
 namespace dvfw {

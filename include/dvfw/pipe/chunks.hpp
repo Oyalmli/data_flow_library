@@ -1,9 +1,6 @@
 #ifndef DVFW_CHUNKS_HPP
 #define DVFW_CHUNKS_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename T>

@@ -1,12 +1,6 @@
 #ifndef DVFW_TAP_HPP
 #define DVFW_TAP_HPP
 
-#include <type_traits>
-
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-#include "dvfw/helpers/assignable.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename Function>

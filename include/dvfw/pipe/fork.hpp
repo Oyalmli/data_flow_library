@@ -1,9 +1,7 @@
 #ifndef DVFW_FORK_HPP
 #define DVFW_FORK_HPP
 
-#include "dvfw/base.hpp"
 #include "dvfw/helpers/meta.hpp"
-#include "dvfw/operator.hpp"
 
 namespace dvfw {
 namespace pipe {

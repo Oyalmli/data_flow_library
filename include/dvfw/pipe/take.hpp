@@ -1,9 +1,6 @@
 #ifndef DVFW_TAKE_HPP
 #define DVFW_TAKE_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-
 namespace dvfw {
 namespace pipe {
 class take : public dvfw_base {

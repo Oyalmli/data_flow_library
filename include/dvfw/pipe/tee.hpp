@@ -1,11 +1,6 @@
 #ifndef DVFW_TEE_HPP
 #define DVFW_TEE_HPP
 
-#include <type_traits>
-
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename TeeBranch>

@@ -1,10 +1,6 @@
 #ifndef DVFW_INTERSPERSE_HPP
 #define DVFW_INTERSPERSE_HPP
 
-#include "dvfw/base.hpp"
-#include "dvfw/helpers/FWD.hpp"
-#include "dvfw/send.hpp"
-
 namespace dvfw {
 namespace pipe {
 template <typename Delimiter>
