@@ -1,4 +1,3 @@
-
 namespace dvfw {
 namespace gen {
 template <typename T>

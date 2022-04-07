@@ -1,7 +1,6 @@
 #ifndef GEN_FILE_HPP
 #define GEN_FILE_HPP
 
-#include "base.hpp"
 #include "reader/reader.hpp"
 
 namespace dvfw {

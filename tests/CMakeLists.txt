@@ -2,6 +2,7 @@ add_executable(
   dvfw_test
   main.cpp
   pipe/chunks.cpp
+  pipe/moving_avg.cpp
   pipe/take.cpp
   pipe/drop.cpp
   pipe/scanl.cpp
@@ -12,6 +13,8 @@ add_executable(
   pipe/tee.cpp
   pipe/fork.cpp
   pipe/transform.cpp
+  gen/range.cpp
+  gen/value.cpp
   gen/file.cpp
   gen/impl_generator.cpp)
 add_test(NAME dvfw_test COMMAND dvfw_test)

@@ -3,7 +3,7 @@
 #include "../catch.hpp"
 #include "dvfw/dvfw.hpp"
 using namespace dvfw;
-const std::string prefix = "[TEE]: ";
+const std::string prefix = "[FORK]: ";
 
 TEST_CASE(prefix + "fork dispatches an input to several destinations") {
     std::vector<int> numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

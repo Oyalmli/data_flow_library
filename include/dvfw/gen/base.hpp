@@ -1,11 +1,7 @@
 #ifndef DVFW_GENERATOR_HPP
 #define DVFW_GENERATOR_HPP
 
-#include <cstdlib>
-#include <ctime>
 #include <thread>
-
-#include "../dvfw.hpp"
 
 namespace dvfw {
 namespace gen {
@@ -18,7 +14,7 @@ class base_generator {
     template <typename Pipeline>
     void operator>>=(Pipeline&& pipeline) {
         while (hasNext()) {
-            dvfw::send(next(), pipeline);
+            send(next(), pipeline);
         }
     }
 
