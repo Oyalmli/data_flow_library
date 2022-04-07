@@ -1,6 +1,9 @@
 #ifndef DVFW_HPP
 #define DVFW_HPP
 
+#include "dvfw/operator.hpp"
+#include "dvfw/send.hpp"
+
 #include "dvfw/gen/base.hpp"
 #include "dvfw/gen/file.hpp"
 #include "dvfw/gen/modifyer/noise.hpp"

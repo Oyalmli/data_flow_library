@@ -8,7 +8,7 @@
 namespace dvfw {
 namespace pipe {
 template <typename Delimiter>
-class intersperse_pipe : public pipe_base {
+class intersperse_pipe : public dvfw_base {
    public:
     template <typename T, typename TailPipeline>
     void onReceive(T&& value, TailPipeline& tailPipeline) {

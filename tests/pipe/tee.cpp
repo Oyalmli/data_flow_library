@@ -1,6 +1,6 @@
 #include <vector>
 
-#include "catch.hpp"
+#include "../catch.hpp"
 #include "dvfw/dvfw.hpp"
 using namespace dvfw;
 const std::string prefix = "[TEE]: ";
