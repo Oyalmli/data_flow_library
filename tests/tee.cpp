@@ -2,7 +2,7 @@
 
 #include "catch.hpp"
 #include "dvfw/dvfw.hpp"
-
+using namespace dvfw;
 const std::string prefix = "[TEE]: ";
 
 TEST_CASE(prefix + "splits values to two pipes") {
@@ -13,11 +13,11 @@ TEST_CASE(prefix + "splits values to two pipes") {
     std::vector<int> main;
 
     input 
-    >>= dvfw::tee(
-        dvfw::filter([](int i) { return i % 2 != 0; })
-        >>= dvfw::push_back(branch) ) 
-    >>= dvfw::filter([](int i) { return i % 2 == 0; }) 
-    >>= dvfw::push_back(main);
+    >>= pipe::tee(
+        pipe::filter([](int i) { return i % 2 != 0; })
+        >>= sink::push_back(branch) ) 
+    >>= pipe::filter([](int i) { return i % 2 == 0; }) 
+    >>= sink::push_back(main);
 
     REQUIRE(main == expected_main);
     REQUIRE(branch == expected_branch);

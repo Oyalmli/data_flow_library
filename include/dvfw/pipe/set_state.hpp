@@ -10,6 +10,7 @@
 #include "dvfw/helpers/invoke.hpp"
 
 namespace dvfw {
+namespace pipe {
 template <typename Function, typename State>
 class set_state_pipe : public dvfw_base {
    public:
@@ -30,7 +31,7 @@ template <typename Function, typename State>
 set_state_pipe<Function, State> set_state(Function&& function, State&& state) {
     return set_state_pipe<Function, State>{function, state};
 }
-
+}
 }  // namespace dvfw
 
 #endif /* DVFW_SET_STATE_HPP */

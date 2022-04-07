@@ -2,7 +2,7 @@
 
 #include "catch.hpp"
 #include "dvfw/dvfw.hpp"
-
+using namespace dvfw;
 const std::string prefix = "[TEE]: ";
 
 TEST_CASE(prefix + "fork dispatches an input to several destinations") {
@@ -14,10 +14,10 @@ TEST_CASE(prefix + "fork dispatches an input to several destinations") {
 
     std::vector<int> results1, results2, results3;
 
-    numbers >>= dvfw::fork(
-        dvfw::filter([](int i) { return (i & 1) == 0; }) >>= dvfw::push_back(results1),
-        dvfw::filter([](int i) { return (i & 1) == 1; }) >>= dvfw::push_back(results2),
-        dvfw::push_back(results3));
+    numbers >>= pipe::fork(
+        pipe::filter([](int i) { return (i & 1) == 0; }) >>= sink::push_back(results1),
+        pipe::filter([](int i) { return (i & 1) == 1; }) >>= sink::push_back(results2),
+        sink::push_back(results3));
 
     REQUIRE(results1 == expected1);
     REQUIRE(results2 == expected2);

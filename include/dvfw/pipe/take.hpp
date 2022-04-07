@@ -5,6 +5,7 @@
 #include "dvfw/helpers/FWD.hpp"
 
 namespace dvfw {
+namespace pipe {
 class take : public dvfw_base {
    public:
     template <typename... Values, typename TailPipeline>
@@ -21,6 +22,7 @@ class take : public dvfw_base {
     std::size_t nbToTake_;
     std::size_t nbTaken_;
 };
+}
 }  // namespace dvfw
 
 #endif /* PIPES_TAKE_HPP */

@@ -2,7 +2,7 @@
 #include "dvfw/dvfw.hpp"
 
 #include <vector>
-
+using namespace dvfw;
 const std::string prefix = "[DROP_WHILE]: ";
 
 TEST_CASE(prefix + "dropwhile on numbers")
@@ -12,8 +12,8 @@ TEST_CASE(prefix + "dropwhile on numbers")
     std::vector<int> res = {};
 
     input 
-    >>= dvfw::drop_while([](int i){ return i != 6; }) 
-    >>= dvfw::push_back(res);
+    >>= pipe::drop_while([](int i){ return i != 6; }) 
+    >>= sink::push_back(res);
 
     REQUIRE(res == expected);
 }

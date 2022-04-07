@@ -1,7 +1,7 @@
 #include <vector>
 
 #include "../catch.hpp"
-#include "dvfw/generator/gen.hpp"
+#include "dvfw/dvfw.hpp"
 
 template<typename T>
 class range_gen : public dvfw::gen::base_generator<T> {
@@ -32,7 +32,7 @@ TEST_CASE(prefix + "able to create own generator") {
 
     auto range_generator = range_gen(1,6);
 
-    range_generator >>= dvfw::push_back(res);
+    range_generator >>= dvfw::sink::push_back(res);
     
     REQUIRE(res == expected);
 }

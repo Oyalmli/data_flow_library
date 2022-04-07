@@ -6,7 +6,7 @@
 #include "dvfw/operator.hpp"
 
 namespace dvfw {
-
+namespace pipe {
 template <typename... TailPipelines>
 class fork_pipeline : public pipeline_base<fork_pipeline<TailPipelines...>> {
    public:
@@ -25,7 +25,7 @@ template <typename... TailPipelines>
 fork_pipeline<TailPipelines...> fork(TailPipelines const&... tailPipelines) {
     return fork_pipeline<TailPipelines...>(tailPipelines...);
 }
-
+}
 }  // namespace dvfw
 
 #endif /* DVFW_FORK_HPP */

@@ -3,7 +3,7 @@
 
 #include "catch.hpp"
 #include "dvfw/dvfw.hpp"
-
+using namespace dvfw;
 const std::string prefix = "[SCANL]: ";
 
 TEST_CASE(prefix + "scanl with sum") {
@@ -11,9 +11,9 @@ TEST_CASE(prefix + "scanl with sum") {
     std::vector<int> expected = {1,3,6,10,15};
     std::vector<int> result = {};
 
-    input 
-    >>= dvfw::scanl([](int& acc, int i){ return i + acc; },0) 
-    >>= dvfw::push_back(result);
+    input
+    >>= pipe::scanl([](int& acc, int i){ return i + acc; },0) 
+    >>= sink::push_back(result);
 
     REQUIRE(result == expected);
 }

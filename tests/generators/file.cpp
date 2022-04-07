@@ -2,7 +2,7 @@
 #include <string>
 
 #include "../catch.hpp"
-#include "dvfw/generator/file.hpp"
+#include "dvfw/dvfw.hpp"
 
 
 const std::string prefix = "[FILE]: ";
@@ -14,7 +14,7 @@ TEST_CASE(prefix + "able to read from file") {
     std::vector<int> expected = {1,-2,3,-4,5};
     std::vector<int> res = {};
 
-    file_gen >>= dvfw::push_back(res);
+    file_gen >>= dvfw::sink::push_back(res);
     
     REQUIRE(res == expected);
     fclose (pFile);
@@ -27,7 +27,7 @@ TEST_CASE(prefix + "able to read words from from file") {
     std::vector<std::string> expected = {"1","-2","3","-4","5"};
     std::vector<std::string> res = {};
 
-    file_gen >>= dvfw::push_back(res);
+    file_gen >>= dvfw::sink::push_back(res);
     
     REQUIRE(res == expected);
     fclose (pFile);
@@ -40,7 +40,7 @@ TEST_CASE(prefix + "able to read lines from from file") {
     std::vector<std::string> expected = {"1","-2","3 -4","5"};
     std::vector<std::string> res = {};
 
-    file_gen >>= dvfw::push_back(res);
+    file_gen >>= dvfw::sink::push_back(res);
     
     REQUIRE(res == expected);
     fclose (pFile);

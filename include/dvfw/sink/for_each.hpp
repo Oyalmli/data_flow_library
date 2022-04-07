@@ -6,7 +6,7 @@
 #include "dvfw/operator.hpp"
 
 namespace dvfw {
-
+namespace sink {
 template <typename Function>
 class for_each_pipeline : public pipeline_base<for_each_pipeline<Function>> {
    public:
@@ -25,7 +25,7 @@ template <typename InsertFunction>
 for_each_pipeline<InsertFunction> for_each(InsertFunction insertFunction) {
     return for_each_pipeline<InsertFunction>(insertFunction);
 }
-
+}
 }  // namespace dvfw
 
 #endif /* DVFW_CUSTOM_INSERTER_HPP */

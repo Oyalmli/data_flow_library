@@ -6,6 +6,7 @@
 #include "dvfw/helpers/assignable.hpp"
 
 namespace dvfw {
+namespace pipe {
 template <typename Predicate>
 class drop_while_pipe : public dvfw_base {
    public:
@@ -30,6 +31,7 @@ class drop_while_pipe : public dvfw_base {
 template <typename Predicate>
 drop_while_pipe<Predicate> drop_while(Predicate&& predicate) {
     return drop_while_pipe<Predicate>(FWD(predicate));
+}
 }
 }  // namespace dvfw
 

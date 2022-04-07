@@ -1,24 +1,33 @@
 #ifndef DVFW_HPP
 #define DVFW_HPP
 
-#include "pipes/include/pipes/pipes.hpp"
-
-#include "dvfw/drop.hpp"
-#include "dvfw/for_each.hpp"
-#include "dvfw/hole.hpp"
 #include "dvfw/operator.hpp"
-#include "dvfw/push_back.hpp"
-#include "dvfw/scanl.hpp"
-#include "dvfw/set_state.hpp"
-#include "dvfw/take.hpp"
-#include "dvfw/to_out_stream.hpp"
-#include "dvfw/transform.hpp"
-#include "dvfw/transform_s.hpp"
-#include "dvfw/drop_while.hpp"
-#include "dvfw/filter.hpp"
-#include "dvfw/tee.hpp"
-#include "dvfw/fork.hpp"
-#include "dvfw/chunks.hpp"
-#include "dvfw/printf.hpp"
+
+#include "dvfw/pipe/drop.hpp"
+#include "dvfw/pipe/scanl.hpp"
+#include "dvfw/pipe/set_state.hpp"
+#include "dvfw/pipe/transform.hpp"
+#include "dvfw/pipe/transform_s.hpp"
+#include "dvfw/pipe/drop_while.hpp"
+#include "dvfw/pipe/filter.hpp"
+#include "dvfw/pipe/tee.hpp"
+#include "dvfw/pipe/fork.hpp"
+#include "dvfw/pipe/chunks.hpp"
+#include "dvfw/pipe/take.hpp"
+
+#include "dvfw/sink/to_out_stream.hpp"
+#include "dvfw/sink/print.hpp"
+#include "dvfw/sink/printf.hpp"
+#include "dvfw/sink/to_out_stream.hpp"
+#include "dvfw/sink/for_each.hpp"
+#include "dvfw/sink/push_back.hpp"
+#include "dvfw/sink/hole.hpp"
+
+#include "dvfw/gen/base.hpp"
+#include "dvfw/gen/file.hpp"
+#include "dvfw/gen/modifyer/noise.hpp"
+#include "dvfw/gen/modifyer/random_err.hpp"
+#include "dvfw/gen/range.hpp"
+#include "dvfw/gen/value.hpp"
 
 #endif /* DVFW_HPP */

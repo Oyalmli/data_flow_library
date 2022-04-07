@@ -9,6 +9,7 @@
 #include "dvfw/helpers/invoke.hpp"
 
 namespace dvfw {
+namespace pipe {
 template <typename Function, typename State>
 class transform_s_pipe : public dvfw_base {
    public:
@@ -28,7 +29,7 @@ template <typename Function, typename State>
 transform_s_pipe<Function, State> transform_s(Function&& function, State&& state) {
     return transform_s_pipe<Function, State>{function, state};
 }
-
+}
 }  // namespace dvfw
 
 #endif /* DVFW_TRANSFORM_S_HPP */

@@ -3,7 +3,7 @@
 
 #include "catch.hpp"
 #include "dvfw/dvfw.hpp"
-
+using namespace dvfw;
 const std::string prefix = "[TRANSFORM]: ";
 
 TEST_CASE(prefix + "transforming a vector of ints") {
@@ -13,13 +13,13 @@ TEST_CASE(prefix + "transforming a vector of ints") {
 
     SECTION("input from range") {
         input 
-        >>= dvfw::transform([](int i) { return i * 2; }) 
-        >>= dvfw::push_back(result);
+        >>= pipe::transform([](int i) { return i * 2; }) 
+        >>= sink::push_back(result);
         REQUIRE(result == expected);
     }
 
     SECTION("input from STL algorithm") {
-        std::copy(begin(input), end(input), dvfw::transform([](int i) { return i * 2; }) >>= dvfw::push_back(result));
+        std::copy(begin(input), end(input), pipe::transform([](int i) { return i * 2; }) >>= sink::push_back(result));
         REQUIRE(result == expected);
     }
 }

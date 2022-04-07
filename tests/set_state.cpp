@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-
+using namespace dvfw;
 const std::string prefix = "[SET STATE]: ";
 
 struct State {
@@ -24,8 +24,8 @@ TEST_CASE(prefix + "able to set part of state")
     State init_state = { .val=0 };
     State expected_state = { .val=10 };
     input 
-        >>= dvfw::set_state(max<int>, init_state)
-        >>= dvfw::hole();
+    >>= pipe::set_state(max<int>, init_state)
+    >>= sink::hole();
     REQUIRE(init_state.val == expected_state.val);
 }
 
@@ -38,8 +38,8 @@ TEST_CASE(prefix + "static state is applied")
     State state = { .val=3 };
 
     input 
-        >>= dvfw::transform_s([](int i, State state){ return i + state.val; }, state)
-        >>= dvfw::push_back(result);
+    >>= pipe::transform_s([](int i, State state){ return i + state.val; }, state)
+    >>= sink::push_back(result);
     
     REQUIRE(result == expected);
 }
@@ -53,9 +53,9 @@ TEST_CASE(prefix + "able to use state in transform")
     State state = { .val=0 };
 
     input 
-        >>= dvfw::set_state(max<int>, state)
-        >>= dvfw::transform_s([](int i, State state){ return i + state.val; }, state)
-        >>= dvfw::push_back(result);
+    >>= pipe::set_state(max<int>, state)
+    >>= pipe::transform_s([](int i, State state){ return i + state.val; }, state)
+    >>= sink::push_back(result);
     
     REQUIRE(result == expected);
 }

@@ -5,7 +5,7 @@
 #include "dvfw/helpers/FWD.hpp"
 
 namespace dvfw {
-
+namespace pipe {
 template<typename T>
 class chunks : public dvfw_base {
    public:
@@ -27,6 +27,7 @@ class chunks : public dvfw_base {
     std::vector<T> _curr_chunk;
     
 };
+}
 }  // namespace dvfw
 
 #endif /* PIPES_CHUNKS_HPP */

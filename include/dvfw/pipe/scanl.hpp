@@ -8,6 +8,7 @@
 #include "dvfw/helpers/invoke.hpp"
 
 namespace dvfw {
+namespace pipe {
 template <typename Function, typename State>
 class scanl_pipe : public dvfw_base {
    public:
@@ -28,7 +29,7 @@ template <typename Function, typename State>
 scanl_pipe<Function, State> scanl(Function&& function, State initState) {
     return scanl_pipe<Function, State>{function, initState};
 }
-
+}
 }  // namespace dvfw
 
 #endif /* DVFW_SCANL_HPP */

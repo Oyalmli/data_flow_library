@@ -5,6 +5,7 @@
 #include "dvfw/helpers/FWD.hpp"
 
 namespace dvfw {
+namespace pipe {
 class drop : public dvfw_base {
    public:
     template <typename... Values, typename TailPipeline>
@@ -22,6 +23,7 @@ class drop : public dvfw_base {
     std::size_t nbToDrop_;
     std::size_t nbDropped_;
 };
+}
 }  // namespace dvfw
 
 #endif /* PIPES_DROP_HPP */

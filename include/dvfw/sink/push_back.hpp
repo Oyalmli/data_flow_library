@@ -7,6 +7,7 @@
 #include "dvfw/helpers/FWD.hpp"
 
 namespace dvfw {
+namespace sink {
 template <typename Container>
 class push_back_pipeline : public pipeline_base<push_back_pipeline<Container>> {
    public:
@@ -24,6 +25,7 @@ class push_back_pipeline : public pipeline_base<push_back_pipeline<Container>> {
 template <typename Container>
 push_back_pipeline<Container> push_back(Container& container) {
     return push_back_pipeline<Container>(container);
+}
 }
 }  // namespace dvfw
 

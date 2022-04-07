@@ -30,7 +30,7 @@
                 "cwd": "${workspaceFolder}/build-cmake",
                 "tooltip": "tests build in build folder",
                 "singleInstance": true,
-                "command": "time ./main > /dev/null"
+                "command": "time ./main"
              }
         ]
     },

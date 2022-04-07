@@ -6,6 +6,7 @@
 #include "dvfw/operator.hpp"
 
 namespace dvfw {
+namespace pipe {
 template <typename Predicate>
 class filter_pipe : public dvfw_base {
    public:
@@ -26,7 +27,7 @@ template <typename Predicate>
 auto filter(Predicate&& predicate) {
     return filter_pipe<std::decay_t<Predicate>>{predicate};
 }
-
+}
 }  // namespace dvfw
 
 #endif /* DVFW_FILTER_HPP */

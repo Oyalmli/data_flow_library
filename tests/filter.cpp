@@ -2,7 +2,7 @@
 #include "dvfw/dvfw.hpp"
 
 #include <vector>
-
+using namespace dvfw;
 const std::string prefix = "[FILTER]: ";
 
 TEST_CASE(prefix + "filters out odd numbers")
@@ -12,8 +12,8 @@ TEST_CASE(prefix + "filters out odd numbers")
     std::vector<int> res;
     
     input 
-    >>= dvfw::filter([](int i){ return i % 2 == 0; })
-    >>= dvfw::push_back(res);
+    >>= pipe::filter([](int i){ return i % 2 == 0; })
+    >>= sink::push_back(res);
 
     REQUIRE(res == expected);
 }

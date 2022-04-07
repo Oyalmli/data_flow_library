@@ -2,7 +2,7 @@
 #include "dvfw/dvfw.hpp"
 
 #include <vector>
-
+using namespace dvfw;
 const std::string prefix = "[DROP]: ";
 
 TEST_CASE(prefix + "drop the first N elements coming from a range")
@@ -12,8 +12,8 @@ TEST_CASE(prefix + "drop the first N elements coming from a range")
     
     auto result = std::vector<int>{};
     
-    input >>= dvfw::drop(2)
-          >>= dvfw::push_back(result);
+    input >>= pipe::drop(2)
+          >>= sink::push_back(result);
     
     REQUIRE(result == expected);
 }
@@ -25,8 +25,8 @@ TEST_CASE(prefix + "dropping nothing returns full list")
     
     auto result = std::vector<int>{};
     
-    input >>= dvfw::drop(0)
-          >>= dvfw::push_back(result);
+    input >>= pipe::drop(0)
+          >>= sink::push_back(result);
     
     REQUIRE(result == expected);
 }
@@ -38,8 +38,8 @@ TEST_CASE(prefix + "dropping more than the full list returns empty list")
     
     auto result = std::vector<int>{};
     
-    input >>= dvfw::drop(11)
-          >>= dvfw::push_back(result);
+    input >>= pipe::drop(11)
+          >>= sink::push_back(result);
     
     REQUIRE(result == expected);
 }

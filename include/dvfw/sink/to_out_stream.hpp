@@ -6,7 +6,7 @@
 #include "dvfw/base.hpp"
 
 namespace dvfw {
-
+namespace sink {
 template <typename OutStream>
 class to_out_stream_pipeline : public pipeline_base<to_out_stream_pipeline<OutStream>> {
    public:
@@ -25,7 +25,7 @@ template <typename OutStream>
 to_out_stream_pipeline<OutStream> to_out_stream(OutStream& outStream) {
     return to_out_stream_pipeline<OutStream>(outStream);
 }
-
+}
 }  // namespace dvfw
 
 #endif /* TO_OUT_STREAM_HPP */
