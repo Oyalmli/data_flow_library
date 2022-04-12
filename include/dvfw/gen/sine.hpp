@@ -2,6 +2,7 @@
 #define GEN_SINE_HPP
 
 #include <type_traits>
+#include <cmath>
 
 namespace dvfw {
 namespace gen {
