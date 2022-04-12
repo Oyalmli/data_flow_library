@@ -16,7 +16,7 @@ class moving_avg : public dvfw_base {
    private:
     T _samples[N];
     size_t _num_samples{0};
-    int _total;
+    T _total;
 
     float get_avg(T sample) {
         _total += sample;
@@ -27,7 +27,7 @@ class moving_avg : public dvfw_base {
             _total -= oldest;
             oldest = sample;
         }
-        return _total / static_cast<float>(std::min(_num_samples, N));
+        return _total / static_cast<double>(std::min(_num_samples, N));
     }
 };
 }  // namespace pipe
