@@ -16,7 +16,7 @@ class print_pipeline : public pipeline_base<print_pipeline<Sep>> {
     }
 
     explicit print_pipeline(Sep sep, FILE* outStream) : _writer(sep, outStream) {}
-    explicit print_pipeline(char sep) : _writer(sep, stdout) {}
+    
 
    private:
     Writer _writer;
@@ -24,7 +24,7 @@ class print_pipeline : public pipeline_base<print_pipeline<Sep>> {
 
 template <typename Sep>
 print_pipeline<Sep> print(Sep sep) {
-    return print_pipeline(sep);
+    return print_pipeline(sep, stdout);
 }
 
 template <typename Sep>

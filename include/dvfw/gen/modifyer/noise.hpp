@@ -3,19 +3,20 @@
 
 namespace dvfw {
 namespace gen {
-template <class base_generator, typename T>
-class noise : public base_generator {
+template <typename T, class Gen>
+class noise : public base_generator<T> {
    private:
-    base_generator _gen;
+    Gen _gen;
     T _noise;
 
    public:
     noise() = default;
-    noise(base_generator generator, T noise, int seed = time(0)) : _gen{generator}, _noise{noise} {
+    noise(T noise, Gen generator, int seed = time(0)) : _gen{generator}, _noise{noise} {
         srand(static_cast<unsigned>(seed));
     }
-    float r() {
-        return static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+
+    double r() {
+        return rand() / static_cast<double>(RAND_MAX);
     }
 
     bool hasNext() {

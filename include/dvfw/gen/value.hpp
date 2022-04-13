@@ -8,8 +8,7 @@ class value : public base_generator<T> {
     std::size_t _sent{0};
 
    public:
-    value() = default;
-    value(T value) : _value{value} {};
+    value(T value = 0) : _value{value} {};
 
     bool hasNext() { return _sent < Num; }
 

@@ -32,8 +32,7 @@ class Writer {
     }
 
    public:
-    Writer() = default;
-    Writer(char sep, FILE* outputStream) {
+    Writer(char sep = '\n', FILE* outputStream = stdout) {
         _sep = sep;
         _fp = outputStream;
     }

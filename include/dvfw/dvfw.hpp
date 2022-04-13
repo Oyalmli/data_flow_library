@@ -5,7 +5,7 @@
 #include "dvfw/gen/file.hpp"
 #include "dvfw/gen/modifyer/noise.hpp"
 #include "dvfw/gen/modifyer/random_err.hpp"
-#include "dvfw/gen/modifyer/slice.hpp"
+#include "dvfw/gen/modifyer/take.hpp"
 #include "dvfw/gen/range.hpp"
 #include "dvfw/gen/sine.hpp"
 #include "dvfw/gen/value.hpp"

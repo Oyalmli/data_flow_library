@@ -18,8 +18,7 @@ class sine: public base_generator<T> {
     }
 
    public:
-    sine() = default;
-    sine(T freq, T ampl, T yOffset) : _freq{freq}, _ampl{ampl}, _yOffset{yOffset} {};
+    sine(T freq = 0.0, T ampl = 0.0, T yOffset = 0.0) : _freq{freq}, _ampl{ampl}, _yOffset{yOffset} {};
 
     bool hasNext() {
         return true;

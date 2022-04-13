@@ -8,8 +8,8 @@ namespace gen {
 template <typename T>
 class base_generator {
    public:
-    virtual bool hasNext() = 0;
     virtual T next() = 0;
+    virtual bool hasNext() = 0;
 
     template <typename Pipeline>
     void operator>>=(Pipeline&& pipeline) {

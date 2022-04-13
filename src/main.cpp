@@ -1,10 +1,13 @@
 #include "dvfw/dvfw.hpp"
+#include <iostream>
 
 using namespace dvfw;
 
 int main() {
-    auto range_gen = gen::take<double, gen::sine<double>>(gen::sine<double>(0.001, 1.0, 0.0), 1000);
-    range_gen
-    >>= pipe::transform([](double i){ return i + 1.0;})
-    >>= sink::printf("%f\n");
+    auto erroneous_sine_gen = 
+        gen::random_err(0.1, 0.0,
+        gen::take      (100, 
+        gen::sine      (0.01, 10.0, 5.0)));//T freq, T ampl, T yOffset
+
+    erroneous_sine_gen >>= sink::printf("%f\n");
 }

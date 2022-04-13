@@ -3,15 +3,14 @@
 
 namespace dvfw {
 namespace gen {
-template <class base_generator, typename T>
-class random_err : public base_generator {
-    base_generator _gen;
+template <class Gen, typename T>
+class random_err : public base_generator<T> {
+    Gen _gen;
     float _chance;
     T _err;
 
    public:
-    random_err() = default;
-    random_err(base_generator generator, float chance, T err, int seed = time(0)) : _gen{generator}, _chance{chance}, _err{err} {
+    random_err(float chance, T err, Gen generator, int seed = time(0)) : _gen{generator}, _chance{chance}, _err{err} {
         srand(static_cast<unsigned>(seed));
     }
 
