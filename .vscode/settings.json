@@ -110,7 +110,12 @@
         "*.ipp": "cpp",
         "strstream": "cpp",
         "shared_mutex": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "__tree": "cpp",
+        "filesystem": "cpp"
     },
     "cmake.configureOnOpen": false,
     "cmake.configureOnEdit": false

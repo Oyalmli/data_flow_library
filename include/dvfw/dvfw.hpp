@@ -18,6 +18,7 @@
 #include "dvfw/pipe/fork.hpp"
 #include "dvfw/pipe/intersperse.hpp"
 #include "dvfw/pipe/moving_avg.hpp"
+#include "dvfw/pipe/mux.hpp"
 #include "dvfw/pipe/partition.hpp"
 #include "dvfw/pipe/scanl.hpp"
 #include "dvfw/pipe/set_state.hpp"
@@ -32,5 +33,6 @@
 #include "dvfw/sink/printf.hpp"
 #include "dvfw/sink/push_back.hpp"
 #include "dvfw/sink/to_out_stream.hpp"
+#include "dvfw/gen/basev2.hpp"
 
 #endif /* DVFW_HPP */

@@ -1,13 +1,34 @@
-#include "dvfw/dvfw.hpp"
 #include <iostream>
+#include <vector>
+
+#include "dvfw/dvfw.hpp"
+#include <iterator>
 
 using namespace dvfw;
 
-int main() {
-    auto erroneous_sine_gen = 
-        gen::random_err(0.1, 0.0,
-        gen::take      (100, 
-        gen::sine      (0.01, 10.0, 5.0)));//T freq, T ampl, T yOffset
+struct Hell {
+    int o;
+    int a;
+};
 
-    erroneous_sine_gen >>= sink::printf("%f\n");
+class hell_gen : public gen::base_generator<Hell> {
+    public: 
+    bool hasNext () {
+        return true;
+    }
+
+    Hell next (){
+        return {1,2};
+    }
+
+    hell_gen(){}
+};
+
+int main() {
+    auto t_val_gen = gen::take<gen::value<int>>(100,gen::value(10));
+    auto h_it = gen::gen_it<gen::take<gen::value<int>>, int>(t_val_gen);
+
+    for (int i : h_it) {
+        std::cout << i << "\n";
+    }
 }
