@@ -49,7 +49,7 @@ class Writer {
             return;
         }
         if constexpr (std::is_same_v<T,const char*>) {
-            _writeStr(val, std::strlen(val));
+            _writeStr(val, strlen(val));
             return;
         }
         if constexpr (std::is_same_v<T, std::string>) {
