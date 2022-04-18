@@ -3,6 +3,8 @@
 #include "../catch.hpp"
 #include "dvfw/dvfw.hpp"
 
+using namespace dvfw;
+
 template <typename T>
 class range_gen : public dvfw::gen::base_generator<T> {
    private:
@@ -29,9 +31,9 @@ TEST_CASE(prefix + "able to create own generator") {
     std::vector<int> expected = {1, 2, 3, 4, 5};
     std::vector<int> res = {};
 
-    auto range_generator = range_gen(1, 6);
+    auto range_generator = gen::It(range_gen(1, 6));
 
-    range_generator >>= dvfw::sink::push_back(res);
+    range_generator >>= sink::push_back(res);
 
     REQUIRE(res == expected);
 }

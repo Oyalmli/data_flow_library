@@ -1,26 +1,36 @@
 #ifndef GEN_FILE_HPP
 #define GEN_FILE_HPP
 
-#include "reader/reader.hpp"
+#include "../util/IO.hpp"
 
 namespace dvfw {
 namespace gen {
 template <typename T, bool word = true>
-class file : public base_generator<T> {
+class file : public base_generator<T>, base_iterator<file<T, word>, T> {
    private:
-    Reader _reader;
+    Reader<128> _reader;
 
    public:
-    file() : _reader{stdin} {};
-    file(FILE* f) : _reader{f} {};
+    T _itVal;
+    file(FILE* f = stdin) : _reader{f} {
+        _itVal = next();
+    };
 
     T next() {
-        return _reader.next<T, word>();
+        _itVal = _reader.next<T, word>();
+        return _itVal;
     }
 
     bool hasNext() {
         return _reader.hasNext();
     }
+
+    file begin(){ return *this; }
+    file end() { return *this; }
+    file operator++(){ next(); return *this; }
+    file operator++(int){ file f = *this; ++*this; return f; }
+    bool operator!=(const file& it){ return hasNext(); }
+    T operator*(){ return _itVal; }
 };
 }  // namespace gen
 }  // namespace dvfw

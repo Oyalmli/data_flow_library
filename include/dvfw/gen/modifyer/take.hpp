@@ -4,22 +4,33 @@
 namespace dvfw {
 namespace gen {
 template <typename Gen>
-class take : public Gen {
+class take {
     Gen _gen;
     size_t _num;
     size_t _taken{0};
-
+    
    public:
+
     take(size_t num, Gen generator) : _gen{generator}, _num{num} {}
 
     bool hasNext() {
-        return (_taken < _num);
+        return _gen.hasNext() && (_taken < _num);
     }
 
-    decltype(_gen.next()) next () {
+    decltype(_gen.next()) next() {
         _taken++;
-        return _gen.next();
+        _gen.next();
+        return _gen._itVal;
     }
+
+    take begin() { return *this; }
+    take end() { return *this; }
+    take operator++(){
+        next();
+        return *this;
+    }
+    bool operator!=(const take& it){ return hasNext(); }
+    decltype(_gen._itVal) operator*(){ return _gen._itVal; }
 };
 }  // namespace gen
 }  // namespace dvfw

@@ -2,7 +2,7 @@
 #define PRINT_HPP
 
 #include <string>
-#include "writer/writer.hpp"
+#include "../util/IO.hpp"
 
 namespace dvfw {
 namespace sink {
@@ -19,7 +19,7 @@ class print_pipeline : public pipeline_base<print_pipeline<Sep>> {
     
 
    private:
-    Writer _writer;
+    Writer<128> _writer;
 };
 
 template <typename Sep>

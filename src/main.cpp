@@ -1,34 +1,26 @@
 #include <iostream>
+#include <iterator>
 #include <vector>
 
 #include "dvfw/dvfw.hpp"
-#include <iterator>
 
 using namespace dvfw;
 
-struct Hell {
-    int o;
-    int a;
-};
+template <typename _IO>
+auto pp(_IO& io) { return [&io](int rhs) { io << rhs << '\n'; }; }
 
-class hell_gen : public gen::base_generator<Hell> {
-    public: 
-    bool hasNext () {
-        return true;
-    }
+auto even = [](auto i) { return i % 2 == 0; };
 
-    Hell next (){
-        return {1,2};
-    }
-
-    hell_gen(){}
-};
+auto add(int i) { return [=](int j) { return i + j; }; }
 
 int main() {
-    auto t_val_gen = gen::take<gen::value<int>>(100,gen::value(10));
-    auto h_it = gen::gen_it<gen::take<gen::value<int>>, int>(t_val_gen);
+    IO io;
 
-    for (int i : h_it) {
-        std::cout << i << "\n";
+    auto generator = gen::take(100, gen::value(10));
+
+    for (auto i : generator) {
+        io << i << '\n';
     }
+
+    io.writer.flush();
 }
