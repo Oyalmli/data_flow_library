@@ -27,6 +27,7 @@ class range_gen : public dvfw::gen::base_generator<T> {
 
 const std::string prefix = "[IMPL_GENERATOR]: ";
 
+/*
 TEST_CASE(prefix + "able to create own generator") {
     std::vector<int> expected = {1, 2, 3, 4, 5};
     std::vector<int> res = {};
@@ -37,3 +38,4 @@ TEST_CASE(prefix + "able to create own generator") {
 
     REQUIRE(res == expected);
 }
+*/

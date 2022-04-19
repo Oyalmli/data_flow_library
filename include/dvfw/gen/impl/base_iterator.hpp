@@ -2,6 +2,7 @@
 #define DVFW_ITERATOR_HPP
 
 #include <thread>
+#include <iterator>
 
 namespace dvfw {
 namespace gen {

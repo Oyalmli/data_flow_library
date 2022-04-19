@@ -7,6 +7,13 @@ namespace dvfw {
 namespace gen {
 template <typename T, bool word = true>
 class file : public base_generator<T>, base_iterator<file<T, word>, T> {
+   public:
+    using value_type = T;
+    using difference_type = bool;
+    using pointer = T*;
+    using reference = T&;
+    using iterator_category = std::forward_iterator_tag;
+
    private:
     Reader<128> _reader;
 
