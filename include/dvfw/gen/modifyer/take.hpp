@@ -3,7 +3,7 @@
 
 namespace dvfw {
 namespace gen {
-template <typename Gen>
+template <class Gen>
 class take {
    private:
     Gen _gen;
@@ -16,7 +16,7 @@ class take {
     using pointer = value_type*;
     using reference = value_type&;
     using iterator_category = std::forward_iterator_tag;
-    
+
     take(size_t num, Gen generator) : _gen{generator}, _num{num} {}
 
     bool hasNext() {

@@ -7,7 +7,7 @@
             ],
             "defines": [],
             "macFrameworkPath": [],
-            "compilerPath": "/Users/oyvind/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc",
+            "compilerPath": "usr/bin/gcc",
             "cStandard": "gnu17",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-gcc-x64"

@@ -9,15 +9,15 @@ class Writer {
    private:
     FILE* _fp = stdout;
 
-    unsigned char buffer[BUFFER_SIZE];
-    int bufferPointer = 0;
+    uint8_t buffer[BUFFER_SIZE];
+    uint_fast32_t bufferPointer = 0;
 
     void _flushBuffer() {
         fwrite(buffer, 1, bufferPointer, _fp);
         bufferPointer = 0;
     }
 
-    constexpr void _write(char c) {
+    constexpr void _write(uint8_t c) {
         buffer[bufferPointer++] = c;
         if (bufferPointer >= BUFFER_SIZE) {
             _flushBuffer();
@@ -48,7 +48,7 @@ class Writer {
             _write(val);
             return;
         }
-        if constexpr (std::is_same_v<T,const char*>) {
+        if constexpr (std::is_same_v<T, const char*>) {
             _writeStr(val, strlen(val));
             return;
         }
@@ -78,8 +78,8 @@ class Reader {
    private:
     FILE* _fp;
     
-    unsigned char buffer[BUFFER_SIZE];
-    int bufferPointer = 0, bytesRead = 0;
+    uint8_t buffer[BUFFER_SIZE];
+    uint_fast32_t bufferPointer = 0, bytesRead = 0;
 
     bool _fillBuffer() {
         #ifdef __linux__
@@ -92,7 +92,7 @@ class Reader {
         return (bytesRead > 0);
     }
 
-    constexpr char _read() {
+    constexpr uint8_t _read() {
         if (!hasNext()) return '\0';
         return buffer[bufferPointer++];
     }
@@ -100,7 +100,7 @@ class Reader {
     template <typename T>
     constexpr T _readUnsignedInteger() {
         T ret = 0;
-        char c = _read();
+        uint8_t c = _read();
         for (; (c < '0' || c > '9') && c != '\0'; c = _read());
         for (; c >= '0' && c <= '9'; c = _read()) {
             ret = ret * 10 + (c - '0');
@@ -112,7 +112,7 @@ class Reader {
     constexpr T _readInteger() {
         T ret = 0;
         bool neg = false;
-        char c = _read();
+        uint8_t c = _read();
         for (; (c < '0' || c > '9') && c != '\0'; c = _read()) {
             neg = (c == '-');
         }
@@ -126,7 +126,7 @@ class Reader {
     constexpr T _readFloating() {
         T pow10 = 1, left = 0, right = 0;
         bool neg = false;
-        unsigned c = _read();
+        uint8_t c = _read();
         for (; (c < '0' || c > '9') && c != '\0'; c = _read()) {
             neg = (c == '-');
         }
@@ -145,7 +145,7 @@ class Reader {
 
     std::string _readWord() {
         std::string res;
-        char c = _read();
+        uint8_t c = _read();
         for (; std::isspace(c) && c != '\0'; c = _read())
             ;
         for (; !std::isspace(c) && c != '\0'; c = _read()) {
@@ -156,7 +156,7 @@ class Reader {
 
     std::string _readLine() {
         std::string res;
-        for (char c = _read(); c != '\n' && c != '\0'; c = _read()) {
+        for (uint8_t c = _read(); c != '\n' && c != '\0'; c = _read()) {
             res.push_back(c);
         }
         return res;
@@ -173,7 +173,7 @@ class Reader {
     std::string getWord() { return _readWord(); }
     std::string getLine() { return _readLine(); }
 
-    constexpr char getChar() {
+    constexpr uint8_t getChar() {
         return _read();
     }
 
@@ -182,7 +182,7 @@ class Reader {
     }
 
     void skipToken() {
-        unsigned c = _read();
+        uint8_t c = _read();
         for (; std::isspace(c) && c != '\0'; c = _read());
         for (; !std::isspace(c); c = _read());
     }
@@ -216,26 +216,43 @@ class Reader {
     }
 };
 
-template<size_t R_BUF=128, size_t W_BUF=R_BUF>
+template <size_t R_BUF = 128, size_t W_BUF = R_BUF>
 class IO {
    public:
     Writer<R_BUF> writer;
     Reader<W_BUF> reader;
 
     template <typename T>
-    IO& operator<<(T val) {
+    constexpr IO& operator<<(T val) {
         writer.write(val);
         return *this;
     }
 
     template <typename T>
-    IO& operator>>(T& val) {
+    constexpr IO& operator>>(T& val) {
         val = reader.template next<T, true>();
         return *this;
     }
 
-    bool operator MORE(){
+    template <typename T>
+    constexpr IO& operator+(T& val) {
+        val += reader.template next<T, true>();
+        return *this;
+    }
+
+    template <typename T>
+    constexpr IO& operator-(T& val) {
+        val -= reader.template next<T, true>();
+        return *this;
+    }
+
+    constexpr bool operator MORE() {
         return reader.hasNext();
+    }
+
+    constexpr IO& operator!() {
+        writer.alertMode();
+        return *this;
     }
 };
 

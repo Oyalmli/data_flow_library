@@ -33,7 +33,7 @@ class file : public base_generator<T>, base_iterator<file<T, word>, T> {
     }
 
     file begin(){ return *this; }
-    file end() { return *this; }
+    file end(){ return *this; }
     file operator++(){ next(); return *this; }
     file operator++(int){ file f = *this; ++*this; return f; }
     bool operator!=(const file& it){ return hasNext(); }

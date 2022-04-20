@@ -13,10 +13,6 @@ class value : public base_generator<T>, base_iterator<value<T>, T> {
     using reference = T&;
     using iterator_category = std::forward_iterator_tag;
 
-   private:
-    std::size_t _numVals;
-    std::size_t _sent{0};
-
    public:
     T _itVal;
 
