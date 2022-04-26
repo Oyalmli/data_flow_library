@@ -4,13 +4,10 @@
 namespace dvfw {
 namespace gen {
 template <typename T>
-class range : public base_generator<T>, base_iterator<range<T>, T> {
+class range {
    public:
     using value_type = T;
-    using difference_type = bool;
-    using pointer = T*;
-    using reference = T&;
-    using iterator_category = std::forward_iterator_tag;
+    using Iterator = GenIterator<range<T>>;
 
    private:
     T _min, _max, _step, _curr;
@@ -33,21 +30,8 @@ class range : public base_generator<T>, base_iterator<range<T>, T> {
         return _itVal;
     }
 
-    range begin() { return *this; }
-    range end() { return *this; }
-
-    range operator++() {
-        next();
-        return *this;
-    }
-
-    range operator++(int) {
-        range r = *this;
-        ++*this;
-        return r;
-    }
-    bool operator!=(const range& it) { return hasNext(); }
-    T operator*() { return _itVal; }
+    Iterator begin() { return Iterator(this); }
+    Iterator end() { return Iterator(nullptr); }
 };
 }  // namespace gen
 }  // namespace dvfw

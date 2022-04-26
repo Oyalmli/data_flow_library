@@ -1,11 +1,18 @@
+// -*- lsst-c++ -*-
+#include <sys/time.h>
+
+#include <chrono>
 #include <iostream>
 #include <iterator>
+#include <thread>
 #include <vector>
 
 #include "dvfw/dvfw.hpp"
+#include "sys/resource.h"
 
 using namespace dvfw;
 
+/*
 template <typename _IO>
 auto pp(_IO& io) { return [&io](int rhs) { io << rhs << '\n'; }; }
 
@@ -29,16 +36,42 @@ class io_gen : public gen::base_generator<T> {
         return _io.reader.template next<T>();
     }
 };
+*/
+
+template<typename T>
+class range : public gen::base_generator<T>{
+    public:
+    //using value_type = T;
+    //using Iterator = gen::GenIterator<range<T>>;
+    T _low, _high, _itVal;
+
+    range(T low = 0, T high = 0) : _low{low}, _high{high}, _itVal{low} {}
+    
+    bool hasNext() { return _itVal < _high; }
+    T next() { return _itVal++; }
+
+    //Iterator begin() { return Iterator(this); }
+    //Iterator end() { return Iterator(nullptr); }
+};
+
 
 int main() {
-    using IO = IO<(1<<16), 32>;
+    long long sum = 0;
+    //auto generator = gen::file<long long>(stdin);
+    //auto generator = gen::take(10000000000, gen::value(10));
+    auto generator = range(0LL,100LL);
 
-    IO io;
-    long long sum = 0;   
-    auto generator = gen::It(io_gen<IO, long long>(io));
-    auto pipeline = sink::for_each([&sum](auto i){ sum+=i; });
+    auto pipeline 
+    =   dvfw::sink::for_each([](auto i) { printf("%lld\n", i); });
+    
     generator >>= pipeline;
 
-    io << sum << '\n';
-    io.writer.flush();
+    printf("sum: %lld\n", sum);
 }
+// rusage info;
+//&res, &info,
+//  IO io;
+//  auto generator = gen::It(io_gen<IO, long long>(io));
+//  auto pipeline = sink::for_each([&res, &info, &sum](auto i){
+// getrusage(RUSAGE_SELF, &info);
+// print_rusage(info);

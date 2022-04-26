@@ -8,13 +8,10 @@ namespace dvfw {
 namespace gen {
 
 template <typename T, typename = typename std::enable_if_t<std::is_floating_point_v<T>>>
-class sine : public base_generator<T>, base_iterator<sine<T>, T> {
+class sine {
    public:
     using value_type = T;
-    using difference_type = bool;
-    using pointer = T*;
-    using reference = T&;
-    using iterator_category = std::forward_iterator_tag;
+    using Iterator = GenIterator<sine<T>>;
 
    private:
     T _freq, _ampl, _yOffset;
@@ -38,19 +35,8 @@ class sine : public base_generator<T>, base_iterator<sine<T>, T> {
         return _itVal;
     }
 
-    sine begin() { return *this; }
-    sine end() { return *this; }
-    sine operator++() {
-        next();
-        return *this;
-    }
-    sine operator++(int) {
-        sine s = *this;
-        ++*this;
-        return s;
-    }
-    bool operator!=(const sine& it) { return hasNext(); }
-    T operator*() { return _itVal; }
+    Iterator begin() { return Iterator(this); }
+    Iterator end() { return Iterator(nullptr); }
 };
 }  // namespace gen
 }  // namespace dvfw

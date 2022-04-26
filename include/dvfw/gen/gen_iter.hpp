@@ -3,39 +3,33 @@
 
 namespace dvfw {
 namespace gen {
-
-template <class Gen>
-class It {
+template <typename Gen>
+class GenIterator {
    public:
-    Gen _gen;
-    decltype(_gen.next()) _itVal;
-
-   public:
-    using value_type = decltype(_gen.next());
+    using value_type = typename Gen::value_type;
     using difference_type = bool;
-    using pointer = value_type*;
-    using reference = value_type&;
-    using iterator_category = std::forward_iterator_tag;   
+    using pointer_type = value_type*;
+    using reference_type = value_type&;
+    using iterator_category = std::input_iterator_tag;
 
-    It(Gen gen) : _gen{gen} {
-        _itVal = _gen.next();
-    }
+    Gen* _range;
 
-    It begin() { return *this; }
-    It end() { return *this; }
-    It operator++() {
-        _itVal = _gen.next();
+   public:
+    GenIterator(Gen* range) : _range{range} {};
+
+    GenIterator& operator++() {
+        _range->next();
         return *this;
     }
-    It operator++(int) {
-        It bg = *this;
-        ++*this;
-        return bg;
-    }
-    bool operator!=(const It& it) { return _gen.hasNext(); }
-    value_type operator*() { return _itVal; }
-};
 
+    bool operator!=(GenIterator& other) {
+        return _range->hasNext();
+    }
+
+    value_type operator*() {
+        return _range->_itVal;
+    }
+};
 };  // namespace gen
 };  // namespace dvfw
 

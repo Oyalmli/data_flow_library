@@ -18,7 +18,7 @@ class base_generator {
         }
     }
 
-    void wait(int delay) {
+    constexpr void wait(int delay) {
         std::this_thread::sleep_for(std::chrono::milliseconds(delay));
     }
 };

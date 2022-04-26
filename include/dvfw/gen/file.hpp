@@ -6,16 +6,14 @@
 namespace dvfw {
 namespace gen {
 template <typename T, bool word = true>
-class file : public base_generator<T>, base_iterator<file<T, word>, T> {
+class file {
    public:
     using value_type = T;
-    using difference_type = bool;
-    using pointer = T*;
-    using reference = T&;
-    using iterator_category = std::forward_iterator_tag;
+    using Iterator = GenIterator<file<T, word>>;
 
    private:
     Reader<128> _reader;
+    bool more = true;
 
    public:
     T _itVal;
@@ -29,15 +27,15 @@ class file : public base_generator<T>, base_iterator<file<T, word>, T> {
     }
 
     bool hasNext() {
-        return _reader.hasNext();
+        if(!_reader.hasNext() && more) {
+            more = false;
+            return true;
+        }
+        return more;
     }
 
-    file begin(){ return *this; }
-    file end(){ return *this; }
-    file operator++(){ next(); return *this; }
-    file operator++(int){ file f = *this; ++*this; return f; }
-    bool operator!=(const file& it){ return hasNext(); }
-    T operator*(){ return _itVal; }
+    Iterator begin() { return Iterator(this); }
+    Iterator end() { return Iterator(nullptr); }
 };
 }  // namespace gen
 }  // namespace dvfw

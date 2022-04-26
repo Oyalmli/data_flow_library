@@ -1,9 +1,11 @@
 #ifndef DVFW_HPP
 #define DVFW_HPP
 
-#include "dvfw/gen/impl/base_iterator.hpp"
+#include "dvfw/gen/gen_iter.hpp"
 #include "dvfw/gen/impl/base_generator.hpp"
+
 #include "dvfw/gen/file.hpp"
+#include "dvfw/gen/impl/base_iterator.hpp"
 #include "dvfw/gen/modifyer/noise.hpp"
 #include "dvfw/gen/modifyer/random_err.hpp"
 #include "dvfw/gen/modifyer/take.hpp"
@@ -34,6 +36,5 @@
 #include "dvfw/sink/printf.hpp"
 #include "dvfw/sink/push_back.hpp"
 #include "dvfw/sink/to_out_stream.hpp"
-#include "dvfw/gen/gen_iter.hpp"
 #include "dvfw/util/IO.hpp"
 #endif /* DVFW_HPP */

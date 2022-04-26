@@ -17,6 +17,11 @@ class for_each_pipeline : public pipeline_base<for_each_pipeline<Function>> {
     detail::assignable<Function> function_;
 };
 
+/**
+ * Pipe component for running a function for each element of a pipeline
+ * @param function
+ * @return itself
+*/
 template <typename InsertFunction>
 for_each_pipeline<InsertFunction> for_each(InsertFunction insertFunction) {
     return for_each_pipeline<InsertFunction>(insertFunction);
