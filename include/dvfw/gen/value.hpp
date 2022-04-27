@@ -8,7 +8,7 @@ template <typename T>
 class value : public base_generator<T> {
     public:
     using value_type = T;
-    using Iterator = GenIterator<value<T>>;
+    using Iterator = GenIterator<value<T>, T>;
     T _itVal;
 
     value(T value = 0) : _itVal{value} {};

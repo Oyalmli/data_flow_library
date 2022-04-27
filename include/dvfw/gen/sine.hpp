@@ -11,7 +11,7 @@ template <typename T, typename = typename std::enable_if_t<std::is_floating_poin
 class sine {
    public:
     using value_type = T;
-    using Iterator = GenIterator<sine<T>>;
+    using Iterator = GenIterator<sine<T>, T>;
 
    private:
     T _freq, _ampl, _yOffset;

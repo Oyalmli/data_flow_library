@@ -9,7 +9,7 @@ template <typename T, bool word = true>
 class file {
    public:
     using value_type = T;
-    using Iterator = GenIterator<file<T, word>>;
+    using Iterator = GenIterator<file<T, word>, T>;
 
    private:
     Reader<128> _reader;

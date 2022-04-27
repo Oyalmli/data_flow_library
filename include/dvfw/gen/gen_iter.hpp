@@ -1,21 +1,16 @@
 #ifndef DVFW_GEN_ITER_HPP
 #define DVFW_GEN_ITER_HPP
 
+#include <iterator>
+
 namespace dvfw {
 namespace gen {
-template <typename Gen>
-class GenIterator {
-   public:
-    using value_type = typename Gen::value_type;
-    using difference_type = bool;
-    using pointer_type = value_type*;
-    using reference_type = value_type&;
-    using iterator_category = std::input_iterator_tag;
-
+template <class Gen, typename T>
+class GenIterator : public std::iterator<std::input_iterator_tag, T, bool, T*, T&> {
     Gen* _range;
 
    public:
-    GenIterator(Gen* range) : _range{range} {};
+    explicit GenIterator(Gen* range) : _range{range} {};
 
     GenIterator& operator++() {
         _range->next();
@@ -26,7 +21,7 @@ class GenIterator {
         return _range->hasNext();
     }
 
-    value_type operator*() {
+    T operator*() {
         return _range->_itVal;
     }
 };

@@ -39,10 +39,10 @@ class io_gen : public gen::base_generator<T> {
 */
 
 template<typename T>
-class range : public gen::base_generator<T>{
+class range {
     public:
-    //using value_type = T;
-    //using Iterator = gen::GenIterator<range<T>>;
+    using value_type = T;
+    using Iterator = gen::GenIterator<range<T>, T>;
     T _low, _high, _itVal;
 
     range(T low = 0, T high = 0) : _low{low}, _high{high}, _itVal{low} {}
@@ -50,20 +50,18 @@ class range : public gen::base_generator<T>{
     bool hasNext() { return _itVal < _high; }
     T next() { return _itVal++; }
 
-    //Iterator begin() { return Iterator(this); }
-    //Iterator end() { return Iterator(nullptr); }
+    Iterator begin() { return Iterator(this); }
+    Iterator end() { return Iterator(nullptr); }
 };
 
 
 int main() {
-    long long sum = 0;
+    unsigned long long sum = 0;
     //auto generator = gen::file<long long>(stdin);
     //auto generator = gen::take(10000000000, gen::value(10));
-    auto generator = range(0LL,100LL);
-
+    auto generator = gen::take(10,gen::range(0ULL,1000000000ULL));
     auto pipeline 
     =   dvfw::sink::for_each([](auto i) { printf("%lld\n", i); });
-    
     generator >>= pipeline;
 
     printf("sum: %lld\n", sum);

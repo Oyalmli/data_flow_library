@@ -16,6 +16,7 @@ add_executable(
   gen/range.cpp
   gen/value.cpp
   gen/file.cpp
+  gen/take.cpp
   gen/impl_generator.cpp)
 add_test(NAME dvfw_test COMMAND dvfw_test)
 

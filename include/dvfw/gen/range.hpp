@@ -7,7 +7,7 @@ template <typename T>
 class range {
    public:
     using value_type = T;
-    using Iterator = GenIterator<range<T>>;
+    using Iterator = GenIterator<range<T>, T>;
 
    private:
     T _min, _max, _step, _curr;
