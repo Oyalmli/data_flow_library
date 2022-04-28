@@ -1,8 +1,17 @@
+/**
+ * @file transform_s.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Transform with state pipeline class
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_TRANSFORM_S_HPP
 #define DVFW_TRANSFORM_S_HPP
 
-namespace dvfw {
-namespace pipe {
+namespace dvfw::pipe {
 template <typename Function, typename State>
 class transform_s_pipe : public dvfw_base {
    public:
@@ -18,11 +27,19 @@ class transform_s_pipe : public dvfw_base {
     State state_;
 };
 
+/**
+ * @brief Applies the function on the value and state, allowing the possibility of changing the state
+ * 
+ * @tparam Function 
+ * @tparam State 
+ * @param function 
+ * @param state 
+ * @return transform_s_pipe<Function, State> 
+ */
 template <typename Function, typename State>
 transform_s_pipe<Function, State> transform_s(Function&& function, State&& state) {
     return transform_s_pipe<Function, State>{function, state};
 }
-}  // namespace pipe
-}  // namespace dvfw
+};  // namespace dvfw::pipe
 
 #endif /* DVFW_TRANSFORM_S_HPP */

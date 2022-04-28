@@ -1,3 +1,13 @@
+/**
+ * @file sine.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Sine generator class
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef GEN_SINE_HPP
 #define GEN_SINE_HPP
 
@@ -24,7 +34,14 @@ class sine {
    public:
     T _itVal;
 
-    sine(T freq = 0.0, T ampl = 0.0, T yOffset = 0.0) : _freq{freq}, _ampl{ampl}, _yOffset{yOffset} {};
+    /**
+     * @brief Creates a sine wave generator with as set frequency, amplitude and offset.
+     * 
+     * @param freq 
+     * @param ampl 
+     * @param yOffset 
+     */
+    sine(T freq = 0.0, T ampl = 1.0, T yOffset = 0.0) : _freq{freq}, _ampl{ampl}, _yOffset{yOffset} {};
 
     bool hasNext() {
         return true;

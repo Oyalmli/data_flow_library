@@ -1,8 +1,17 @@
+/**
+ * @file partition.hpp
+ * @author Jonathan Boccara
+ * @brief Partition pipeline class
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_PARTITION_HPP
 #define DVFW_PARTITION_HPP
 
-namespace dvfw {
-namespace pipe {
+namespace dvfw::pipe {
 template <typename OutputPipeTrue, typename OutputPipeFalse, typename Predicate>
 class partition_pipe : public pipeline_base<partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate>> {
    public:
@@ -23,11 +32,21 @@ class partition_pipe : public pipeline_base<partition_pipe<OutputPipeTrue, Outpu
     detail::assignable<Predicate> predicate_;
 };
 
+/**
+ * @brief Given a predicate function a value will be sent to the first pipleine if true the other if not
+ * 
+ * @tparam Predicate 
+ * @tparam OutputPipeTrue 
+ * @tparam OutputPipeFalse 
+ * @param predicate 
+ * @param outputPipeTrue 
+ * @param outputPipeFalse 
+ * @return partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate> 
+ */
 template <typename Predicate, typename OutputPipeTrue, typename OutputPipeFalse>
 partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate> partition(Predicate predicate, OutputPipeTrue&& outputPipeTrue, OutputPipeFalse&& outputPipeFalse) {
     return partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate>(FWD(outputPipeTrue), FWD(outputPipeFalse), predicate);
 }
-}  // namespace pipe
-}  // namespace dvfw
+};  // namespace dvfw::pipe
 
 #endif /* DVFW_PARTITION_HPP */

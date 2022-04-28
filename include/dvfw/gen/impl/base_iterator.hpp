@@ -1,11 +1,20 @@
+/**
+ * @file base_iterator.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief abstract base class for itera
+ * @version 0.1
+ * @date 2022-04-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_ITERATOR_HPP
 #define DVFW_ITERATOR_HPP
 
 #include <thread>
 #include <iterator>
 
-namespace dvfw {
-namespace gen {
+namespace dvfw::gen {
 template <typename Gen, typename T>
 class base_iterator {
    public:
@@ -16,8 +25,6 @@ class base_iterator {
     virtual bool operator!=(const Gen& it) = 0;
     virtual T operator*() = 0;
 };
-
-};  // namespace gen
-};  // namespace dvfw
+};  // namespace dvfw::gen
 
 #endif /* DVFW_ITEARATOR_HPP */

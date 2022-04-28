@@ -1,3 +1,13 @@
+/**
+ * @file moving_avg.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Moving average pipeline class
+ * @version 0.1
+ * @date 2022-04-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_MOVING_AVERAGE_HPP
 #define DVFW_MOVING_AVERAGE_HPP
 
@@ -11,6 +21,10 @@ class moving_avg : public dvfw_base {
         send(FWD(get_avg(values...)), tailPipeline);
     }
 
+    /**
+     * @brief Returns a moving average of the last N values
+     * @return moving average {double}
+     */
     explicit moving_avg() : _total{0} {}
 
    private:

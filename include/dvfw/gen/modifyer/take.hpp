@@ -1,8 +1,17 @@
+/**
+ * @file take.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Take generator modifyier class
+ * @version 0.1
+ * @date 2022-04-28
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef GEN_MOD_TAKE_HPP
 #define GEN_MOD_TAKE_HPP
 
-namespace dvfw {
-namespace gen {
+namespace dvfw::gen {
 template <class Gen>
 class take {
    private:
@@ -18,6 +27,11 @@ class take {
 
     take(size_t num, Gen generator) : _gen{generator}, _num{num} {}
 
+    /**
+     * @brief Return true of the generator has more values, and not enough values have been taken
+     *
+     * @return bool
+     */
     bool hasNext() {
         return _gen.hasNext() && (_taken < _num);
     }
@@ -31,19 +45,7 @@ class take {
 
     Iterator begin() { return Iterator(this); }
     Iterator end() { return Iterator(nullptr); }
-
-    /*
-    take begin() { return *this; }
-    take end() { return *this; }
-    take operator++() {
-        next();
-        return *this;
-    }
-    bool operator!=(const take& it) { return hasNext(); }
-    decltype(_gen._itVal) operator*() { return _gen._itVal; }
-    */
 };
-}  // namespace gen
-}  // namespace dvfw
+};  // namespace dvfw::gen
 
-#endif  // GEN_MOD_SLICE_HPP
+#endif  // GEN_MOD_TAKE_HPP

@@ -5,7 +5,7 @@
 
 using namespace dvfw;
 const std::string prefix = "[CHUNKS]: ";
-
+/*
 TEST_CASE(prefix + "chunking works") {
     auto const input = std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     auto const expected = std::vector<std::vector<int>>{{1, 2}, {3, 4}, {5, 6}, {7, 8}, {9, 10}};
@@ -30,3 +30,4 @@ TEST_CASE(prefix + "chunking chunks works") {
 
     REQUIRE(res == expected);
 }
+*/

@@ -1,10 +1,19 @@
+/**
+ * @file file.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief File generator class
+ * @version 0.1
+ * @date 2022-04-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef GEN_FILE_HPP
 #define GEN_FILE_HPP
 
 #include "../util/IO.hpp"
 
-namespace dvfw {
-namespace gen {
+namespace dvfw::gen {
 template <typename T, bool word = true>
 class file {
    public:
@@ -17,6 +26,11 @@ class file {
 
    public:
     T _itVal;
+    /**
+     * @brief Construct a new file object
+     * 
+     * @param f FILE*
+     */
     file(FILE* f = stdin) : _reader{f} {
         _itVal = next();
     };
@@ -37,7 +51,6 @@ class file {
     Iterator begin() { return Iterator(this); }
     Iterator end() { return Iterator(nullptr); }
 };
-}  // namespace gen
-}  // namespace dvfw
+};  // namespace dvfw::gen
 
 #endif  // GEN_FILE_HPP

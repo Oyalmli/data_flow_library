@@ -1,8 +1,17 @@
+/**
+ * @file for_each.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief For each sink class
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_CUSTOM_INSERTER_HPP
 #define DVFW_CUSTOM_INSERTER_HPP
 
-namespace dvfw {
-namespace sink {
+namespace dvfw::sink {
 template <typename Function>
 class for_each_pipeline : public pipeline_base<for_each_pipeline<Function>> {
    public:
@@ -26,7 +35,6 @@ template <typename InsertFunction>
 for_each_pipeline<InsertFunction> for_each(InsertFunction insertFunction) {
     return for_each_pipeline<InsertFunction>(insertFunction);
 }
-}  // namespace sink
-}  // namespace dvfw
+};  // namespace dvfw
 
 #endif /* DVFW_CUSTOM_INSERTER_HPP */

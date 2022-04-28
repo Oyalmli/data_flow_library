@@ -1,3 +1,16 @@
+/**
+ * @file dvfw.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Entry point for the library
+ * 
+ * Select which parts of the framework are to be exported
+ * 
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_HPP
 #define DVFW_HPP
 
@@ -21,7 +34,7 @@
 #include "dvfw/pipe/fork.hpp"
 #include "dvfw/pipe/intersperse.hpp"
 #include "dvfw/pipe/moving_avg.hpp"
-#include "dvfw/pipe/mux.hpp"
+#include "dvfw/gen/mux.hpp"
 #include "dvfw/pipe/partition.hpp"
 #include "dvfw/pipe/scanl.hpp"
 #include "dvfw/pipe/set_state.hpp"
@@ -37,4 +50,5 @@
 #include "dvfw/sink/push_back.hpp"
 #include "dvfw/sink/to_out_stream.hpp"
 #include "dvfw/util/IO.hpp"
+#include "dvfw/gen/adjacent.hpp"
 #endif /* DVFW_HPP */

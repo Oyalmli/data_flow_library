@@ -1,10 +1,19 @@
+/**
+ * @file base_generator.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief abstract base class for the generators
+ * @version 0.1
+ * @date 2022-04-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_GENERATOR_HPP
 #define DVFW_GENERATOR_HPP
 
 #include <thread>
 
-namespace dvfw {
-namespace gen {
+namespace dvfw::gen {
 template <typename T>
 class base_generator {
    public:
@@ -22,8 +31,6 @@ class base_generator {
         std::this_thread::sleep_for(std::chrono::milliseconds(delay));
     }
 };
-
-};  // namespace gen
-};  // namespace dvfw
+};  // namespace dvfw::gen
 
 #endif /* DVFW_GENERATOR_HPP */

@@ -1,29 +1,46 @@
+/**
+ * @file chunks.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Chunk pipeline class
+ * @version 0.1
+ * @date 2022-04-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_CHUNKS_HPP
 #define DVFW_CHUNKS_HPP
 
-namespace dvfw {
-namespace pipe {
-template <typename T>
+namespace dvfw::pipe {
+template <typename T, std::size_t N>
 class chunks : public dvfw_base {
    public:
+
+   /**
+    * @brief Forwards the values supplied to the next pipeline
+    * 
+    * @tparam Values 
+    * @tparam TailPipeline 
+    * @param values 
+    * @param tailPipeline 
+    */
     template <typename... Values, typename TailPipeline>
     void onReceive(Values&&... values, TailPipeline&& tailPipeline) {
         _curr_chunk.push_back(values...);
-        if (_curr_chunk.size() >= _chunk_size) {
+        if (_curr_chunk.size() >= N) {
             send(FWD(_curr_chunk), tailPipeline);
             _curr_chunk.clear();
         }
     }
 
-    explicit chunks(std::size_t chunk_size) : _chunk_size{chunk_size} {
-        _curr_chunk = {};
-    }
+    /**
+     * @brief Generates chunks of size N
+     */
+    explicit chunks() {}
 
    private:
-    std::size_t _chunk_size;
-    std::vector<T> _curr_chunk;
+    std::vector<T> _curr_chunk{};
 };
-}  // namespace pipe
-}  // namespace dvfw
+}  // namespace dvfw::pipe
 
 #endif /* PIPES_CHUNKS_HPP */

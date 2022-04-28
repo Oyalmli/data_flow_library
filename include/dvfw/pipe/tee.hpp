@@ -1,8 +1,17 @@
+/**
+ * @file tee.hpp
+ * @author Jonathan Boccara
+ * @brief Tee pipeline class
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_TEE_HPP
 #define DVFW_TEE_HPP
 
-namespace dvfw {
-namespace pipe {
+namespace dvfw::pipe {
 template <typename TeeBranch>
 class tee_pipe : public dvfw_base {
    public:
@@ -22,7 +31,6 @@ template <typename TeeBranch>
 tee_pipe<std::decay_t<TeeBranch>> tee(TeeBranch&& predicate) {
     return tee_pipe<std::decay_t<TeeBranch>>{predicate};
 }
-}  // namespace pipe
-}  // namespace dvfw
+};  // namespace dvfw
 
 #endif /* DVFW_TEE_HPP */

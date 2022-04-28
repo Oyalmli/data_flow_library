@@ -1,3 +1,13 @@
+/**
+ * @file drop.hpp
+ * @author Jonathan Boccara
+ * @brief Drop generator class
+ * @version 0.1
+ * @date 2022-04-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_DROP_HPP
 #define DVFW_DROP_HPP
 

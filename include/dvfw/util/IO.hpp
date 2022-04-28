@@ -1,3 +1,13 @@
+/**
+ * @file IO.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Utility class for very fast buffered reading and writing
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef IO_HPP
 #define IO_HPP
 
@@ -222,34 +232,91 @@ class IO {
     Writer<R_BUF> writer;
     Reader<W_BUF> reader;
 
+    /**
+     * @brief Add the value to the writeStream
+     * 
+     * @tparam T 
+     * @param val 
+     * @return constexpr IO& 
+     */
     template <typename T>
     constexpr IO& operator<<(T val) {
         writer.write(val);
         return *this;
     }
 
+    /**
+     * @brief Set the value to the next value
+     * 
+     * @tparam T 
+     * @param val 
+     * @return constexpr IO& 
+     */
     template <typename T>
     constexpr IO& operator>>(T& val) {
         val = reader.template next<T, true>();
         return *this;
     }
 
+    /**
+     * @brief Adds the next value from the value provided
+     * * EXAMPLE:
+     * int i = 10;
+     * io - i;  //io returns 8
+     * io << i; //prints 18
+     * 
+     * @tparam T 
+     * @param val 
+     * @return constexpr IO& 
+     */
     template <typename T>
     constexpr IO& operator+(T& val) {
         val += reader.template next<T, true>();
         return *this;
     }
 
+    /**
+     * @brief Subtracts the next value from the value provided
+     * EXAMPLE:
+     * int i = 10;
+     * io - i;  //io returns 8
+     * io << i; //prints 2
+     * 
+     * @tparam T 
+     * @param val 
+     * @return constexpr IO& 
+     */
     template <typename T>
     constexpr IO& operator-(T& val) {
         val -= reader.template next<T, true>();
         return *this;
     }
 
+    /**
+     * @brief Check if the inputstream has not reached its end
+     * EXAMPLE:
+     * int i;
+     * while(MORE io){
+     *   io >> i;
+     *   io << i << '\n';
+     * }
+     * 
+     * @return MORE
+     */
     constexpr bool operator MORE() {
         return reader.hasNext();
     }
 
+    /**
+     * @brief Toggle alert mode [stdout | stderr]
+     * EXAMPLE:
+     * int meaningOfLife = 42;
+     * !io << "hello" << meaningOfLife << '\n' << !io;
+     * 
+     * Should be used at the start and end of the line to make sure to flush what was in the buffer
+     * As well as returning to stdout
+     * @return constexpr IO& 
+     */
     constexpr IO& operator!() {
         writer.alertMode();
         return *this;

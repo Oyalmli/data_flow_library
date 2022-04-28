@@ -1,3 +1,13 @@
+/**
+ * @file filter.hpp
+ * @author Jonathan Boccara
+ * @brief Filter pipeline class
+ * @version 0.1
+ * @date 2022-04-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef DVFW_FILTER_HPP
 #define DVFW_FILTER_HPP
 
