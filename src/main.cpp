@@ -29,12 +29,9 @@ struct Count : public gen::base_generator<long long> {
 };
 
 int main() {
-    long long sum = 0;
-    auto generator = gen::take(1000000000, Count());
-    //auto generator = gen::range(1000000000LL);
-    auto pipeline = sink::for_each([&sum](auto i){ sum += i; });
-    generator >>= pipeline;
-    printf("%lld\n", sum); 
+    auto range_gen = gen::repeat(gen::range(13));
+    auto pipeline = sink::for_each([](auto i){ printf("%d\n", i); });
+    range_gen >>= pipeline;
 }
 
 //#include "sys/resource.h"

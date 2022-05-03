@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example for_each.cpp
  */
 #ifndef DVFW_CUSTOM_INSERTER_HPP
 #define DVFW_CUSTOM_INSERTER_HPP

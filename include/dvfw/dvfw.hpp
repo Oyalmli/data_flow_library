@@ -14,6 +14,8 @@
 #ifndef DVFW_HPP
 #define DVFW_HPP
 
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include "dvfw/gen/gen_iter.hpp"
 #include "dvfw/gen/impl/base_generator.hpp"
 
@@ -22,6 +24,7 @@
 #include "dvfw/gen/modifyer/noise.hpp"
 #include "dvfw/gen/modifyer/random_err.hpp"
 #include "dvfw/gen/modifyer/take.hpp"
+#include "dvfw/gen/modifyer/repeat.hpp"
 #include "dvfw/gen/range.hpp"
 #include "dvfw/gen/sine.hpp"
 #include "dvfw/gen/value.hpp"

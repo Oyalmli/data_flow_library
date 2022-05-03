@@ -59,4 +59,12 @@ endif()
 # Create example executabel using the framework
 add_executable(main src/main.cpp)
 target_link_libraries(main PRIVATE dvfw)
-target_compile_options(main PRIVATE -Ofast -save-temps -fverbose-asm -Ofast -Wall)
+target_compile_features(main PRIVATE cxx_std_17)
+target_compile_options(
+  main
+  PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
+          $<$<CXX_COMPILER_ID:MSVC>:/W4>
+          $<$<CXX_COMPILER_ID:MSVC>:/WX>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wextra>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Werror>
+          $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-pedantic>)
