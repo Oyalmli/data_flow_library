@@ -1,6 +1,7 @@
 add_executable(
   dvfw_test
   main.cpp
+  test_example.cpp
   pipe/chunks.cpp
   pipe/moving_avg.cpp
   pipe/take.cpp
@@ -17,7 +18,9 @@ add_executable(
   gen/value.cpp
   gen/file.cpp
   gen/take.cpp
-  gen/impl_generator.cpp)
+  gen/impl_generator.cpp
+  gen/modifyer/noise.cpp
+  )
 add_test(NAME dvfw_test COMMAND dvfw_test)
 
 target_include_directories(

@@ -44,6 +44,6 @@ class random_err : public base_generator<T> {
         return (_chance > r()) ? _err : curr;
     }
 };
-};  // namespace dvfw::gen
+}  // namespace dvfw::gen
 
 #endif  // GEN_MOD_RANDOM_ERR_HPP

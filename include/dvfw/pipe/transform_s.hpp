@@ -40,6 +40,6 @@ template <typename Function, typename State>
 transform_s_pipe<Function, State> transform_s(Function&& function, State&& state) {
     return transform_s_pipe<Function, State>{function, state};
 }
-};  // namespace dvfw::pipe
+}  // namespace dvfw::pipe
 
 #endif /* DVFW_TRANSFORM_S_HPP */

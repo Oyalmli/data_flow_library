@@ -48,6 +48,6 @@ class noise : public base_generator<T> {
         return _gen.next() + offset;
     }
 };
-}; // namespace dvfw::gen
+} // namespace dvfw::gen
 
 #endif  // GEN_MOD_NOISE_HPP

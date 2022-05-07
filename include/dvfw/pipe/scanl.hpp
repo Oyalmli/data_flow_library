@@ -43,6 +43,6 @@ template <typename Function, typename State>
 scanl_pipe<Function, State> scanl(Function&& function, State initState) {
     return scanl_pipe<Function, State>{function, initState};
 }
-};  // namespace dvfw::pipe
+}  // namespace dvfw::pipe
 
 #endif /* DVFW_SCANL_HPP */

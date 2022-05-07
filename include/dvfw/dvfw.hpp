@@ -46,6 +46,7 @@
 #include "dvfw/pipe/tee.hpp"
 #include "dvfw/pipe/transform.hpp"
 #include "dvfw/pipe/transform_s.hpp"
+#include "dvfw/pipe/transform_t.hpp"
 #include "dvfw/sink/for_each.hpp"
 #include "dvfw/sink/hole.hpp"
 #include "dvfw/sink/print.hpp"

@@ -31,6 +31,6 @@ class base_generator {
         std::this_thread::sleep_for(std::chrono::milliseconds(delay));
     }
 };
-};  // namespace dvfw::gen
+}  // namespace dvfw::gen
 
 #endif /* DVFW_GENERATOR_HPP */

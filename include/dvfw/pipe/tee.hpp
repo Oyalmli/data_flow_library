@@ -31,6 +31,6 @@ template <typename TeeBranch>
 tee_pipe<std::decay_t<TeeBranch>> tee(TeeBranch&& predicate) {
     return tee_pipe<std::decay_t<TeeBranch>>{predicate};
 }
-};  // namespace dvfw
+}  // namespace dvfw
 
 #endif /* DVFW_TEE_HPP */

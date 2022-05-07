@@ -21,8 +21,8 @@ namespace gen {
 
 template <typename... Ranges>
 struct muxer {
-    std::tuple<Ranges const&...> inputs;
-    explicit muxer(Ranges const&... inputs) : inputs(inputs...) {}
+    std::tuple<Ranges&...> inputs;
+    explicit muxer(Ranges&... inputs) : inputs(inputs...) {}
 };
 
 /**
@@ -42,7 +42,7 @@ auto mux(Ranges&&... ranges) {
 
 namespace detail {
 template <typename... Ts>
-bool match_on_any(std::tuple<Ts...> const& tuple1, std::tuple<Ts...> const& tuple2) {
+bool match_on_any(std::tuple<Ts...>& tuple1, std::tuple<Ts...>& tuple2) {
     auto matchOnAny = false;
     detail::for_each2(tuple1, tuple2, [&matchOnAny](auto&& element1, auto&& element2) {
         if (!matchOnAny && element1 == element2) {
@@ -68,8 +68,8 @@ void increment(std::tuple<Ts...>& tuple) {
  */
 template <typename... Ranges, typename Pipeline, detail::IsAPipeline<Pipeline> = true>
 void operator>>=(gen::muxer<Ranges...> inputsMuxer, Pipeline&& pipeline) {
-    auto const beginIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return begin(range); });
-    auto const endIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return end(range); });
+    auto beginIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return range.begin(); });
+    auto endIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return range.end(); });
 
     for (auto iterators = beginIterators;
          !detail::match_on_any(iterators, endIterators);

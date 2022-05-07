@@ -11,8 +11,7 @@
 #ifndef DVFW_GEN_VALUE_HPP
 #define DVFW_GEN_VALUE_HPP
 
-namespace dvfw {
-namespace gen {
+namespace dvfw::gen {
 
 template <typename T>
 class value : public base_generator<T> {
@@ -57,7 +56,6 @@ class value : public base_generator<T> {
      */
     Iterator end() { return Iterator(nullptr); }
 };
-}  // namespace gen
-}  // namespace dvfw
+}  // namespace dvfw::gen
 
 #endif

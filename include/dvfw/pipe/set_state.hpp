@@ -50,6 +50,6 @@ template <typename Function, typename State>
 set_state_pipe<Function, State> set_state(Function&& function, State&& state) {
     return set_state_pipe<Function, State>{function, state};
 }
-};  // namespace dvfw::pipe
+}  // namespace dvfw::pipe
 
 #endif /* DVFW_SET_STATE_HPP */

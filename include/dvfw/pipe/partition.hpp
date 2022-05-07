@@ -47,6 +47,6 @@ template <typename Predicate, typename OutputPipeTrue, typename OutputPipeFalse>
 partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate> partition(Predicate predicate, OutputPipeTrue&& outputPipeTrue, OutputPipeFalse&& outputPipeFalse) {
     return partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate>(FWD(outputPipeTrue), FWD(outputPipeFalse), predicate);
 }
-};  // namespace dvfw::pipe
+}  // namespace dvfw::pipe
 
 #endif /* DVFW_PARTITION_HPP */

@@ -17,9 +17,12 @@ namespace dvfw::sink {
 template <typename Container>
 class push_back_pipeline : public pipeline_base<push_back_pipeline<Container>> {
    public:
-    template <typename T>
-    void onReceive(T&& value) {
+    template <typename T, typename...Args>
+    void onReceive(T&& value, Args... args) {
         container_.get().push_back(FWD(value));
+        if constexpr (sizeof...(Args) > 0) {
+            onReceive(args...);
+        }
     }
 
     explicit push_back_pipeline(Container& container) : container_(container) {}
@@ -38,6 +41,6 @@ template <typename Container>
 push_back_pipeline<Container> push_back(Container& container) {
     return push_back_pipeline<Container>(container);
 }
-};  // namespace dvfw::sink
+}  // namespace dvfw::sink
 
 #endif /* PUSH_BACK_HPP */

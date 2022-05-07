@@ -132,7 +132,8 @@
         "__tuple": "cpp",
         "coroutine": "cpp",
         "ios": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "__functional_base": "cpp"
     },
     "cmake.configureOnOpen": false,
     "cmake.configureOnEdit": false,

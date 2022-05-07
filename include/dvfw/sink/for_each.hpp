@@ -1,6 +1,6 @@
 /**
  * @file for_each.hpp
- * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @author Jonathan Boccara
  * @brief For each sink class
  * @version 0.1
  * @date 2022-04-28
@@ -15,9 +15,9 @@ namespace dvfw::sink {
 template <typename Function>
 class for_each_pipeline : public pipeline_base<for_each_pipeline<Function>> {
    public:
-    template <typename T>
-    void onReceive(T&& value) {
-        function_(FWD(value));
+    template <typename... T>
+    void onReceive(T&&... value) {
+        function_(FWD(value)...);
     }
 
     explicit for_each_pipeline(Function function) : function_(function) {}
@@ -35,6 +35,6 @@ template <typename InsertFunction>
 for_each_pipeline<InsertFunction> for_each(InsertFunction insertFunction) {
     return for_each_pipeline<InsertFunction>(insertFunction);
 }
-};  // namespace dvfw
+}  // namespace dvfw
 
 #endif /* DVFW_CUSTOM_INSERTER_HPP */

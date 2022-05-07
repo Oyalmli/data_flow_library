@@ -22,6 +22,6 @@ class hole : public pipeline_base<hole> {
      */
     hole(){}
 };
-};  // namespace dvfw
+}  // namespace dvfw
 
 #endif /* DVFW_HOLE_HPP */

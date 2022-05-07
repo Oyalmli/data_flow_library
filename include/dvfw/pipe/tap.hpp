@@ -42,6 +42,6 @@ template <typename Function>
 tap_pipe<std::decay_t<Function>> tap(Function&& function) {
     return tap_pipe<std::decay_t<Function>>(FWD(function));
 }
-};  // namespace dvfw::pipe
+}  // namespace dvfw::pipe
 
 #endif /* DVFW_TAP_HPP */

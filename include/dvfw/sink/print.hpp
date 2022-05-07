@@ -41,6 +41,6 @@ template <typename Sep>
 print_pipeline<Sep> print(Sep sep, FILE* outStream = stdout) {
     return print_pipeline(sep, stdout);
 }
-};  // namespace dvfw::sink
+}  // namespace dvfw::sink
 
 #endif /* PRINT_HPP */

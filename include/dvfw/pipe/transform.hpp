@@ -38,6 +38,6 @@ template <typename Function>
 transform_pipe<Function> transform(Function&& function) {
     return transform_pipe<Function>{function};
 }
-};  // namespace dvfw::pipe
+}  // namespace dvfw::pipe
 
 #endif /* DVFW_TRANSFORM_HPP */

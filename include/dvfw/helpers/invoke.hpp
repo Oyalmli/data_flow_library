@@ -4,8 +4,7 @@
 #include <functional>
 #include <type_traits>
 
-namespace dvfw {
-namespace detail {
+namespace dvfw::detail {
 template <typename Functor, typename... Args>
 typename std::enable_if_t<
     std::is_member_pointer_v<typename std::decay_t<Functor>>,
@@ -21,7 +20,7 @@ typename std::enable_if_t<
 invoke(Functor&& f, Args&&... args) {
     return std::forward<Functor>(f)(std::forward<Args>(args)...);
 }
-}  // namespace detail
-}  // namespace dvfw
+
+}  // namespace dvfw::detail
 
 #endif /* DVFW_INVOKE_HPP */
