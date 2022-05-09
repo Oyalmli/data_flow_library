@@ -4,45 +4,52 @@
  * @brief Random Error generator modifyier class
  * @version 0.1
  * @date 2022-04-28
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 #ifndef GEN_MOD_RANDOM_ERR_HPP
 #define GEN_MOD_RANDOM_ERR_HPP
 
 namespace dvfw::gen {
-template <class Gen, typename T>
-class random_err : public base_generator<T> {
-    Gen _gen;
-    float _chance;
-    T _err;
+template <class Gen>
+class random_err : public base_generator<random_err<Gen>, typename Gen::value_type> {
+  using T = typename Gen::value_type;
 
-   public:
-   /**
-    * @brief Has a set chance to insert a set error value 
-    * 
-    * @param chance 
-    * @param err 
-    * @param generator 
-    * @param seed 
-    */
-    random_err(float chance, T err, Gen generator, int seed = time(0)) : _gen{generator}, _chance{chance}, _err{err} {
-        srand(static_cast<unsigned>(seed));
-    }
+ private:
+  Gen _gen;
+  double _chance;
+  T _err;
+  T _curr = _gen.curr();
 
-    float r() {
-        return static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
-    }
+ public:
+  /**
+   * @brief Has a set chance to insert a set error value
+   *
+   * @param chance
+   * @param err
+   * @param generator
+   * @param seed
+   */
+  random_err(double chance, T err, Gen generator, int seed = time(0))
+      : _gen{generator}, _chance{chance}, _err{err} {
+    srand(static_cast<unsigned>(seed));
+  }
+  IT(random_err<Gen>, T);
 
-    bool hasNext() {
-        return _gen.hasNext();
-    }
+  double r() {
+    return static_cast<double>(rand()) / static_cast<double>(RAND_MAX);
+  }
 
-    T next() {
-        T curr = _gen.next();
-        return (_chance > r()) ? _err : curr;
-    }
+  bool hasNext() { return _gen.hasNext(); }
+
+  T next() {
+    T curr = _gen.next();
+    _curr = (_chance > r()) ? _err : curr;
+    return _curr;
+  }
+
+  T curr() { return _curr; }
 };
 }  // namespace dvfw::gen
 

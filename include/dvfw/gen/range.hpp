@@ -13,38 +13,27 @@
 
 namespace dvfw::gen {
 template <typename T>
-class range {
- public:
-  using value_type = T;
-  using Iterator = GenIterator<range<T>, T>;
-
+class range : public base_generator<range<T>, T> {
  private:
   T _min, _max, _step, _curr;
 
  public:
-  T _itVal;
-
   /**
    * @brief Construct a range generator
    *
    */
   range() = default;
-  range(T max) : _min{0}, _max{max}, _step{1}, _curr{0}, _itVal{0} {};
-  range(T min, T max)
-      : _min{min}, _max{max}, _step{1}, _curr{min}, _itVal{min} {};
+  range(T max) : _min{0}, _max{max}, _step{1}, _curr{0} {};
+  range(T min, T max) : _min{min}, _max{max}, _step{1}, _curr{min} {};
   range(T min, T max, T step)
-      : _min{min}, _max{max}, _step{step}, _curr{min}, _itVal{min} {};
+      : _min{min}, _max{max}, _step{step}, _curr{min} {};
+  IT(range<T>, T);
 
   bool hasNext() { return _max > _curr; }
 
-  T next() {
-    _curr += _step;
-    _itVal = _curr;
-    return _itVal;
-  }
+  T next() { return (_curr += _step); }
 
-  Iterator begin() { return Iterator(this); }
-  Iterator end() { return Iterator(nullptr); }
+  T curr() { return _curr; }
 };
 }  // namespace dvfw::gen
 

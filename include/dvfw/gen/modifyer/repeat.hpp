@@ -13,18 +13,18 @@
 
 namespace dvfw::gen {
 template <class Gen>
-class repeat {
+class repeat : public base_generator<Gen, typename Gen::value_type> {
+  using T = typename Gen::value_type;
+
  private:
   Gen _gen_init;
   Gen _gen;
 
  public:
-  using value_type = decltype(_gen.next());
-  using Iterator = gen::GenIterator<repeat<Gen>, value_type>;
-
-  value_type _itVal = _gen._itVal;
+  T _curr = _gen.curr();
 
   repeat(Gen generator) : _gen_init{generator}, _gen{generator} {}
+  IT(repeat, T);
 
   /**
    * @brief Repeats the generator
@@ -33,17 +33,16 @@ class repeat {
    */
   bool hasNext() { return true; }
 
-  decltype(_gen.next()) next() {
+  T next() {
     _gen.next();
     if (!_gen.hasNext()) {
       _gen = _gen_init;
     }
-    _itVal = _gen._itVal;
-    return _gen._itVal;
+    _curr = _gen.curr();
+    return _curr;
   }
 
-  Iterator begin() { return Iterator(this); }
-  Iterator end() { return Iterator(nullptr); }
+  T curr() { return _curr; }
 };
 }  // namespace dvfw::gen
 

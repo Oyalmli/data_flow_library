@@ -6,7 +6,7 @@
 using namespace dvfw;
 
 template <typename T>
-class range_gen : public dvfw::gen::base_generator<T> {
+class range_gen : public dvfw::gen::base_generator<range_gen<T>, T> {
    private:
     T _min, _max, _step, _curr;
 

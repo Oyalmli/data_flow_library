@@ -15,28 +15,21 @@
 
 namespace dvfw::gen {
 template <typename T, bool word = true>
-class file {
- public:
-  using value_type = T;
-  using Iterator = GenIterator<file<T, word>, T>;
+class file : public base_generator<file<T, word>, T> {
+  using iterator = GenIterator<file<T, word>, T>;
 
  private:
   Reader<128> _reader;
   bool more = true;
+  T _curr;
 
  public:
-  T _itVal;
   /**
    * @brief Construct a new file object
    *
    * @param f FILE*
    */
-  file(FILE* f = stdin) : _reader{f} { _itVal = next(); };
-
-  T next() {
-    _itVal = _reader.next<T, word>();
-    return _itVal;
-  }
+  file(FILE* f = stdin) : _reader{f} { _curr = next(); };
 
   bool hasNext() {
     if (!_reader.hasNext() && more) {
@@ -46,8 +39,15 @@ class file {
     return more;
   }
 
-  Iterator begin() { return Iterator(this); }
-  Iterator end() { return Iterator(nullptr); }
+  T next() {
+    _curr = _reader.next<T, word>();
+    return _curr;
+  }
+
+  T curr() { return _curr; }
+
+  iterator begin() { return iterator(this); }
+  iterator end() { return iterator(nullptr); }
 };
 }  // namespace dvfw::gen
 

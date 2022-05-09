@@ -13,19 +13,19 @@
 
 namespace dvfw::gen {
 template <class Gen>
-class take {
+class take : public base_generator<take<Gen>, typename Gen::value_type> {
+  using T = typename Gen::value_type;
+  //using iterator = GenIterator<take<Gen>, T>;
+
  private:
   Gen _gen;
   size_t _num;
   size_t _taken{0};
+  T _curr = _gen.curr();
 
  public:
-  using value_type = decltype(_gen.next());
-  using Iterator = gen::GenIterator<take<Gen>, value_type>;
-
-  value_type _itVal = _gen._itVal;
-
   take(size_t num, Gen generator) : _gen{generator}, _num{num} {}
+  IT(take<Gen>, T);
 
   /**
    * @brief Return true of the generator has more values, and not enough values
@@ -35,15 +35,17 @@ class take {
    */
   bool hasNext() { return _gen.hasNext() && (_taken < _num); }
 
-  decltype(_gen.next()) next() {
+  T next() {
     _taken++;
     _gen.next();
-    _itVal = _gen._itVal;
-    return _gen._itVal;
+    _curr = _gen.curr();
+    return _curr;
   }
 
-  Iterator begin() { return Iterator(this); }
-  Iterator end() { return Iterator(nullptr); }
+  T curr() { return _curr; }
+
+  //iterator begin() { return iterator(this); }
+  //iterator end() { return iterator(nullptr); }
 };
 }  // namespace dvfw::gen
 

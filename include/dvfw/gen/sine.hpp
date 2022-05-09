@@ -12,19 +12,14 @@
 #define GEN_SINE_HPP
 
 #include <cmath>
-#include <type_traits>
 
 namespace dvfw::gen {
 
 template <typename T,
           typename = typename std::enable_if_t<std::is_floating_point_v<T>>>
-class sine {
- public:
-  using value_type = T;
-  using Iterator = GenIterator<sine<T>, T>;
-
+class sine : public base_generator<sine<T>, T> {
  private:
-  T _freq, _ampl, _yOffset;
+  T _freq, _ampl, _yOffset, _curr;
   long long _cnt = 0;
 
   float getSine() {
@@ -32,8 +27,6 @@ class sine {
   }
 
  public:
-  T _itVal;
-
   /**
    * @brief Creates a sine wave generator with as set frequency, amplitude and
    * offset.
@@ -43,17 +36,19 @@ class sine {
    * @param yOffset
    */
   sine(T freq = 0.0, T ampl = 1.0, T yOffset = 0.0)
-      : _freq{freq}, _ampl{ampl}, _yOffset{yOffset} {};
+      : _freq{freq}, _ampl{ampl}, _yOffset{yOffset} {
+    _curr = next();
+  };
+  IT(sine<T>, T);
 
   bool hasNext() { return true; }
 
   T next() {
-    _itVal = getSine();
-    return _itVal;
+    _curr = getSine();
+    return _curr;
   }
 
-  Iterator begin() { return Iterator(this); }
-  Iterator end() { return Iterator(nullptr); }
+  T curr() { return _curr; }
 };
 }  // namespace dvfw::gen
 
