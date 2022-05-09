@@ -33,7 +33,5 @@
 
 .DS_Store
 build
-docs/doxygen/html
-docs/doxygen/latex
 build-cmake
 inp_test*.txt
