@@ -3,6 +3,8 @@
 DFL - Data Flow Library is a library for creating a pipeline in C++.  
 It comes with generators, pipes and sinks to aid in the creation of a data flow pipeline from the sensor on an IoT device.  
 
+[Documentation](https://oyalmli.github.io/data_flow_library/)
+
 Example of a simple pipeline:
 ```cpp
 #include "dfl/dfl.hpp"
