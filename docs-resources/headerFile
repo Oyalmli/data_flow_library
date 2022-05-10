@@ -20,7 +20,7 @@ $treeview
 $search
 $mathjax
 <link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
-<link rel="icon" href="$relpath^../docs-resources/images/dfl.png">
+<link rel="icon" href="$relpath^dfl.png">
 $extrastylesheet
 </head>
 <body>
