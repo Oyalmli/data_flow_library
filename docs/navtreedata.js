@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Data Validation Framework", "index.html", [
+  [ "Data Flow Library", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

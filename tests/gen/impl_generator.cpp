@@ -1,12 +1,12 @@
 #include <vector>
 
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
+#include "dfl/dfl.hpp"
 
-using namespace dvfw;
+using namespace dfl;
 
 template <typename T>
-class range_gen : public dvfw::gen::base_generator<range_gen<T>, T> {
+class range_gen : public dfl::gen::base_generator<range_gen<T>, T> {
    private:
     T _min, _max, _step, _curr;
 

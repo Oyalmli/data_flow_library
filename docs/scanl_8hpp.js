@@ -1,5 +1,5 @@
 var scanl_8hpp =
 [
-    [ "dvfw::pipe::scanl_pipe< Function, State >", "classdvfw_1_1pipe_1_1scanl__pipe.html", null ],
-    [ "scanl", "scanl_8hpp.html#a99ad13adb1d969807f52462e8c7fe056", null ]
+    [ "dfl::pipe::scanl_pipe< Function, State >", "classdfl_1_1pipe_1_1scanl__pipe.html", null ],
+    [ "scanl", "scanl_8hpp.html#ab8b25e14c380b398437fc212fe9786fc", null ]
 ];

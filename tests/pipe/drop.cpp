@@ -1,8 +1,8 @@
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
+#include "dfl/dfl.hpp"
 
 #include <vector>
-using namespace dvfw;
+using namespace dfl;
 const std::string prefix = "[DROP]: ";
 
 TEST_CASE(prefix + "drop the first N elements coming from a range")

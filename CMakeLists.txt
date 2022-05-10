@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 project(
-  dvfw
+  dfl
   VERSION 0.0.1
   DESCRIPTION "High level data validation framework for standalone IoT devices"
   HOMEPAGE_URL "https://github.com/Oyalmli/data_validation_framework")
@@ -58,6 +58,6 @@ endif()
 
 # Create example executabel using the framework
 add_executable(main src/main.cpp)
-target_link_libraries(main PRIVATE dvfw)
+target_link_libraries(main PRIVATE dfl)
 target_compile_features(main PRIVATE cxx_std_17)
 target_compile_options(main PRIVATE -O2)

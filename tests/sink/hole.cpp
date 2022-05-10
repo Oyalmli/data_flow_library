@@ -1,8 +1,8 @@
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
+#include "dfl/dfl.hpp"
 
 #include <vector>
-using namespace dvfw;
+using namespace dfl;
 const std::string prefix = "[HOLE]: ";
 
 TEST_CASE(prefix + "hole does not change values")

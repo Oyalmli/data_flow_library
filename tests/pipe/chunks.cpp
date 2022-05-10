@@ -1,9 +1,9 @@
 #include <vector>
 
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
+#include "dfl/dfl.hpp"
 
-using namespace dvfw;
+using namespace dfl;
 const std::string prefix = "[CHUNKS]: ";
 /*
 TEST_CASE(prefix + "chunking works") {

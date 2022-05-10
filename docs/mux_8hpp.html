@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -5,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Validation Framework: include/dvfw/gen/mux.hpp File Reference</title>
+<title>Data Flow Library: include/dfl/gen/mux.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="../docs-resources/images/dfl.png">
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,9 +26,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="DvFw.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="DFL_log.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Data Validation Framework
+   <div id="projectname">Data Flow Library
    </div>
   </td>
  </tr>
@@ -94,31 +96,31 @@ $(document).ready(function(){initNavTree('mux_8hpp.html',''); initResizable(); }
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
-<code>#include &quot;dvfw/impl/concepts.hpp&quot;</code><br />
+<code>#include &quot;dfl/impl/concepts.hpp&quot;</code><br />
 </div>
 <p><a href="mux_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdvfw_1_1gen_1_1muxer.html">dvfw::gen::muxer&lt; Ranges &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdfl_1_1gen_1_1muxer.html">dfl::gen::muxer&lt; Ranges &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a95bd536fccab3365c698fcf84383698a"><td class="memTemplParams" colspan="2">template&lt;typename... Ranges&gt; </td></tr>
-<tr class="memitem:a95bd536fccab3365c698fcf84383698a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#a95bd536fccab3365c698fcf84383698a">dvfw::gen::mux</a> (Ranges &amp;&amp;... ranges)</td></tr>
-<tr class="memdesc:a95bd536fccab3365c698fcf84383698a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates conjoined tuples from the ranges supplied.  <a href="mux_8hpp.html#a95bd536fccab3365c698fcf84383698a">More...</a><br /></td></tr>
-<tr class="separator:a95bd536fccab3365c698fcf84383698a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab05da6ad27676e91f32394a15858169c"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:ab05da6ad27676e91f32394a15858169c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#ab05da6ad27676e91f32394a15858169c">dvfw::detail::match_on_any</a> (std::tuple&lt; Ts... &gt; &amp;tuple1, std::tuple&lt; Ts... &gt; &amp;tuple2)</td></tr>
-<tr class="separator:ab05da6ad27676e91f32394a15858169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7f9d8a8e1f2003740453fe88babe0dd"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:ae7f9d8a8e1f2003740453fe88babe0dd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#ae7f9d8a8e1f2003740453fe88babe0dd">dvfw::detail::increment</a> (std::tuple&lt; Ts... &gt; &amp;tuple)</td></tr>
-<tr class="separator:ae7f9d8a8e1f2003740453fe88babe0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1d0c32c344a337af480a37d176b3d1c"><td class="memTemplParams" colspan="2">template&lt;typename... Ranges, typename Pipeline , detail::IsAPipeline&lt; Pipeline &gt;  = true&gt; </td></tr>
-<tr class="memitem:ac1d0c32c344a337af480a37d176b3d1c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#ac1d0c32c344a337af480a37d176b3d1c">dvfw::operator&gt;&gt;=</a> (gen::muxer&lt; Ranges... &gt; inputsMuxer, Pipeline &amp;&amp;pipeline)</td></tr>
-<tr class="memdesc:ac1d0c32c344a337af480a37d176b3d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects muxer of ranges to a pipeline.  <a href="mux_8hpp.html#ac1d0c32c344a337af480a37d176b3d1c">More...</a><br /></td></tr>
-<tr class="separator:ac1d0c32c344a337af480a37d176b3d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab614e8fe4ac233ca079ed86287cc28c5"><td class="memTemplParams" colspan="2">template&lt;typename... Ranges&gt; </td></tr>
+<tr class="memitem:ab614e8fe4ac233ca079ed86287cc28c5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#ab614e8fe4ac233ca079ed86287cc28c5">dfl::gen::mux</a> (Ranges &amp;&amp;... ranges)</td></tr>
+<tr class="memdesc:ab614e8fe4ac233ca079ed86287cc28c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates conjoined tuples from the ranges supplied.  <a href="mux_8hpp.html#ab614e8fe4ac233ca079ed86287cc28c5">More...</a><br /></td></tr>
+<tr class="separator:ab614e8fe4ac233ca079ed86287cc28c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ebd9b0b2023fc1e1811741584ba155"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a64ebd9b0b2023fc1e1811741584ba155"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#a64ebd9b0b2023fc1e1811741584ba155">dfl::detail::match_on_any</a> (std::tuple&lt; Ts... &gt; &amp;tuple1, std::tuple&lt; Ts... &gt; &amp;tuple2)</td></tr>
+<tr class="separator:a64ebd9b0b2023fc1e1811741584ba155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad93a8e067cdb17c25531fe65cce032"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a5ad93a8e067cdb17c25531fe65cce032"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#a5ad93a8e067cdb17c25531fe65cce032">dfl::detail::increment</a> (std::tuple&lt; Ts... &gt; &amp;tuple)</td></tr>
+<tr class="separator:a5ad93a8e067cdb17c25531fe65cce032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff89ef989aee2f01af3dc3ab2e40232"><td class="memTemplParams" colspan="2">template&lt;typename... Ranges, typename Pipeline , detail::IsAPipeline&lt; Pipeline &gt;  = true&gt; </td></tr>
+<tr class="memitem:a0ff89ef989aee2f01af3dc3ab2e40232"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#a0ff89ef989aee2f01af3dc3ab2e40232">dfl::operator&gt;&gt;=</a> (gen::muxer&lt; Ranges... &gt; inputsMuxer, Pipeline &amp;&amp;pipeline)</td></tr>
+<tr class="memdesc:a0ff89ef989aee2f01af3dc3ab2e40232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects muxer of ranges to a pipeline.  <a href="mux_8hpp.html#a0ff89ef989aee2f01af3dc3ab2e40232">More...</a><br /></td></tr>
+<tr class="separator:a0ff89ef989aee2f01af3dc3ab2e40232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Mux generator class. </p>
@@ -129,8 +131,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae7f9d8a8e1f2003740453fe88babe0dd" name="ae7f9d8a8e1f2003740453fe88babe0dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7f9d8a8e1f2003740453fe88babe0dd">&#9670;&nbsp;</a></span>increment()</h2>
+<a id="a5ad93a8e067cdb17c25531fe65cce032" name="a5ad93a8e067cdb17c25531fe65cce032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad93a8e067cdb17c25531fe65cce032">&#9670;&nbsp;</a></span>increment()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +140,7 @@ Functions</h2></td></tr>
 template&lt;typename... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void dvfw::detail::increment </td>
+          <td class="memname">void dfl::detail::increment </td>
           <td>(</td>
           <td class="paramtype">std::tuple&lt; Ts... &gt; &amp;&#160;</td>
           <td class="paramname"><em>tuple</em></td><td>)</td>
@@ -151,8 +153,8 @@ template&lt;typename... Ts&gt; </div>
 
 </div>
 </div>
-<a id="ab05da6ad27676e91f32394a15858169c" name="ab05da6ad27676e91f32394a15858169c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab05da6ad27676e91f32394a15858169c">&#9670;&nbsp;</a></span>match_on_any()</h2>
+<a id="a64ebd9b0b2023fc1e1811741584ba155" name="a64ebd9b0b2023fc1e1811741584ba155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ebd9b0b2023fc1e1811741584ba155">&#9670;&nbsp;</a></span>match_on_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +162,7 @@ template&lt;typename... Ts&gt; </div>
 template&lt;typename... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool dvfw::detail::match_on_any </td>
+          <td class="memname">bool dfl::detail::match_on_any </td>
           <td>(</td>
           <td class="paramtype">std::tuple&lt; Ts... &gt; &amp;&#160;</td>
           <td class="paramname"><em>tuple1</em>, </td>
@@ -183,8 +185,8 @@ template&lt;typename... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a95bd536fccab3365c698fcf84383698a" name="a95bd536fccab3365c698fcf84383698a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95bd536fccab3365c698fcf84383698a">&#9670;&nbsp;</a></span>mux()</h2>
+<a id="ab614e8fe4ac233ca079ed86287cc28c5" name="ab614e8fe4ac233ca079ed86287cc28c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab614e8fe4ac233ca079ed86287cc28c5">&#9670;&nbsp;</a></span>mux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +194,7 @@ template&lt;typename... Ts&gt; </div>
 template&lt;typename... Ranges&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto dvfw::gen::mux </td>
+          <td class="memname">auto dfl::gen::mux </td>
           <td>(</td>
           <td class="paramtype">Ranges &amp;&amp;...&#160;</td>
           <td class="paramname"><em>ranges</em></td><td>)</td>
@@ -220,8 +222,8 @@ template&lt;typename... Ranges&gt; </div>
 
 </div>
 </div>
-<a id="ac1d0c32c344a337af480a37d176b3d1c" name="ac1d0c32c344a337af480a37d176b3d1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1d0c32c344a337af480a37d176b3d1c">&#9670;&nbsp;</a></span>operator&gt;&gt;=()</h2>
+<a id="a0ff89ef989aee2f01af3dc3ab2e40232" name="a0ff89ef989aee2f01af3dc3ab2e40232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff89ef989aee2f01af3dc3ab2e40232">&#9670;&nbsp;</a></span>operator&gt;&gt;=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,9 +231,9 @@ template&lt;typename... Ranges&gt; </div>
 template&lt;typename... Ranges, typename Pipeline , detail::IsAPipeline&lt; Pipeline &gt;  = true&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void dvfw::operator&gt;&gt;= </td>
+          <td class="memname">void dfl::operator&gt;&gt;= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structdvfw_1_1gen_1_1muxer.html">gen::muxer</a>&lt; Ranges... &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="structdfl_1_1gen_1_1muxer.html">gen::muxer</a>&lt; Ranges... &gt;&#160;</td>
           <td class="paramname"><em>inputsMuxer</em>, </td>
         </tr>
         <tr>
@@ -273,7 +275,7 @@ template&lt;typename... Ranges, typename Pipeline , detail::IsAPipeline&lt; Pipe
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_36542c921b2b4c0d2e3372610eee3b88.html">dvfw</a></li><li class="navelem"><a class="el" href="dir_0a4e9122c36267c52bca2326ce0bd821.html">gen</a></li><li class="navelem"><a class="el" href="mux_8hpp.html">mux.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c2f8c49cf0b16735b4dd33782c136130.html">dfl</a></li><li class="navelem"><a class="el" href="dir_b157fe9b241659444948dbd68636c824.html">gen</a></li><li class="navelem"><a class="el" href="mux_8hpp.html">mux.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

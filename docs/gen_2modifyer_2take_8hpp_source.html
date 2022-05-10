@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -5,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Validation Framework: include/dvfw/gen/modifyer/take.hpp Source File</title>
+<title>Data Flow Library: include/dfl/gen/modifyer/take.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="../docs-resources/images/dfl.png">
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,9 +26,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="DvFw.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="DFL_log.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Data Validation Framework
+   <div id="projectname">Data Flow Library
    </div>
   </td>
  </tr>
@@ -90,9 +92,9 @@ $(document).ready(function(){initNavTree('gen_2modifyer_2take_8hpp_source.html',
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef GEN_MOD_TAKE_HPP</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define GEN_MOD_TAKE_HPP</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>dvfw::gen {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>dfl::gen {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Gen&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classdvfw_1_1gen_1_1take.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classdvfw_1_1gen_1_1take.html">take</a> : <span class="keyword">public</span> <a class="code hl_class" href="classdvfw_1_1gen_1_1base__generator.html">base_generator</a>&lt;take&lt;Gen&gt;, typename Gen::value_type&gt; {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classdfl_1_1gen_1_1take.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classdfl_1_1gen_1_1take.html">take</a> : <span class="keyword">public</span> <a class="code hl_class" href="classdfl_1_1gen_1_1base__generator.html">base_generator</a>&lt;take&lt;Gen&gt;, typename Gen::value_type&gt; {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">using</span> T = <span class="keyword">typename</span> Gen::value_type;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="comment">//using iterator = GenIterator&lt;take&lt;Gen&gt;, T&gt;;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
@@ -103,10 +105,10 @@ $(document).ready(function(){initNavTree('gen_2modifyer_2take_8hpp_source.html',
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  T _curr = _gen.curr();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_class" href="classdvfw_1_1gen_1_1take.html">take</a>(<span class="keywordtype">size_t</span> num, Gen generator) : _gen{generator}, _num{num} {}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  IT(<a class="code hl_class" href="classdvfw_1_1gen_1_1take.html">take&lt;Gen&gt;</a>, T);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_class" href="classdfl_1_1gen_1_1take.html">take</a>(<span class="keywordtype">size_t</span> num, Gen generator) : _gen{generator}, _num{num} {}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  IT(<a class="code hl_class" href="classdfl_1_1gen_1_1take.html">take&lt;Gen&gt;</a>, T);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classdvfw_1_1gen_1_1take.html#a23806d5610c59a5851f6f7c48d84bf4c">   36</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classdvfw_1_1gen_1_1take.html#a23806d5610c59a5851f6f7c48d84bf4c">hasNext</a>() { <span class="keywordflow">return</span> _gen.hasNext() &amp;&amp; (_taken &lt; _num); }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classdfl_1_1gen_1_1take.html#a37fe4d824dc97289d960fd97121419b6">   36</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classdfl_1_1gen_1_1take.html#a37fe4d824dc97289d960fd97121419b6">hasNext</a>() { <span class="keywordflow">return</span> _gen.hasNext() &amp;&amp; (_taken &lt; _num); }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  T next() {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    _taken++;</div>
@@ -120,18 +122,18 @@ $(document).ready(function(){initNavTree('gen_2modifyer_2take_8hpp_source.html',
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="comment">//iterator begin() { return iterator(this); }</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">//iterator end() { return iterator(nullptr); }</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace dvfw::gen</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}  <span class="comment">// namespace dfl::gen</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif  </span><span class="comment">// GEN_MOD_TAKE_HPP</span></div>
-<div class="ttc" id="aclassdvfw_1_1gen_1_1base__generator_html"><div class="ttname"><a href="classdvfw_1_1gen_1_1base__generator.html">dvfw::gen::base_generator</a></div><div class="ttdef"><b>Definition:</b> <a href="base__generator_8hpp_source.html#l00046">base_generator.hpp:46</a></div></div>
-<div class="ttc" id="aclassdvfw_1_1gen_1_1take_html"><div class="ttname"><a href="classdvfw_1_1gen_1_1take.html">dvfw::gen::take</a></div><div class="ttdef"><b>Definition:</b> <a href="gen_2modifyer_2take_8hpp_source.html#l00016">take.hpp:16</a></div></div>
-<div class="ttc" id="aclassdvfw_1_1gen_1_1take_html_a23806d5610c59a5851f6f7c48d84bf4c"><div class="ttname"><a href="classdvfw_1_1gen_1_1take.html#a23806d5610c59a5851f6f7c48d84bf4c">dvfw::gen::take::hasNext</a></div><div class="ttdeci">bool hasNext()</div><div class="ttdoc">Return true of the generator has more values, and not enough values have been taken.</div><div class="ttdef"><b>Definition:</b> <a href="gen_2modifyer_2take_8hpp_source.html#l00036">take.hpp:36</a></div></div>
+<div class="ttc" id="aclassdfl_1_1gen_1_1base__generator_html"><div class="ttname"><a href="classdfl_1_1gen_1_1base__generator.html">dfl::gen::base_generator</a></div><div class="ttdef"><b>Definition:</b> <a href="base__generator_8hpp_source.html#l00046">base_generator.hpp:46</a></div></div>
+<div class="ttc" id="aclassdfl_1_1gen_1_1take_html"><div class="ttname"><a href="classdfl_1_1gen_1_1take.html">dfl::gen::take</a></div><div class="ttdef"><b>Definition:</b> <a href="gen_2modifyer_2take_8hpp_source.html#l00016">take.hpp:16</a></div></div>
+<div class="ttc" id="aclassdfl_1_1gen_1_1take_html_a37fe4d824dc97289d960fd97121419b6"><div class="ttname"><a href="classdfl_1_1gen_1_1take.html#a37fe4d824dc97289d960fd97121419b6">dfl::gen::take::hasNext</a></div><div class="ttdeci">bool hasNext()</div><div class="ttdoc">Return true of the generator has more values, and not enough values have been taken.</div><div class="ttdef"><b>Definition:</b> <a href="gen_2modifyer_2take_8hpp_source.html#l00036">take.hpp:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_36542c921b2b4c0d2e3372610eee3b88.html">dvfw</a></li><li class="navelem"><a class="el" href="dir_0a4e9122c36267c52bca2326ce0bd821.html">gen</a></li><li class="navelem"><a class="el" href="dir_021cf983fdaa463bc01431252e0c92db.html">modifyer</a></li><li class="navelem"><a class="el" href="gen_2modifyer_2take_8hpp.html">take.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c2f8c49cf0b16735b4dd33782c136130.html">dfl</a></li><li class="navelem"><a class="el" href="dir_b157fe9b241659444948dbd68636c824.html">gen</a></li><li class="navelem"><a class="el" href="dir_bc28bbff5c0f06a188dbbb4f9320a987.html">modifyer</a></li><li class="navelem"><a class="el" href="gen_2modifyer_2take_8hpp.html">take.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

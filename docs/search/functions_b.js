@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['take_0',['take',['../classdvfw_1_1pipe_1_1take.html#a9082829b1c0cc768511fc910e5ab9bfb',1,'dvfw::pipe::take']]],
-  ['tap_1',['tap',['../tap_8hpp.html#a7d08f24432f13ef012a5b1d126c22984',1,'dvfw::pipe']]],
-  ['transform_2',['transform',['../transform_8hpp.html#ae3a5cfba45c8b1e58eedb8a54c0179ce',1,'dvfw::pipe']]],
-  ['transform_5fs_3',['transform_s',['../transform__s_8hpp.html#a5a54cdc0338a3c3464b080ded43c7f38',1,'dvfw::pipe']]],
-  ['transform_5ft_4',['transform_t',['../transform__t_8hpp.html#aeb97fd8597b23b144cd40b4551136c4b',1,'dvfw::pipe']]]
+  ['take_0',['take',['../classdfl_1_1pipe_1_1take.html#ad3625dafcde899cc4522763938134b6b',1,'dfl::pipe::take']]],
+  ['tap_1',['tap',['../tap_8hpp.html#a4a2d71e8382d1aa0eb242da59fbcd01f',1,'dfl::pipe']]],
+  ['transform_2',['transform',['../transform_8hpp.html#a47ebd08786ed077ff4b918a8efcc8257',1,'dfl::pipe']]],
+  ['transform_5fs_3',['transform_s',['../transform__s_8hpp.html#ac3a14f876c85103251320da05a0dac1f',1,'dfl::pipe']]],
+  ['transform_5ft_4',['transform_t',['../transform__t_8hpp.html#a367baa12414949fcbd1359f5f8ef971b',1,'dfl::pipe']]]
 ];

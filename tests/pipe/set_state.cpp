@@ -1,10 +1,10 @@
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
+#include "dfl/dfl.hpp"
 
 #include <vector>
 #include <iostream>
 #include <algorithm>
-using namespace dvfw;
+using namespace dfl;
 const std::string prefix = "[SET STATE]: ";
 
 struct State {

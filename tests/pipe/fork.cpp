@@ -1,8 +1,8 @@
 #include <vector>
 
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
-using namespace dvfw;
+#include "dfl/dfl.hpp"
+using namespace dfl;
 const std::string prefix = "[FORK]: ";
 
 TEST_CASE(prefix + "fork dispatches an input to several destinations") {

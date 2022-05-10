@@ -1,5 +1,5 @@
 var set__state_8hpp =
 [
-    [ "dvfw::pipe::set_state_pipe< Function, State >", "classdvfw_1_1pipe_1_1set__state__pipe.html", null ],
-    [ "set_state", "set__state_8hpp.html#a50cccb5c7cfd61c838c2a2bc2aeb98ad", null ]
+    [ "dfl::pipe::set_state_pipe< Function, State >", "classdfl_1_1pipe_1_1set__state__pipe.html", null ],
+    [ "set_state", "set__state_8hpp.html#a59ea85c542a3a6420fc37822a00de348", null ]
 ];

@@ -23,7 +23,7 @@
                "cwd": "${workspaceFolder}/build-cmake/tests",
                "tooltip": "tests build in build folder",
                "singleInstance": true,
-               "command": "./dvfw_test"
+               "command": "./dfl_test"
             },
             {
                 "name": "Run main $(play)",

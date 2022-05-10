@@ -2,8 +2,8 @@
 #include <vector>
 
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
-using namespace dvfw;
+#include "dfl/dfl.hpp"
+using namespace dfl;
 const std::string prefix = "[TRANSFORM]: ";
 
 TEST_CASE(prefix + "transforming a vector of ints") {

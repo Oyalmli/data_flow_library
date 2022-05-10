@@ -1,8 +1,8 @@
 #include <vector>
 
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
-using namespace dvfw;
+#include "dfl/dfl.hpp"
+using namespace dfl;
 const std::string prefix = "[TEE]: ";
 
 TEST_CASE(prefix + "splits values to two pipes") {

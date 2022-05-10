@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.9.3-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -5,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Validation Framework: include/dvfw/pipe/tee.hpp File Reference</title>
+<title>Data Flow Library: include/dfl/pipe/tee.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="../docs-resources/images/dfl.png">
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -24,9 +26,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="DvFw.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="DFL_log.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Data Validation Framework
+   <div id="projectname">Data Flow Library
    </div>
   </td>
  </tr>
@@ -97,14 +99,14 @@ $(document).ready(function(){initNavTree('tee_8hpp.html',''); initResizable(); }
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdvfw_1_1pipe_1_1tee__pipe.html">dvfw::pipe::tee_pipe&lt; TeeBranch &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1tee__pipe.html">dfl::pipe::tee_pipe&lt; TeeBranch &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac2679fbc0e9ff0591287ac4a8d60b74e"><td class="memTemplParams" colspan="2">template&lt;typename TeeBranch &gt; </td></tr>
-<tr class="memitem:ac2679fbc0e9ff0591287ac4a8d60b74e"><td class="memTemplItemLeft" align="right" valign="top">tee_pipe&lt; std::decay_t&lt; TeeBranch &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="tee_8hpp.html#ac2679fbc0e9ff0591287ac4a8d60b74e">dvfw::pipe::tee</a> (TeeBranch &amp;&amp;predicate)</td></tr>
-<tr class="separator:ac2679fbc0e9ff0591287ac4a8d60b74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f44638d82bb5bfbda0b90450ec5a63"><td class="memTemplParams" colspan="2">template&lt;typename TeeBranch &gt; </td></tr>
+<tr class="memitem:a80f44638d82bb5bfbda0b90450ec5a63"><td class="memTemplItemLeft" align="right" valign="top">tee_pipe&lt; std::decay_t&lt; TeeBranch &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="tee_8hpp.html#a80f44638d82bb5bfbda0b90450ec5a63">dfl::pipe::tee</a> (TeeBranch &amp;&amp;predicate)</td></tr>
+<tr class="separator:a80f44638d82bb5bfbda0b90450ec5a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Tee pipeline class. </p>
@@ -115,8 +117,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="tee_8hpp_source.html">tee.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac2679fbc0e9ff0591287ac4a8d60b74e" name="ac2679fbc0e9ff0591287ac4a8d60b74e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2679fbc0e9ff0591287ac4a8d60b74e">&#9670;&nbsp;</a></span>tee()</h2>
+<a id="a80f44638d82bb5bfbda0b90450ec5a63" name="a80f44638d82bb5bfbda0b90450ec5a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f44638d82bb5bfbda0b90450ec5a63">&#9670;&nbsp;</a></span>tee()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,7 +126,7 @@ Functions</h2></td></tr>
 template&lt;typename TeeBranch &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">tee_pipe&lt; std::decay_t&lt; TeeBranch &gt; &gt; dvfw::pipe::tee </td>
+          <td class="memname">tee_pipe&lt; std::decay_t&lt; TeeBranch &gt; &gt; dfl::pipe::tee </td>
           <td>(</td>
           <td class="paramtype">TeeBranch &amp;&amp;&#160;</td>
           <td class="paramname"><em>predicate</em></td><td>)</td>
@@ -142,7 +144,7 @@ template&lt;typename TeeBranch &gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_36542c921b2b4c0d2e3372610eee3b88.html">dvfw</a></li><li class="navelem"><a class="el" href="dir_df0807bc03cd132a89921b6bb16b975f.html">pipe</a></li><li class="navelem"><a class="el" href="tee_8hpp.html">tee.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c2f8c49cf0b16735b4dd33782c136130.html">dfl</a></li><li class="navelem"><a class="el" href="dir_5e68270a9fe58834eb97b67b7ba1bfe4.html">pipe</a></li><li class="navelem"><a class="el" href="tee_8hpp.html">tee.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

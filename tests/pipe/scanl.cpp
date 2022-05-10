@@ -2,8 +2,8 @@
 #include <vector>
 
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
-using namespace dvfw;
+#include "dfl/dfl.hpp"
+using namespace dfl;
 const std::string prefix = "[SCANL]: ";
 
 TEST_CASE(prefix + "scanl with sum") {
@@ -25,8 +25,8 @@ TEST_CASE(prefix + "scanl with string") {
     std::vector<std::string> result = {};
 
     input
-    >>= dvfw::scanl([](std::string& acc, std::string i){ return acc + i; }, std::string(""))
-    >>= dvfw::push_back(result);
+    >>= dfl::scanl([](std::string& acc, std::string i){ return acc + i; }, std::string(""))
+    >>= dfl::push_back(result);
 
     REQUIRE(result == expected);
 }

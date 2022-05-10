@@ -1,5 +1,5 @@
 add_executable(
-  dvfw_test
+  dfl_test
   main.cpp
   test_example.cpp
   pipe/chunks.cpp
@@ -21,16 +21,16 @@ add_executable(
   gen/impl_generator.cpp
   gen/modifyer/noise.cpp
   )
-add_test(NAME dvfw_test COMMAND dvfw_test)
+add_test(NAME dfl_test COMMAND dfl_test)
 
 target_include_directories(
-  dvfw_test PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+  dfl_test PRIVATE $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
                     $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>)
 
-target_compile_features(dvfw_test PRIVATE cxx_std_17)
+target_compile_features(dfl_test PRIVATE cxx_std_17)
 
 target_compile_options(
-  dvfw_test
+  dfl_test
   PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/std:c++17>
           $<$<CXX_COMPILER_ID:MSVC>:/W4>
           $<$<CXX_COMPILER_ID:MSVC>:/WX>

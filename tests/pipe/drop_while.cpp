@@ -1,8 +1,8 @@
 #include "../catch.hpp"
-#include "dvfw/dvfw.hpp"
+#include "dfl/dfl.hpp"
 
 #include <vector>
-using namespace dvfw;
+using namespace dfl;
 const std::string prefix = "[DROP_WHILE]: ";
 
 TEST_CASE(prefix + "dropwhile on numbers")

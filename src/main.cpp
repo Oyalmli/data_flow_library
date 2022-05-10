@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include "dvfw/dvfw.hpp"
+#include "dfl/dfl.hpp"
 
 //#include "sys/resource.h"
 // rusage info;
@@ -12,7 +12,32 @@
 // getrusage(RUSAGE_SELF, &info);
 // print_rusage(info);
 
-using namespace dvfw;
+using namespace dfl;
+
+union pin_t {
+  int pin;
+  long pin;
+};
+
+int sensor_read(pin_t pin) {
+  return 0;
+}
+
+class sensor_gen : public gen::base_generator<x, int> {
+  int _curr;
+  pin_t _sensor_pin;
+  public:
+  sensor_gen(pin_t sensor_pin) : _sensor_pin{sensor_pin} {
+    _curr = sensor_read(sensor_pin);
+  };
+
+  bool hasNext(){ return true; }
+  int curr() {return _curr; }
+  int next() {
+    _curr = sensor_read(_sensor_pin);
+    return _curr;
+  };
+};
 
 class x : public gen::base_generator<x, int> {
   int _curr{0};
