@@ -4,4 +4,3 @@ cd docs
 rm -rf *
 cd ..
 doxygen
-mv docs/html/* docs/
