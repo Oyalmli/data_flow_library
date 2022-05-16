@@ -53,13 +53,6 @@ class base_generator {
   virtual iterator begin() = 0;
   virtual iterator end() = 0;
 
-  template <typename Pipeline>
-  void operator>>=(Pipeline&& pipeline) {
-    while (hasNext()) {
-      send(next(), pipeline);
-    }
-  }
-
   constexpr void wait(int delay) {
     std::this_thread::sleep_for(std::chrono::milliseconds(delay));
   }

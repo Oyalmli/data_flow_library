@@ -1,0 +1,21 @@
+static void BM_SimpleRange(benchmark::State& state) {
+  for (auto _ : state) {
+    long long sum = 0;
+    auto range_gen = gen::range(1000000000LL);
+    auto sum_range = sink::sum(sum);
+    range_gen >>= sum_range;
+    assert(sum == 499999999500000000);
+  }
+}
+BENCHMARK(BM_SimpleRange);
+
+static void BM_SimpleForLoop(benchmark::State& state) {
+  for (auto _ : state) {
+    long long sum = 0;
+    for (long long i = 0; i < 1000000000LL; ++i) {
+      sum += i;
+    }
+    assert(sum == 499999999500000000);
+  }
+}
+BENCHMARK(BM_SimpleForLoop);

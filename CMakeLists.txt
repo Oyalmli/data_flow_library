@@ -54,10 +54,20 @@ include(CTest)
 
 if(BUILD_TESTING)
   add_subdirectory(tests)
-endif()
+  # Create example executabel using the framework
+  find_package(benchmark REQUIRED)
 
-# Create example executabel using the framework
-add_executable(main src/main.cpp)
-target_link_libraries(main PRIVATE dfl)
-target_compile_features(main PRIVATE cxx_std_17)
-target_compile_options(main PRIVATE -O2)
+  # MAIN
+  add_executable(main src/main.cpp)
+  target_link_libraries(main PRIVATE dfl)
+  target_link_libraries(main PRIVATE benchmark::benchmark)
+  target_compile_features(main PRIVATE cxx_std_17)
+  target_compile_options(main PRIVATE -fverbose-asm -save-temps -O2)
+
+  # BENCHMARK
+  add_executable(bench benchmark/benchmark.cpp)
+  target_link_libraries(bench PRIVATE dfl)
+  target_link_libraries(bench PRIVATE benchmark::benchmark)
+  target_compile_features(bench PRIVATE cxx_std_17)
+  target_compile_options(bench PRIVATE -O2)
+endif()

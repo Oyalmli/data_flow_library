@@ -15,7 +15,7 @@ namespace dfl::sink {
 class hole : public pipeline_base<hole> {
    public:
     template <typename T>
-    void onReceive(T&&) {}
+    void onReceive(T&&...) {}
     
     /**
      * @brief Discard all values recieved

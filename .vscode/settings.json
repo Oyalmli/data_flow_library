@@ -28,9 +28,16 @@
             {
                 "name": "Run main $(play)",
                 "cwd": "${workspaceFolder}/build-cmake",
-                "tooltip": "tests build in build folder",
+                "tooltip": "Run main program",
                 "singleInstance": true,
                 "command": "time ./main"
+             },
+             {
+                "name": "Benchmark $(play)",
+                "cwd": "${workspaceFolder}/build-cmake",
+                "tooltip": "Run benchmark program",
+                "singleInstance": true,
+                "command": "./bench"
              }
         ]
     },
