@@ -141,7 +141,9 @@
         "ios": "cpp",
         "stack": "cpp",
         "__functional_base": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "__functional_03": "cpp",
+        "__undef_macros": "cpp"
     },
     "cmake.configureOnOpen": false,
     "cmake.configureOnEdit": false,

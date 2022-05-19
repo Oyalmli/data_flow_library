@@ -17,6 +17,8 @@
 template<size_t BUFFER_SIZE>
 class Writer {
    private:
+   bool _alert_mode = false;
+   FILE* _fp_o = stderr;
     FILE* _fp = stdout;
 
     uint8_t buffer[BUFFER_SIZE];
@@ -81,6 +83,22 @@ class Writer {
         write(val);
         return *this;
     }
+
+    Writer& alertMode(){
+        if(_alert_mode){
+            _flushBuffer();
+            FILE* _temp = _fp;
+            _fp = _fp_o;
+            _fp_o = _temp;
+            _alert_mode = false;
+        } else {
+            _alert_mode = true;
+            FILE* _temp = _fp;
+            _fp = _fp_o;
+            _fp_o = _temp;
+        }
+        return *this;
+    }
 };
 
 template<size_t BUFFER_SIZE>
@@ -97,9 +115,8 @@ class Reader {
         #else 
             bytesRead = fread(buffer, 1, BUFFER_SIZE, _fp);
         #endif
-
         bufferPointer = 0;
-        return (bytesRead > 0);
+        return bytesRead;
     }
 
     constexpr uint8_t _read() {
@@ -173,8 +190,7 @@ class Reader {
     }
 
    public:
-    Reader() : _fp{stdin} {}
-    Reader(FILE* inputStream) : _fp{inputStream} {}
+    Reader(FILE* inputStream = stdin) : _fp{inputStream} {}
 
     ~Reader() {
         fclose(_fp);
@@ -231,6 +247,9 @@ class IO {
    public:
     Writer<R_BUF> writer;
     Reader<W_BUF> reader;
+
+    IO (FILE* read_path = stdin, FILE* write_path = stdout) 
+        : reader{read_path}, writer{write_path} {}
 
     /**
      * @brief Add the value to the writeStream

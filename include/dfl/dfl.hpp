@@ -40,6 +40,7 @@
 #include "dfl/pipe/partition.hpp"
 #include "dfl/pipe/scanl.hpp"
 #include "dfl/pipe/set_state.hpp"
+#include "dfl/pipe/side_effect.hpp"
 #include "dfl/pipe/stride.hpp"
 #include "dfl/pipe/take.hpp"
 #include "dfl/pipe/tap.hpp"

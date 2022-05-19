@@ -28,7 +28,7 @@ class chunks : public dfl_base {
     void onReceive(Values&&... values, TailPipeline&& tailPipeline) {
         _curr_chunk.push_back(values...);
         if (_curr_chunk.size() >= N) {
-            send(FWD(_curr_chunk), tailPipeline);
+            send(_curr_chunk, tailPipeline);
             _curr_chunk.clear();
         }
     }
@@ -39,7 +39,7 @@ class chunks : public dfl_base {
     explicit chunks() {}
 
    private:
-    std::vector<T> _curr_chunk{};
+    std::vector<T> _curr_chunk{N};
 };
 }  // namespace dfl::pipe
 
