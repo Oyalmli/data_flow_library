@@ -38,6 +38,8 @@ var hierarchy =
       [ "dfl::pipe::moving_avg< T, N >", "classdfl_1_1pipe_1_1moving__avg.html", null ],
       [ "dfl::pipe::scanl_pipe< Function, State >", "classdfl_1_1pipe_1_1scanl__pipe.html", null ],
       [ "dfl::pipe::set_state_pipe< Function, State >", "classdfl_1_1pipe_1_1set__state__pipe.html", null ],
+      [ "dfl::pipe::side_effect_pipe< Function >", "classdfl_1_1pipe_1_1side__effect__pipe.html", null ],
+      [ "dfl::pipe::stride", "classdfl_1_1pipe_1_1stride.html", null ],
       [ "dfl::pipe::take", "classdfl_1_1pipe_1_1take.html", null ],
       [ "dfl::pipe::tap_pipe< Function >", "classdfl_1_1pipe_1_1tap__pipe.html", null ],
       [ "dfl::pipe::tee_pipe< TeeBranch >", "classdfl_1_1pipe_1_1tee__pipe.html", null ],
@@ -58,6 +60,7 @@ var hierarchy =
       [ "dfl::sink::print_pipeline< Sep >", "classdfl_1_1sink_1_1print__pipeline.html", null ],
       [ "dfl::sink::printf_pipeline< Fmt >", "classdfl_1_1sink_1_1printf__pipeline.html", null ],
       [ "dfl::sink::push_back_pipeline< Container >", "classdfl_1_1sink_1_1push__back__pipeline.html", null ],
+      [ "dfl::sink::sum_pipeline< T >", "classdfl_1_1sink_1_1sum__pipeline.html", null ],
       [ "dfl::sink::to_out_stream_pipeline< OutStream >", "classdfl_1_1sink_1_1to__out__stream__pipeline.html", null ]
     ] ],
     [ "Reader< BUFFER_SIZE >", "class_reader.html", null ],

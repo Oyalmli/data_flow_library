@@ -16,6 +16,10 @@ var dir_5e68270a9fe58834eb97b67b7ba1bfe4 =
     [ "partition.hpp", "partition_8hpp.html", "partition_8hpp" ],
     [ "scanl.hpp", "scanl_8hpp.html", "scanl_8hpp" ],
     [ "set_state.hpp", "set__state_8hpp.html", "set__state_8hpp" ],
+    [ "side_effect.hpp", "side__effect_8hpp.html", "side__effect_8hpp" ],
+    [ "stride.hpp", "stride_8hpp.html", [
+      [ "dfl::pipe::stride", "classdfl_1_1pipe_1_1stride.html", null ]
+    ] ],
     [ "take.hpp", "pipe_2take_8hpp.html", [
       [ "dfl::pipe::take", "classdfl_1_1pipe_1_1take.html", "classdfl_1_1pipe_1_1take" ]
     ] ],

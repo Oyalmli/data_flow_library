@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('chunks_8hpp_source.html',''); initResi
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">onReceive</a>(Values&amp;&amp;... values, TailPipeline&amp;&amp; tailPipeline) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        _curr_chunk.push_back(values...);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span> (_curr_chunk.size() &gt;= N) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            send(FWD(_curr_chunk), tailPipeline);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            send(_curr_chunk, tailPipeline);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            _curr_chunk.clear();</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('chunks_8hpp_source.html',''); initResi
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">   39</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">chunks</a>() {}</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::vector&lt;T&gt; _curr_chunk{};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::vector&lt;T&gt; _curr_chunk{N};</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}  <span class="comment">// namespace dfl::pipe</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>

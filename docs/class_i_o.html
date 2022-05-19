@@ -95,6 +95,8 @@ $(document).ready(function(){initNavTree('class_i_o.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa73468e56f686dffab258071784ba698"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_o.html#aa73468e56f686dffab258071784ba698">IO</a> (FILE *read_path=stdin, FILE *write_path=stdout)</td></tr>
+<tr class="separator:aa73468e56f686dffab258071784ba698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60a54a99b60389390c3c8d959532cbb8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a60a54a99b60389390c3c8d959532cbb8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="class_i_o.html">IO</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_i_o.html#a60a54a99b60389390c3c8d959532cbb8">operator&lt;&lt;</a> (T val)</td></tr>
 <tr class="memdesc:a60a54a99b60389390c3c8d959532cbb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the value to the writeStream.  <a href="class_i_o.html#a60a54a99b60389390c3c8d959532cbb8">More...</a><br /></td></tr>
@@ -130,8 +132,49 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;size_t R_BUF = 128, size_t W_BUF = R_BUF&gt;<br />
 class IO&lt; R_BUF, W_BUF &gt;</div>
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00230">230</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00246">246</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa73468e56f686dffab258071784ba698" name="aa73468e56f686dffab258071784ba698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73468e56f686dffab258071784ba698">&#9670;&nbsp;</a></span>IO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t R_BUF = 128, size_t W_BUF = R_BUF&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_o.html">IO</a>&lt; R_BUF, W_BUF &gt;<a class="el" href="class_i_o.html">::IO</a> </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>read_path</em> = <code>stdin</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>write_path</em> = <code>stdout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00251">251</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a11033d1bd8b52f915b9793db4fb34eac" name="a11033d1bd8b52f915b9793db4fb34eac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11033d1bd8b52f915b9793db4fb34eac">&#9670;&nbsp;</a></span>operator MORE()</h2>
 
@@ -161,7 +204,7 @@ template&lt;size_t R_BUF = 128, size_t W_BUF = R_BUF&gt; </div>
 '; }. </p>
 <dl class="section return"><dt>Returns</dt><dd>MORE </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00306">306</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00325">325</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>
@@ -194,7 +237,7 @@ template&lt;size_t R_BUF = 128, size_t W_BUF = R_BUF&gt; </div>
 ' &lt;&lt; !io;. </p>
 <p >Should be used at the start and end of the line to make sure to flush what was in the buffer As well as returning to stdout </p><dl class="section return"><dt>Returns</dt><dd>constexpr <a class="el" href="class_i_o.html">IO</a>&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00320">320</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00339">339</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>
@@ -244,7 +287,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr <a class="el" href="class_i_o.html">IO</a>&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00273">273</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00292">292</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>
@@ -291,7 +334,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr <a class="el" href="class_i_o.html">IO</a>&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00290">290</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00309">309</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>
@@ -338,7 +381,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr <a class="el" href="class_i_o.html">IO</a>&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00243">243</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00262">262</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>
@@ -385,7 +428,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr <a class="el" href="class_i_o.html">IO</a>&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00256">256</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00275">275</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +447,7 @@ template&lt;size_t R_BUF = 128, size_t W_BUF = R_BUF&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00233">233</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00249">249</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>
@@ -422,7 +465,7 @@ template&lt;size_t R_BUF = 128, size_t W_BUF = R_BUF&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00232">232</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_i_o_8hpp_source.html#l00248">248</a> of file <a class="el" href="_i_o_8hpp_source.html">IO.hpp</a>.</p>
 
 </div>
 </div>

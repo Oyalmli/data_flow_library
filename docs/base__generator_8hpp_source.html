@@ -134,20 +134,13 @@ $(document).ready(function(){initNavTree('base__generator_8hpp_source.html','');
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="classdfl_1_1gen_1_1_gen_iterator.html">iterator</a> begin() = 0;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="classdfl_1_1gen_1_1_gen_iterator.html">iterator</a> end() = 0;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Pipeline&gt;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> operator&gt;&gt;=(Pipeline&amp;&amp; pipeline) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">while</span> (hasNext()) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      send(next(), pipeline);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">constexpr</span> <span class="keywordtype">void</span> wait(<span class="keywordtype">int</span> delay) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    std::this_thread::sleep_for(std::chrono::milliseconds(delay));</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}  <span class="comment">// namespace dfl::gen</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">/* DFL_GENERATOR_HPP */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">constexpr</span> <span class="keywordtype">void</span> wait(<span class="keywordtype">int</span> delay) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::this_thread::sleep_for(std::chrono::milliseconds(delay));</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}  <span class="comment">// namespace dfl::gen</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif </span><span class="comment">/* DFL_GENERATOR_HPP */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aclassdfl_1_1gen_1_1_gen_iterator_html"><div class="ttname"><a href="classdfl_1_1gen_1_1_gen_iterator.html">dfl::gen::GenIterator</a></div><div class="ttdef"><b>Definition:</b> <a href="base__generator_8hpp_source.html#l00029">base_generator.hpp:30</a></div></div>
 <div class="ttc" id="aclassdfl_1_1gen_1_1base__generator_html"><div class="ttname"><a href="classdfl_1_1gen_1_1base__generator.html">dfl::gen::base_generator</a></div><div class="ttdef"><b>Definition:</b> <a href="base__generator_8hpp_source.html#l00046">base_generator.hpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

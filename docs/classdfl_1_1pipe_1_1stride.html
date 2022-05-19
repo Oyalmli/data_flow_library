@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Flow Library: dfl::sink::hole Class Reference</title>
+<title>Data Flow Library: dfl::pipe::stride Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classdfl_1_1sink_1_1hole.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classdfl_1_1pipe_1_1stride.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -87,32 +87,31 @@ $(document).ready(function(){initNavTree('classdfl_1_1sink_1_1hole.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classdfl_1_1sink_1_1hole-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">dfl::sink::hole Class Reference</div></div>
+<a href="classdfl_1_1pipe_1_1stride-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">dfl::pipe::stride Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for dfl::sink::hole:</div>
+Inheritance diagram for dfl::pipe::stride:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classdfl_1_1sink_1_1hole.png" alt=""/>
+  <img src="classdfl_1_1pipe_1_1stride.png" alt=""/>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad1faf87f50174e9449ba7362b5eeaa0d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad1faf87f50174e9449ba7362b5eeaa0d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1hole.html#ad1faf87f50174e9449ba7362b5eeaa0d">onReceive</a> (T &amp;&amp;...)</td></tr>
-<tr class="separator:ad1faf87f50174e9449ba7362b5eeaa0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08c1ccb9981d034647da354c10d6b909"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1hole.html#a08c1ccb9981d034647da354c10d6b909">hole</a> ()</td></tr>
-<tr class="memdesc:a08c1ccb9981d034647da354c10d6b909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discard all values recieved.  <a href="classdfl_1_1sink_1_1hole.html#a08c1ccb9981d034647da354c10d6b909">More...</a><br /></td></tr>
-<tr class="separator:a08c1ccb9981d034647da354c10d6b909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e741ef4830f019ab2e7c5b51d77dcd"><td class="memTemplParams" colspan="2">template&lt;typename... Values, typename TailPipeline &gt; </td></tr>
+<tr class="memitem:af7e741ef4830f019ab2e7c5b51d77dcd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1stride.html#af7e741ef4830f019ab2e7c5b51d77dcd">onReceive</a> (Values &amp;&amp;... values, TailPipeline &amp;&amp;tailPipeline)</td></tr>
+<tr class="separator:af7e741ef4830f019ab2e7c5b51d77dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9afbc17c4c53ef8734a0e05823838aa7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1stride.html#a9afbc17c4c53ef8734a0e05823838aa7">stride</a> (size_t strideSize)</td></tr>
+<tr class="separator:a9afbc17c4c53ef8734a0e05823838aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="hole_8hpp_source.html#l00015">15</a> of file <a class="el" href="hole_8hpp_source.html">hole.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stride_8hpp_source.html#l00015">15</a> of file <a class="el" href="stride_8hpp_source.html">stride.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a08c1ccb9981d034647da354c10d6b909" name="a08c1ccb9981d034647da354c10d6b909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08c1ccb9981d034647da354c10d6b909">&#9670;&nbsp;</a></span>hole()</h2>
+<a id="a9afbc17c4c53ef8734a0e05823838aa7" name="a9afbc17c4c53ef8734a0e05823838aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9afbc17c4c53ef8734a0e05823838aa7">&#9670;&nbsp;</a></span>stride()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,43 +120,52 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">dfl::sink::hole::hole </td>
+          <td class="memname">dfl::pipe::stride::stride </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>strideSize</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Discard all values recieved. </p>
-
-<p class="definition">Definition at line <a class="el" href="hole_8hpp_source.html#l00023">23</a> of file <a class="el" href="hole_8hpp_source.html">hole.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stride_8hpp_source.html#l00027">27</a> of file <a class="el" href="stride_8hpp_source.html">stride.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad1faf87f50174e9449ba7362b5eeaa0d" name="ad1faf87f50174e9449ba7362b5eeaa0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1faf87f50174e9449ba7362b5eeaa0d">&#9670;&nbsp;</a></span>onReceive()</h2>
+<a id="af7e741ef4830f019ab2e7c5b51d77dcd" name="af7e741ef4830f019ab2e7c5b51d77dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7e741ef4830f019ab2e7c5b51d77dcd">&#9670;&nbsp;</a></span>onReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename... Values, typename TailPipeline &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void dfl::sink::hole::onReceive </td>
+          <td class="memname">void dfl::pipe::stride::onReceive </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>...</em></td><td>)</td>
+          <td class="paramtype">Values &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">TailPipeline &amp;&amp;&#160;</td>
+          <td class="paramname"><em>tailPipeline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -167,19 +175,19 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hole_8hpp_source.html#l00018">18</a> of file <a class="el" href="hole_8hpp_source.html">hole.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stride_8hpp_source.html#l00018">18</a> of file <a class="el" href="stride_8hpp_source.html">stride.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/dfl/sink/<a class="el" href="hole_8hpp_source.html">hole.hpp</a></li>
+<li>include/dfl/pipe/<a class="el" href="stride_8hpp_source.html">stride.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dfl</b></li><li class="navelem"><b>sink</b></li><li class="navelem"><a class="el" href="classdfl_1_1sink_1_1hole.html">hole</a></li>
+    <li class="navelem"><b>dfl</b></li><li class="navelem"><b>pipe</b></li><li class="navelem"><a class="el" href="classdfl_1_1pipe_1_1stride.html">stride</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

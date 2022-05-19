@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Flow Library: dfl::sink::hole Class Reference</title>
+<title>Data Flow Library: dfl::pipe::side_effect_pipe&lt; Function &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classdfl_1_1sink_1_1hole.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classdfl_1_1pipe_1_1side__effect__pipe.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -87,77 +87,90 @@ $(document).ready(function(){initNavTree('classdfl_1_1sink_1_1hole.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classdfl_1_1sink_1_1hole-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">dfl::sink::hole Class Reference</div></div>
+<a href="classdfl_1_1pipe_1_1side__effect__pipe-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">dfl::pipe::side_effect_pipe&lt; Function &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for dfl::sink::hole:</div>
+Inheritance diagram for dfl::pipe::side_effect_pipe&lt; Function &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classdfl_1_1sink_1_1hole.png" alt=""/>
+  <img src="classdfl_1_1pipe_1_1side__effect__pipe.png" alt=""/>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad1faf87f50174e9449ba7362b5eeaa0d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad1faf87f50174e9449ba7362b5eeaa0d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1hole.html#ad1faf87f50174e9449ba7362b5eeaa0d">onReceive</a> (T &amp;&amp;...)</td></tr>
-<tr class="separator:ad1faf87f50174e9449ba7362b5eeaa0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08c1ccb9981d034647da354c10d6b909"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1hole.html#a08c1ccb9981d034647da354c10d6b909">hole</a> ()</td></tr>
-<tr class="memdesc:a08c1ccb9981d034647da354c10d6b909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discard all values recieved.  <a href="classdfl_1_1sink_1_1hole.html#a08c1ccb9981d034647da354c10d6b909">More...</a><br /></td></tr>
-<tr class="separator:a08c1ccb9981d034647da354c10d6b909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a983174a9c792228d99773fb0fb554176"><td class="memTemplParams" colspan="2">template&lt;typename... Values, typename TailPipeline &gt; </td></tr>
+<tr class="memitem:a983174a9c792228d99773fb0fb554176"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1side__effect__pipe.html#a983174a9c792228d99773fb0fb554176">onReceive</a> (Values &amp;&amp;... values, TailPipeline &amp;&amp;tailPipeline)</td></tr>
+<tr class="separator:a983174a9c792228d99773fb0fb554176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea0610158a4361e2461eecfa67a9f6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1side__effect__pipe.html#a6ea0610158a4361e2461eecfa67a9f6b">side_effect_pipe</a> (Function function)</td></tr>
+<tr class="separator:a6ea0610158a4361e2461eecfa67a9f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="hole_8hpp_source.html#l00015">15</a> of file <a class="el" href="hole_8hpp_source.html">hole.hpp</a>.</p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Function&gt;<br />
+class dfl::pipe::side_effect_pipe&lt; Function &gt;</div>
+<p class="definition">Definition at line <a class="el" href="side__effect_8hpp_source.html#l00016">16</a> of file <a class="el" href="side__effect_8hpp_source.html">side_effect.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a08c1ccb9981d034647da354c10d6b909" name="a08c1ccb9981d034647da354c10d6b909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08c1ccb9981d034647da354c10d6b909">&#9670;&nbsp;</a></span>hole()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">dfl::sink::hole::hole </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Discard all values recieved. </p>
-
-<p class="definition">Definition at line <a class="el" href="hole_8hpp_source.html#l00023">23</a> of file <a class="el" href="hole_8hpp_source.html">hole.hpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad1faf87f50174e9449ba7362b5eeaa0d" name="ad1faf87f50174e9449ba7362b5eeaa0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1faf87f50174e9449ba7362b5eeaa0d">&#9670;&nbsp;</a></span>onReceive()</h2>
+<a id="a6ea0610158a4361e2461eecfa67a9f6b" name="a6ea0610158a4361e2461eecfa67a9f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea0610158a4361e2461eecfa67a9f6b">&#9670;&nbsp;</a></span>side_effect_pipe()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename Function &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void dfl::sink::hole::onReceive </td>
+          <td class="memname"><a class="el" href="classdfl_1_1pipe_1_1side__effect__pipe.html">dfl::pipe::side_effect_pipe</a>&lt; Function &gt;::side_effect_pipe </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>...</em></td><td>)</td>
+          <td class="paramtype">Function&#160;</td>
+          <td class="paramname"><em>function</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="side__effect_8hpp_source.html#l00024">24</a> of file <a class="el" href="side__effect_8hpp_source.html">side_effect.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a983174a9c792228d99773fb0fb554176" name="a983174a9c792228d99773fb0fb554176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a983174a9c792228d99773fb0fb554176">&#9670;&nbsp;</a></span>onReceive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Function &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Values, typename TailPipeline &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classdfl_1_1pipe_1_1side__effect__pipe.html">dfl::pipe::side_effect_pipe</a>&lt; Function &gt;::onReceive </td>
+          <td>(</td>
+          <td class="paramtype">Values &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TailPipeline &amp;&amp;&#160;</td>
+          <td class="paramname"><em>tailPipeline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -167,19 +180,19 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="hole_8hpp_source.html#l00018">18</a> of file <a class="el" href="hole_8hpp_source.html">hole.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="side__effect_8hpp_source.html#l00019">19</a> of file <a class="el" href="side__effect_8hpp_source.html">side_effect.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/dfl/sink/<a class="el" href="hole_8hpp_source.html">hole.hpp</a></li>
+<li>include/dfl/pipe/<a class="el" href="side__effect_8hpp_source.html">side_effect.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dfl</b></li><li class="navelem"><b>sink</b></li><li class="navelem"><a class="el" href="classdfl_1_1sink_1_1hole.html">hole</a></li>
+    <li class="navelem"><b>dfl</b></li><li class="navelem"><b>pipe</b></li><li class="navelem"><a class="el" href="classdfl_1_1pipe_1_1side__effect__pipe.html">side_effect_pipe</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>
