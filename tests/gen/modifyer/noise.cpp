@@ -10,7 +10,7 @@ const std::string prefix = "[NOISE]: ";
 
 TEST_CASE(prefix + "Noisy range is not equal to range") {
   bool equal = true;
-  auto noisy_range = gen::noise(10, gen::range(5), 123);
+  auto noisy_range = mod::noise(10, gen::range(5), 123);
   auto range = gen::range(5);
 
   noisy_range.begin();

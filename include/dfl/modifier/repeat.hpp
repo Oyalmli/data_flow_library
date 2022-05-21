@@ -11,9 +11,9 @@
 #ifndef GEN_MOD_REPEAT_HPP
 #define GEN_MOD_REPEAT_HPP
 
-namespace dfl::gen {
+namespace dfl::mod {
 template <class Gen>
-class repeat : public base_generator<Gen, typename Gen::value_type> {
+class repeat : public gen::base_generator<Gen, typename Gen::value_type> {
   using T = typename Gen::value_type;
 
  private:

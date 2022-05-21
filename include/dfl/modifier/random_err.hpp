@@ -11,9 +11,9 @@
 #ifndef GEN_MOD_RANDOM_ERR_HPP
 #define GEN_MOD_RANDOM_ERR_HPP
 
-namespace dfl::gen {
+namespace dfl::mod {
 template <class Gen>
-class random_err : public base_generator<random_err<Gen>, typename Gen::value_type> {
+class random_err : public gen::base_generator<random_err<Gen>, typename Gen::value_type> {
   using T = typename Gen::value_type;
 
  private:

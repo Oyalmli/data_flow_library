@@ -174,7 +174,7 @@ class random_gen : public gen::base_generator<random_gen, decltype(random_read()
 static void GENERATOR_setvalue(benchmark::State& state) {
   for (auto _ : state) {
     auto val = 0;
-    auto s_gen = gen::take(state.range(0), sensor_gen());
+    auto s_gen = mod::take(state.range(0), sensor_gen());
     auto pipeline = sink::for_each([&](auto i){ val = i; });
     s_gen >>= pipeline;
     assert(val == 42);
@@ -196,7 +196,7 @@ BENCHMARK(LOOP_setvalue)->Arg(1000000LL);
 static void GENERATOR_randomvalue(benchmark::State& state) {
   for (auto _ : state) {
     auto val = 0;
-    auto s_gen = gen::take(state.range(0), random_gen());
+    auto s_gen = mod::take(state.range(0), random_gen());
     auto pipeline = sink::for_each([&](auto i){ val = i; });
     s_gen >>= pipeline;
     assert(val != 0);

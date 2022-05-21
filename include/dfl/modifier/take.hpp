@@ -11,9 +11,9 @@
 #ifndef GEN_MOD_TAKE_HPP
 #define GEN_MOD_TAKE_HPP
 
-namespace dfl::gen {
+namespace dfl::mod {
 template <class Gen>
-class take : public base_generator<take<Gen>, typename Gen::value_type> {
+class take : public gen::base_generator<take<Gen>, typename Gen::value_type> {
   using T = typename Gen::value_type;
   //using iterator = GenIterator<take<Gen>, T>;
 

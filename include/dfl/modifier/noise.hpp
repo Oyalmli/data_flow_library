@@ -11,9 +11,9 @@
 #ifndef GEN_MOD_NOISE_HPP
 #define GEN_MOD_NOISE_HPP
 
-namespace dfl::gen {
+namespace dfl::mod {
 template <class Gen>
-class noise : public base_generator<noise<Gen>, typename Gen::value_type> {
+class noise : public gen::base_generator<noise<Gen>, typename Gen::value_type> {
   using T = typename Gen::value_type;
 
  private:
