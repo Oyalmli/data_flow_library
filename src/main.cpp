@@ -20,15 +20,3 @@ int main(){
     std::cout << "Timing: " << total << '\n';
     std::cout << sum;
 }
-
-
-/*
-loop
-1000000000
-Timing: 859113
-*/
-
-/*
-1000000000
-Timing: 789304
-*/
