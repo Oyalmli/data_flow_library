@@ -1,7 +1,7 @@
 # High level library for creating data flows on low power IoT devices
 ## DFL
-DFL - Data Flow Library is a library for creating a pipeline in C++.  
-It comes with generators, pipes and sinks to aid in the creation of a data flow pipeline from the sensor on an IoT device.  
+DFL - Data Flow Library is a library for creating genrators and pipelines in C++.  
+It comes with generators, pipes and sinks to aid in the creation of a data flow pipeline from the sensor on an IoT device.
 
 [Documentation](https://oyalmli.github.io/data_flow_library/)  
 [Sample Project](https://github.com/Oyalmli/dfl_sample_project)
