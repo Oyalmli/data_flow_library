@@ -59,23 +59,24 @@ class Writer {
         if constexpr (std::is_same_v<T, char>) {
             _write(val);
             return;
-        }
+        } else
         if constexpr (std::is_same_v<T, const char*>) {
             _writeStr(val, strlen(val));
             return;
-        }
+        } else
         if constexpr (std::is_same_v<T, std::string>) {
             _writeStr(val.c_str(), val.size());
             return;
-        }
+        } else
         if constexpr (std::is_integral_v<T>) {
             std::string s = std::to_string(val);
             _writeStr(s.c_str(), s.size());
             return;
-        }
-        //DEFAULT 
-        std::string s = std::to_string(val);
-        _writeStr(s.c_str(), s.size());        
+        } else {
+            //DEFAULT
+            std::string s = std::to_string(val);
+            _writeStr(s.c_str(), s.size()); 
+        }     
     }
 
     template <typename T>
