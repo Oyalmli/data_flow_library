@@ -5,5 +5,6 @@
 
 using namespace dfl;
 int main(){
-    auto g = mod::repeat(gen::range(100));
+    auto range_gen = gen::range(10000000);
+    range_gen >>= sink::print('\n');
 }
