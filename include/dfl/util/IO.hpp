@@ -17,9 +17,9 @@
 template<size_t BUFFER_SIZE>
 class Writer {
    private:
-   bool _alert_mode = false;
-   FILE* _fp_o = stderr;
-    FILE* _fp = stdout;
+    bool _alert_mode = false;
+    FILE* _fp_o = stderr;
+    FILE* _fp;
 
     uint8_t buffer[BUFFER_SIZE];
     uint_fast32_t bufferPointer = 0;
@@ -87,15 +87,11 @@ class Writer {
     Writer& alertMode(){
         if(_alert_mode){
             _flushBuffer();
-            FILE* _temp = _fp;
-            _fp = _fp_o;
-            _fp_o = _temp;
             _alert_mode = false;
+            std::swap(_fp, _fp_o);
         } else {
             _alert_mode = true;
-            FILE* _temp = _fp;
-            _fp = _fp_o;
-            _fp_o = _temp;
+            std::swap(_fp, _fp_o);
         }
         return *this;
     }

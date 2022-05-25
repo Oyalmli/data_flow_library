@@ -17,30 +17,23 @@
 namespace dfl::sink {
 
 template <typename Sep>
-class print_pipeline : public pipeline_base<print_pipeline<Sep>> {
+class print : public pipeline_base<print<Sep>> {
+    using OutWriter = Writer<128>;
    public:
     template <typename T>
     void onReceive(T&& value) {
-        _writer.write(std::to_string(value));
+        (*_writer) < value < _sep;
+        _writer->flush();
     }
 
-    explicit print_pipeline(Sep sep, FILE* outStream) : _writer(sep, outStream) {}
+    print(Sep sep, FILE* fp=stdout) : _sep{sep} {
+        _writer = new OutWriter(fp);
+    }
 
    private:
-    Writer<128> _writer;
+    OutWriter* _writer;
+    Sep _sep;
 };
-/**
- * @brief Prints the values recieved using the writer class
- * @see Writer
- * @tparam Sep 
- * @param sep 
- * @param outStream, default stdout
- * @return print_pipeline<Sep> 
- */
-template <typename Sep>
-print_pipeline<Sep> print(Sep sep, FILE* outStream = stdout) {
-    return print_pipeline(sep, stdout);
-}
 }  // namespace dfl::sink
 
 #endif /* PRINT_HPP */
