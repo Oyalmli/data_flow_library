@@ -19,7 +19,8 @@ add_executable(
   gen/file.cpp
   gen/take.cpp
   gen/impl_generator.cpp
-  gen/modifyer/noise.cpp
+  modifyer/noise.cpp
+  modifyer/repeat.cpp
   )
 add_test(NAME dfl_test COMMAND dfl_test)
 

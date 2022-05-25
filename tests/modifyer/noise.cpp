@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 
-#include "../../catch.hpp"
+#include "../catch.hpp"
 #include "dfl/dfl.hpp"
 
 using namespace dfl;

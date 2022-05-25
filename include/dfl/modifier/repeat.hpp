@@ -13,7 +13,7 @@
 
 namespace dfl::mod {
 template <class Gen>
-class repeat : public gen::base_generator<Gen, typename Gen::value_type> {
+class repeat : public gen::base_generator<repeat<Gen>, typename Gen::value_type> {
   using T = typename Gen::value_type;
 
  private:
@@ -24,7 +24,7 @@ class repeat : public gen::base_generator<Gen, typename Gen::value_type> {
   T _curr = _gen.curr();
 
   repeat(Gen generator) : _gen_init{generator}, _gen{generator} {}
-  IT(repeat, T);
+  IT(repeat<Gen>, T);
 
   /**
    * @brief Repeats the generator
