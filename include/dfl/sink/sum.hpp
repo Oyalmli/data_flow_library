@@ -1,6 +1,6 @@
 /**
  * @file for_each.hpp
- * @author Jonathan Boccara
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
  * @brief For each sink class
  * @version 0.1
  * @date 2022-04-28

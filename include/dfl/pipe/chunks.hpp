@@ -11,6 +11,8 @@
 #ifndef DFL_CHUNKS_HPP
 #define DFL_CHUNKS_HPP
 
+#include <vector>
+
 namespace dfl::pipe {
 template <typename T, std::size_t N>
 class chunks : public dfl_base {
@@ -39,7 +41,7 @@ class chunks : public dfl_base {
     explicit chunks() {}
 
    private:
-    std::vector<T> _curr_chunk{N};
+    std::vector<T> _curr_chunk;
 };
 }  // namespace dfl::pipe
 

@@ -49,6 +49,8 @@
 #include "dfl/pipe/transform_s.hpp"
 #include "dfl/sink/for_each.hpp"
 #include "dfl/sink/hole.hpp"
+#include "dfl/sink/min.hpp"
+#include "dfl/sink/max.hpp"
 #include "dfl/sink/print.hpp"
 #include "dfl/sink/printf.hpp"
 #include "dfl/sink/push_back.hpp"

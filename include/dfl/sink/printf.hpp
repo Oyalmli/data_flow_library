@@ -17,9 +17,9 @@ namespace dfl::sink {
 template <typename Fmt>
 class printf_pipeline : public pipeline_base<printf_pipeline<Fmt>> {
    public:
-    template <typename T>
-    void onReceive(T&& value) {
-        printf(_fmt, value);
+    template <typename... T>
+    void onReceive(T&&... value) {
+        printf(_fmt, value...);
     }
 
     explicit printf_pipeline(Fmt* fmt) : _fmt(fmt) {}

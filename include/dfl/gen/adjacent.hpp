@@ -42,7 +42,7 @@ void operator>>=(adjacent_range<Range> rangesHolder, Pipeline&& pipeline) {
   
   if (it == end){ return; }
 
-  auto a = *(++it);
+  auto a = *it;
   if (it == end) return;
   auto b = *(++it);
   while (it != end) {

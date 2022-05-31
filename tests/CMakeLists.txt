@@ -37,6 +37,8 @@ add_executable(
 
   sink/hole.cpp
   sink/for_each.cpp
+  sink/max.cpp
+  sink/min.cpp
   sink/print.cpp
   sink/printf.cpp
   sink/push_back.cpp
