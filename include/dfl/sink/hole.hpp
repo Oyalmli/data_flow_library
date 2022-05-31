@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example sink/hole.cpp
  */
 #ifndef DFL_HOLE_HPP
 #define DFL_HOLE_HPP

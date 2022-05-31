@@ -6,7 +6,7 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/filter.cpp
  */
 #ifndef DFL_FILTER_HPP
 #define DFL_FILTER_HPP

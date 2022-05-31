@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/transform_s.cpp
  */
 #ifndef DFL_TRANSFORM_S_HPP
 #define DFL_TRANSFORM_S_HPP

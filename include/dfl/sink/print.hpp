@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example sink/print.cpp
  */
 #ifndef PRINT_HPP
 #define PRINT_HPP

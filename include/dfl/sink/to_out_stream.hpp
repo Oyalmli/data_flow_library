@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example sink/to_out_stream.cpp
  */
 #ifndef TO_OUT_STREAM_HPP
 #define TO_OUT_STREAM_HPP

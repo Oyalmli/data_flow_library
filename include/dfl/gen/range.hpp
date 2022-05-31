@@ -6,7 +6,7 @@
  * @date 2022-04-27
  *
  * @copyright Copyright (c) 2022
- *
+ * @example gen/range.cpp
  */
 #ifndef DFL_GEN_RANGE_HPP
 #define DFL_GEN_RANGE_HPP

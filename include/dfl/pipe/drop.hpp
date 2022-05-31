@@ -6,7 +6,7 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/drop.cpp
  */
 #ifndef DFL_DROP_HPP
 #define DFL_DROP_HPP

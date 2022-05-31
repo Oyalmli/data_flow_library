@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/partition.cpp
  */
 #ifndef DFL_PARTITION_HPP
 #define DFL_PARTITION_HPP

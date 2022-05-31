@@ -6,7 +6,7 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/fork.cpp
  */
 #ifndef DFL_FORK_HPP
 #define DFL_FORK_HPP

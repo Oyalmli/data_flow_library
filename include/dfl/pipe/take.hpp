@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/take.cpp
  */
 #ifndef DFL_TAKE_HPP
 #define DFL_TAKE_HPP

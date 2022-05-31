@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/tee.cpp
  */
 #ifndef DFL_TEE_HPP
 #define DFL_TEE_HPP

@@ -6,7 +6,7 @@
  * @date 2022-05-11
  *
  * @copyright Copyright (c) 2022
- *
+ * @example pipe/stride.cpp
  */
 #ifndef PIPES_STEP_HPP
 #define PIPES_STEP_HPP

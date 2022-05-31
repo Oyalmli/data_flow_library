@@ -6,7 +6,7 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example intersperse.cpp
  */
 #ifndef DFL_INTERSPERSE_HPP
 #define DFL_INTERSPERSE_HPP

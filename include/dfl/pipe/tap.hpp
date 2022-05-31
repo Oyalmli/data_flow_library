@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/tap.cpp
  */
 #ifndef DFL_TAP_HPP
 #define DFL_TAP_HPP

@@ -6,7 +6,7 @@
  * @date 2022-04-28
  *
  * @copyright Copyright (c) 2022
- * @example for_each.cpp
+ * @example sink/min.cpp
  */
 #ifndef DFL_SINK_MIN_HPP
 #define DFL_SINK_MIN_HPP

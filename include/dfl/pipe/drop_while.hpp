@@ -6,7 +6,7 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/drop_while.cpp
  */
 #ifndef DFL_DROP_WHILE_HPP
 #define DFL_DROP_WHILE_HPP

@@ -100,9 +100,9 @@ Inheritance diagram for dfl::sink::printf_pipeline&lt; Fmt &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a72dfbb967505e0c3fe7e3f62cb54a929"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a72dfbb967505e0c3fe7e3f62cb54a929"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1printf__pipeline.html#a72dfbb967505e0c3fe7e3f62cb54a929">onReceive</a> (T &amp;&amp;value)</td></tr>
-<tr class="separator:a72dfbb967505e0c3fe7e3f62cb54a929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38563fb1fe9b48fe96a1325d2bf58f69"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
+<tr class="memitem:a38563fb1fe9b48fe96a1325d2bf58f69"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1printf__pipeline.html#a38563fb1fe9b48fe96a1325d2bf58f69">onReceive</a> (T &amp;&amp;... value)</td></tr>
+<tr class="separator:a38563fb1fe9b48fe96a1325d2bf58f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b58343bd7bc3d68e42bce9c011e57fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1printf__pipeline.html#a1b58343bd7bc3d68e42bce9c011e57fa">printf_pipeline</a> (Fmt *fmt)</td></tr>
 <tr class="separator:a1b58343bd7bc3d68e42bce9c011e57fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -142,15 +142,15 @@ template&lt;typename Fmt &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a72dfbb967505e0c3fe7e3f62cb54a929" name="a72dfbb967505e0c3fe7e3f62cb54a929"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72dfbb967505e0c3fe7e3f62cb54a929">&#9670;&nbsp;</a></span>onReceive()</h2>
+<a id="a38563fb1fe9b48fe96a1325d2bf58f69" name="a38563fb1fe9b48fe96a1325d2bf58f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38563fb1fe9b48fe96a1325d2bf58f69">&#9670;&nbsp;</a></span>onReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Fmt &gt; </div>
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename... T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -158,7 +158,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classdfl_1_1sink_1_1printf__pipeline.html">dfl::sink::printf_pipeline</a>&lt; Fmt &gt;::onReceive </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">T &amp;&amp;...&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>

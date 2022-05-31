@@ -92,31 +92,33 @@ $(document).ready(function(){initNavTree('chunks_8hpp_source.html',''); initResi
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef DFL_CHUNKS_HPP</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define DFL_CHUNKS_HPP</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>dfl::pipe {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classdfl_1_1pipe_1_1chunks.html">chunks</a> : <span class="keyword">public</span> dfl_base {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>   <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Values, <span class="keyword">typename</span> TailPipeline&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">onReceive</a>(Values&amp;&amp;... values, TailPipeline&amp;&amp; tailPipeline) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        _curr_chunk.push_back(values...);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span> (_curr_chunk.size() &gt;= N) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            send(_curr_chunk, tailPipeline);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            _curr_chunk.clear();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">   39</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">chunks</a>() {}</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::vector&lt;T&gt; _curr_chunk{N};</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}  <span class="comment">// namespace dfl::pipe</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif </span><span class="comment">/* PIPES_CHUNKS_HPP */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclassdfl_1_1pipe_1_1chunks_html"><div class="ttname"><a href="classdfl_1_1pipe_1_1chunks.html">dfl::pipe::chunks</a></div><div class="ttdef"><b>Definition:</b> <a href="chunks_8hpp_source.html#l00016">chunks.hpp:16</a></div></div>
-<div class="ttc" id="aclassdfl_1_1pipe_1_1chunks_html_a7f35082d836f6540aa64661e63f22b7a"><div class="ttname"><a href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">dfl::pipe::chunks::chunks</a></div><div class="ttdeci">chunks()</div><div class="ttdoc">Generates chunks of size N.</div><div class="ttdef"><b>Definition:</b> <a href="chunks_8hpp_source.html#l00039">chunks.hpp:39</a></div></div>
-<div class="ttc" id="aclassdfl_1_1pipe_1_1chunks_html_ae01c6f300cffa5070294447e82d12a89"><div class="ttname"><a href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">dfl::pipe::chunks::onReceive</a></div><div class="ttdeci">void onReceive(Values &amp;&amp;... values, TailPipeline &amp;&amp;tailPipeline)</div><div class="ttdoc">Forwards the values supplied to the next pipeline.</div><div class="ttdef"><b>Definition:</b> <a href="chunks_8hpp_source.html#l00028">chunks.hpp:28</a></div></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span>dfl::pipe {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classdfl_1_1pipe_1_1chunks.html">chunks</a> : <span class="keyword">public</span> dfl_base {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Values, <span class="keyword">typename</span> TailPipeline&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">   30</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">onReceive</a>(Values&amp;&amp;... values, TailPipeline&amp;&amp; tailPipeline) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        _curr_chunk.push_back(values...);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (_curr_chunk.size() &gt;= N) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            send(_curr_chunk, tailPipeline);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            _curr_chunk.clear();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">   41</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">chunks</a>() {}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::vector&lt;T&gt; _curr_chunk;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}  <span class="comment">// namespace dfl::pipe</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">/* PIPES_CHUNKS_HPP */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclassdfl_1_1pipe_1_1chunks_html"><div class="ttname"><a href="classdfl_1_1pipe_1_1chunks.html">dfl::pipe::chunks</a></div><div class="ttdef"><b>Definition:</b> <a href="chunks_8hpp_source.html#l00018">chunks.hpp:18</a></div></div>
+<div class="ttc" id="aclassdfl_1_1pipe_1_1chunks_html_a7f35082d836f6540aa64661e63f22b7a"><div class="ttname"><a href="classdfl_1_1pipe_1_1chunks.html#a7f35082d836f6540aa64661e63f22b7a">dfl::pipe::chunks::chunks</a></div><div class="ttdeci">chunks()</div><div class="ttdoc">Generates chunks of size N.</div><div class="ttdef"><b>Definition:</b> <a href="chunks_8hpp_source.html#l00041">chunks.hpp:41</a></div></div>
+<div class="ttc" id="aclassdfl_1_1pipe_1_1chunks_html_ae01c6f300cffa5070294447e82d12a89"><div class="ttname"><a href="classdfl_1_1pipe_1_1chunks.html#ae01c6f300cffa5070294447e82d12a89">dfl::pipe::chunks::onReceive</a></div><div class="ttdeci">void onReceive(Values &amp;&amp;... values, TailPipeline &amp;&amp;tailPipeline)</div><div class="ttdoc">Forwards the values supplied to the next pipeline.</div><div class="ttdef"><b>Definition:</b> <a href="chunks_8hpp_source.html#l00030">chunks.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -6,7 +6,7 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/chunks.cpp
  */
 #ifndef DFL_CHUNKS_HPP
 #define DFL_CHUNKS_HPP

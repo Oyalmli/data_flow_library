@@ -8,13 +8,15 @@ var annotated_dup =
         [ "file", "classdfl_1_1gen_1_1file.html", "classdfl_1_1gen_1_1file" ],
         [ "GenIterator", "classdfl_1_1gen_1_1_gen_iterator.html", null ],
         [ "muxer", "structdfl_1_1gen_1_1muxer.html", null ],
-        [ "noise", "classdfl_1_1gen_1_1noise.html", "classdfl_1_1gen_1_1noise" ],
-        [ "random_err", "classdfl_1_1gen_1_1random__err.html", "classdfl_1_1gen_1_1random__err" ],
         [ "range", "classdfl_1_1gen_1_1range.html", "classdfl_1_1gen_1_1range" ],
-        [ "repeat", "classdfl_1_1gen_1_1repeat.html", "classdfl_1_1gen_1_1repeat" ],
         [ "sine", "classdfl_1_1gen_1_1sine.html", "classdfl_1_1gen_1_1sine" ],
-        [ "take", "classdfl_1_1gen_1_1take.html", "classdfl_1_1gen_1_1take" ],
         [ "value", "classdfl_1_1gen_1_1value.html", "classdfl_1_1gen_1_1value" ]
+      ] ],
+      [ "mod", null, [
+        [ "noise", "classdfl_1_1mod_1_1noise.html", "classdfl_1_1mod_1_1noise" ],
+        [ "random_err", "classdfl_1_1mod_1_1random__err.html", "classdfl_1_1mod_1_1random__err" ],
+        [ "repeat", "classdfl_1_1mod_1_1repeat.html", "classdfl_1_1mod_1_1repeat" ],
+        [ "take", "classdfl_1_1mod_1_1take.html", "classdfl_1_1mod_1_1take" ]
       ] ],
       [ "pipe", null, [
         [ "chunks", "classdfl_1_1pipe_1_1chunks.html", "classdfl_1_1pipe_1_1chunks" ],
@@ -33,13 +35,14 @@ var annotated_dup =
         [ "tap_pipe", "classdfl_1_1pipe_1_1tap__pipe.html", null ],
         [ "tee_pipe", "classdfl_1_1pipe_1_1tee__pipe.html", null ],
         [ "transform_pipe", "classdfl_1_1pipe_1_1transform__pipe.html", null ],
-        [ "transform_s_pipe", "classdfl_1_1pipe_1_1transform__s__pipe.html", null ],
-        [ "transform_t_pipe", "classdfl_1_1pipe_1_1transform__t__pipe.html", null ]
+        [ "transform_s_pipe", "classdfl_1_1pipe_1_1transform__s__pipe.html", null ]
       ] ],
       [ "sink", null, [
         [ "for_each_pipeline", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],
         [ "hole", "classdfl_1_1sink_1_1hole.html", "classdfl_1_1sink_1_1hole" ],
-        [ "print_pipeline", "classdfl_1_1sink_1_1print__pipeline.html", null ],
+        [ "max_pipeline", "classdfl_1_1sink_1_1max__pipeline.html", null ],
+        [ "min_pipeline", "classdfl_1_1sink_1_1min__pipeline.html", null ],
+        [ "print", "classdfl_1_1sink_1_1print.html", null ],
         [ "printf_pipeline", "classdfl_1_1sink_1_1printf__pipeline.html", null ],
         [ "push_back_pipeline", "classdfl_1_1sink_1_1push__back__pipeline.html", null ],
         [ "sum_pipeline", "classdfl_1_1sink_1_1sum__pipeline.html", null ],

@@ -6,7 +6,7 @@
  * @date 2022-04-28
  *
  * @copyright Copyright (c) 2022
- * @example for_each.cpp
+ * @example sink/max.cpp
  */
 #ifndef DFL_SINK_MAX_HPP
 #define DFL_SINK_MAX_HPP

@@ -6,7 +6,7 @@
  * @date 2022-04-28
  *
  * @copyright Copyright (c) 2022
- *
+ * @example gen/sine.cpp
  */
 #ifndef GEN_SINE_HPP
 #define GEN_SINE_HPP

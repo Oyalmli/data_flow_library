@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/set_state.cpp
  */
 #ifndef DFL_SET_STATE_HPP
 #define DFL_SET_STATE_HPP

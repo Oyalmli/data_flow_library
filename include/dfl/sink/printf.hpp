@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example sink/printf.cpp
  */
 #ifndef DFL_PRINTF_HPP
 #define DFL_PRINTF_HPP

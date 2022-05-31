@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * @example for_each.cpp
+ * @example sink/for_each.cpp
  */
 #ifndef DFL_CUSTOM_INSERTER_HPP
 #define DFL_CUSTOM_INSERTER_HPP

@@ -6,7 +6,7 @@
  * @date 2022-04-28
  *
  * @copyright Copyright (c) 2022
- *
+ * @example gen/adjacent.cpp
  */
 #ifndef DFL_ADJACENT_HPP
 #define DFL_ADJACENT_HPP

@@ -26,6 +26,5 @@ var dir_5e68270a9fe58834eb97b67b7ba1bfe4 =
     [ "tap.hpp", "tap_8hpp.html", "tap_8hpp" ],
     [ "tee.hpp", "tee_8hpp.html", "tee_8hpp" ],
     [ "transform.hpp", "transform_8hpp.html", "transform_8hpp" ],
-    [ "transform_s.hpp", "transform__s_8hpp.html", "transform__s_8hpp" ],
-    [ "transform_t.hpp", "transform__t_8hpp.html", "transform__t_8hpp" ]
+    [ "transform_s.hpp", "transform__s_8hpp.html", "transform__s_8hpp" ]
 ];

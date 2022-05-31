@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example sink/push_back.cpp
  */
 #ifndef PUSH_BACK_HPP
 #define PUSH_BACK_HPP

@@ -1,7 +1,6 @@
 var dir_b157fe9b241659444948dbd68636c824 =
 [
     [ "impl", "dir_ffa96d6b8d35991130160f6a82ec2c84.html", "dir_ffa96d6b8d35991130160f6a82ec2c84" ],
-    [ "modifyer", "dir_bc28bbff5c0f06a188dbbb4f9320a987.html", "dir_bc28bbff5c0f06a188dbbb4f9320a987" ],
     [ "adjacent.hpp", "adjacent_8hpp.html", "adjacent_8hpp" ],
     [ "counter.hpp", "counter_8hpp.html", [
       [ "dfl::gen::counter< T >", "classdfl_1_1gen_1_1counter.html", "classdfl_1_1gen_1_1counter" ]

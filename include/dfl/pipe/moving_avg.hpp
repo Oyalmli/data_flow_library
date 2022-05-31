@@ -6,7 +6,7 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/moving_avg.cpp
  */
 #ifndef DFL_MOVING_AVERAGE_HPP
 #define DFL_MOVING_AVERAGE_HPP

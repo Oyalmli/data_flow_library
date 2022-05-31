@@ -8,23 +8,23 @@ var hierarchy =
     [ "dfl::gen::base_generator< file< T, true >, T >", "classdfl_1_1gen_1_1base__generator.html", [
       [ "dfl::gen::file< T, word >", "classdfl_1_1gen_1_1file.html", null ]
     ] ],
-    [ "dfl::gen::base_generator< Gen, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::repeat< Gen >", "classdfl_1_1gen_1_1repeat.html", null ]
-    ] ],
     [ "dfl::gen::base_generator< noise< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::noise< Gen >", "classdfl_1_1gen_1_1noise.html", null ]
+      [ "dfl::mod::noise< Gen >", "classdfl_1_1mod_1_1noise.html", null ]
     ] ],
     [ "dfl::gen::base_generator< random_err< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::random_err< Gen >", "classdfl_1_1gen_1_1random__err.html", null ]
+      [ "dfl::mod::random_err< Gen >", "classdfl_1_1mod_1_1random__err.html", null ]
     ] ],
     [ "dfl::gen::base_generator< range< T >, T >", "classdfl_1_1gen_1_1base__generator.html", [
       [ "dfl::gen::range< T >", "classdfl_1_1gen_1_1range.html", null ]
+    ] ],
+    [ "dfl::gen::base_generator< repeat< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
+      [ "dfl::mod::repeat< Gen >", "classdfl_1_1mod_1_1repeat.html", null ]
     ] ],
     [ "dfl::gen::base_generator< sine< T >, T >", "classdfl_1_1gen_1_1base__generator.html", [
       [ "dfl::gen::sine< T, typename >", "classdfl_1_1gen_1_1sine.html", null ]
     ] ],
     [ "dfl::gen::base_generator< take< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::take< Gen >", "classdfl_1_1gen_1_1take.html", null ]
+      [ "dfl::mod::take< Gen >", "classdfl_1_1mod_1_1take.html", null ]
     ] ],
     [ "dfl::gen::base_generator< value< T >, T >", "classdfl_1_1gen_1_1base__generator.html", [
       [ "dfl::gen::value< T >", "classdfl_1_1gen_1_1value.html", null ]
@@ -44,8 +44,7 @@ var hierarchy =
       [ "dfl::pipe::tap_pipe< Function >", "classdfl_1_1pipe_1_1tap__pipe.html", null ],
       [ "dfl::pipe::tee_pipe< TeeBranch >", "classdfl_1_1pipe_1_1tee__pipe.html", null ],
       [ "dfl::pipe::transform_pipe< Function >", "classdfl_1_1pipe_1_1transform__pipe.html", null ],
-      [ "dfl::pipe::transform_s_pipe< Function, State >", "classdfl_1_1pipe_1_1transform__s__pipe.html", null ],
-      [ "dfl::pipe::transform_t_pipe< Function >", "classdfl_1_1pipe_1_1transform__t__pipe.html", null ]
+      [ "dfl::pipe::transform_s_pipe< Function, State >", "classdfl_1_1pipe_1_1transform__s__pipe.html", null ]
     ] ],
     [ "IO< R_BUF, W_BUF >", "class_i_o.html", null ],
     [ "std::iterator", null, [
@@ -57,7 +56,9 @@ var hierarchy =
       [ "dfl::pipe::partition_pipe< OutputPipeTrue, OutputPipeFalse, Predicate >", "classdfl_1_1pipe_1_1partition__pipe.html", null ],
       [ "dfl::sink::for_each_pipeline< Function >", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],
       [ "dfl::sink::hole", "classdfl_1_1sink_1_1hole.html", null ],
-      [ "dfl::sink::print_pipeline< Sep >", "classdfl_1_1sink_1_1print__pipeline.html", null ],
+      [ "dfl::sink::max_pipeline< T >", "classdfl_1_1sink_1_1max__pipeline.html", null ],
+      [ "dfl::sink::min_pipeline< T >", "classdfl_1_1sink_1_1min__pipeline.html", null ],
+      [ "dfl::sink::print< Sep >", "classdfl_1_1sink_1_1print.html", null ],
       [ "dfl::sink::printf_pipeline< Fmt >", "classdfl_1_1sink_1_1printf__pipeline.html", null ],
       [ "dfl::sink::push_back_pipeline< Container >", "classdfl_1_1sink_1_1push__back__pipeline.html", null ],
       [ "dfl::sink::sum_pipeline< T >", "classdfl_1_1sink_1_1sum__pipeline.html", null ],

@@ -6,7 +6,7 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * 
+ * @example pipe/scanl.cpp 
  */
 #ifndef DFL_SCANL_HPP
 #define DFL_SCANL_HPP

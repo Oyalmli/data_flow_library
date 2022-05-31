@@ -6,7 +6,7 @@
  * @date 2022-04-28
  *
  * @copyright Copyright (c) 2022
- *
+ * @example pipe/side_effect.cpp
  */
 #ifndef DFL_SIDE_EFFECT_HPP
 #define DFL_SIDE_EFFECT_HPP

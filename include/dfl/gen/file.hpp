@@ -6,7 +6,7 @@
  * @date 2022-04-27
  *
  * @copyright Copyright (c) 2022
- *
+ * @example gen/file.cpp
  */
 #ifndef GEN_FILE_HPP
 #define GEN_FILE_HPP
