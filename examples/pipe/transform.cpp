@@ -4,7 +4,7 @@
 using namespace dfl;
 
 int main () {
-    auto range_gen = gen::range(100);
+    auto range_gen = gen::range(20);
 
     range_gen
     >>= pipe::transform([](auto i){ return i*2; })
@@ -15,3 +15,26 @@ int main () {
     >>= pipe::transform([](auto i){ return i-1; })
     >>= sink::print('\n');
 }
+
+/* ./transform
+-6
+6
+19
+32
+44
+57
+70
+-6
+6
+19
+32
+44
+57
+70
+-6
+6
+19
+32
+44
+57
+*/

@@ -94,13 +94,37 @@ $(document).ready(function(){initNavTree('mod_2repeat_8cpp-example.html',''); in
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main (){</div>
 <div class="line">    <span class="keyword">auto</span> inf_gen</div>
-<div class="line">    =   mod::repeat(</div>
+<div class="line">    =   mod::take(20,</div>
+<div class="line">        mod::repeat(</div>
 <div class="line">        mod::take(5,</div>
-<div class="line">        gen::range(100)));</div>
+<div class="line">        gen::range(100))));</div>
 <div class="line"> </div>
 <div class="line">    inf_gen  </div>
 <div class="line">    &gt;&gt;= sink::print(<span class="charliteral">&#39;\n&#39;</span>); </div>
 <div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* ./repeat</span></div>
+<div class="line"><span class="comment">0</span></div>
+<div class="line"><span class="comment">1</span></div>
+<div class="line"><span class="comment">2</span></div>
+<div class="line"><span class="comment">3</span></div>
+<div class="line"><span class="comment">4</span></div>
+<div class="line"><span class="comment">0</span></div>
+<div class="line"><span class="comment">1</span></div>
+<div class="line"><span class="comment">2</span></div>
+<div class="line"><span class="comment">3</span></div>
+<div class="line"><span class="comment">4</span></div>
+<div class="line"><span class="comment">0</span></div>
+<div class="line"><span class="comment">1</span></div>
+<div class="line"><span class="comment">2</span></div>
+<div class="line"><span class="comment">3</span></div>
+<div class="line"><span class="comment">4</span></div>
+<div class="line"><span class="comment">0</span></div>
+<div class="line"><span class="comment">1</span></div>
+<div class="line"><span class="comment">2</span></div>
+<div class="line"><span class="comment">3</span></div>
+<div class="line"><span class="comment">4</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->

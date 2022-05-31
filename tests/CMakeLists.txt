@@ -13,9 +13,9 @@ add_executable(
   gen/sine.cpp
   gen/value.cpp
 
-  modifyer/noise.cpp
-  modifyer/repeat.cpp
-  modifyer/take.cpp
+  mod/noise.cpp
+  mod/repeat.cpp
+  mod/take.cpp
 
   pipe/chunks.cpp
   pipe/moving_avg.cpp

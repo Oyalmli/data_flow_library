@@ -94,11 +94,36 @@ $(document).ready(function(){initNavTree('gen_2sine_8cpp-example.html',''); init
 <div class="line"><span class="keyword">using namespace </span>dfl;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main (){</div>
-<div class="line">    <span class="comment">// 1000 samples period, 1.0 amplitude, 0.0 baseline</span></div>
-<div class="line">    <span class="keyword">auto</span> sine_gen = gen::sine(0.01, 1.0, 0.0); </div>
+<div class="line">    <span class="comment">// 10 samples period, 1.0 amplitude, 0.0 baseline</span></div>
+<div class="line">    <span class="keyword">auto</span> sine_gen </div>
+<div class="line">    =   mod::take(20,</div>
+<div class="line">        gen::sine(0.1, 1.0, 0.0)); </div>
 <div class="line"> </div>
 <div class="line">    sine_gen &gt;&gt;= sink::printf(<span class="stringliteral">&quot;% .2f\n&quot;</span>);</div>
 <div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* ./sine</span></div>
+<div class="line"><span class="comment"> 0.00</span></div>
+<div class="line"><span class="comment"> 0.59</span></div>
+<div class="line"><span class="comment"> 0.95</span></div>
+<div class="line"><span class="comment"> 0.95</span></div>
+<div class="line"><span class="comment"> 0.59</span></div>
+<div class="line"><span class="comment"> 0.00</span></div>
+<div class="line"><span class="comment">-0.59</span></div>
+<div class="line"><span class="comment">-0.95</span></div>
+<div class="line"><span class="comment">-0.95</span></div>
+<div class="line"><span class="comment">-0.59</span></div>
+<div class="line"><span class="comment">-0.00</span></div>
+<div class="line"><span class="comment"> 0.59</span></div>
+<div class="line"><span class="comment"> 0.95</span></div>
+<div class="line"><span class="comment"> 0.95</span></div>
+<div class="line"><span class="comment"> 0.59</span></div>
+<div class="line"><span class="comment"> 0.00</span></div>
+<div class="line"><span class="comment">-0.59</span></div>
+<div class="line"><span class="comment">-0.95</span></div>
+<div class="line"><span class="comment">-0.95</span></div>
+<div class="line"><span class="comment">-0.59</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->

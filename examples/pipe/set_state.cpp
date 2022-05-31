@@ -17,3 +17,20 @@ int main() {
     return hashAddress; })
   >>= sink::print('\n');
 }
+
+/* input.txt
+a long
+list of text 
+with many words
+*/
+
+/* ./set_state < input.txt
+177604
+2087658575
+2087656743
+5861228
+2087956376
+2088203751
+2087696638
+191452152
+*/

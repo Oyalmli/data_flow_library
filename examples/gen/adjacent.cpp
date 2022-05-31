@@ -16,3 +16,11 @@ int main (){
         std::cout << i << '\n';
     }
 }
+
+/* ./adjacent
+11
+17
+2
+25
+20
+*/

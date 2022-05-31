@@ -17,3 +17,26 @@ int main (){
     std::cout << "elem: " << elem << '\n';
   }
 }
+
+/* ./push_back
+elem: 10
+elem: 17
+elem: 6
+elem: 16
+elem: 4
+elem: 17
+elem: 9
+elem: 17
+elem: 9
+elem: 12
+elem: 8
+elem: 7
+elem: 17
+elem: 19
+elem: 3
+elem: 14
+elem: 7
+elem: 9
+elem: 9
+elem: 15
+*/

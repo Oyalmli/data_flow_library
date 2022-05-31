@@ -11,3 +11,10 @@ int main (){
     >>= pipe::transform([](auto i, auto...){ return i; })
     >>= sink::printf("%d\n");
 }
+
+/* ./filter
+1
+3
+1
+37
+*/

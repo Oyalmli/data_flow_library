@@ -8,3 +8,8 @@ int main (){
   range_gen >>= sink::sum(sum);
   std::cout << sum << '\n';
 }
+
+/* time ./sum
+436338997990203022
+./sum 0.00s user 0.00s system 1% cpu 0.004 total
+*/

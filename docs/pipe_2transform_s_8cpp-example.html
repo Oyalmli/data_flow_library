@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('pipe_2transform_s_8cpp-example.html','
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main () {</div>
 <div class="line">    <span class="keyword">auto</span> noisy_value </div>
-<div class="line">    =   mod::take(100, </div>
+<div class="line">    =   mod::take(20, </div>
 <div class="line">        mod::noise(1000, </div>
 <div class="line">        gen::value(0)));</div>
 <div class="line"> </div>
@@ -105,6 +105,29 @@ $(document).ready(function(){initNavTree('pipe_2transform_s_8cpp-example.html','
 <div class="line">    &gt;&gt;= <a id="a1" name="a1"></a>pipe::transform_s([](<span class="keyword">auto</span> i, <span class="keyword">auto</span>&amp; floor){ <span class="keywordflow">return</span> i + floor; } , floor)</div>
 <div class="line">    &gt;&gt;= sink::print(<span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment">0</span></div>
+<div class="line"><span class="comment">1506</span></div>
+<div class="line"><span class="comment">1119</span></div>
+<div class="line"><span class="comment">1474</span></div>
+<div class="line"><span class="comment">347</span></div>
+<div class="line"><span class="comment">800</span></div>
+<div class="line"><span class="comment">819</span></div>
+<div class="line"><span class="comment">319</span></div>
+<div class="line"><span class="comment">-52</span></div>
+<div class="line"><span class="comment">-98</span></div>
+<div class="line"><span class="comment">-245</span></div>
+<div class="line"><span class="comment">433</span></div>
+<div class="line"><span class="comment">498</span></div>
+<div class="line"><span class="comment">-196</span></div>
+<div class="line"><span class="comment">1876</span></div>
+<div class="line"><span class="comment">567</span></div>
+<div class="line"><span class="comment">536</span></div>
+<div class="line"><span class="comment">895</span></div>
+<div class="line"><span class="comment">18</span></div>
+<div class="line"><span class="comment">1607</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->

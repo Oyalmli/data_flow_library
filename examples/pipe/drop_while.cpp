@@ -9,3 +9,16 @@ int main (){
     >>= pipe::drop_while([](auto i){ return i < 90; })
     >>= sink::print('\n');
 }
+
+/* ./drop_while
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+*/

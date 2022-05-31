@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('pipe_2tee_8cpp-example.html',''); init
 <div class="line"><span class="keyword">using namespace </span>dfl;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main () {</div>
-<div class="line">    <span class="keyword">auto</span> range_gen = gen::range(100);</div>
+<div class="line">    <span class="keyword">auto</span> range_gen = gen::range(10);</div>
 <div class="line"> </div>
 <div class="line">    range_gen</div>
 <div class="line">    &gt;&gt;= pipe::tee(</div>
@@ -102,6 +102,29 @@ $(document).ready(function(){initNavTree('pipe_2tee_8cpp-example.html',''); init
 <div class="line">      &gt;&gt;= sink::printf(<span class="stringliteral">&quot;tee: %d\n&quot;</span>))</div>
 <div class="line">    &gt;&gt;= sink::printf(<span class="stringliteral">&quot;end: %d\n&quot;</span>);</div>
 <div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* ./tee</span></div>
+<div class="line"><span class="comment">tee: 0</span></div>
+<div class="line"><span class="comment">end: 0</span></div>
+<div class="line"><span class="comment">tee: 2</span></div>
+<div class="line"><span class="comment">end: 1</span></div>
+<div class="line"><span class="comment">tee: 4</span></div>
+<div class="line"><span class="comment">end: 2</span></div>
+<div class="line"><span class="comment">tee: 6</span></div>
+<div class="line"><span class="comment">end: 3</span></div>
+<div class="line"><span class="comment">tee: 8</span></div>
+<div class="line"><span class="comment">end: 4</span></div>
+<div class="line"><span class="comment">tee: 10</span></div>
+<div class="line"><span class="comment">end: 5</span></div>
+<div class="line"><span class="comment">tee: 12</span></div>
+<div class="line"><span class="comment">end: 6</span></div>
+<div class="line"><span class="comment">tee: 14</span></div>
+<div class="line"><span class="comment">end: 7</span></div>
+<div class="line"><span class="comment">tee: 16</span></div>
+<div class="line"><span class="comment">end: 8</span></div>
+<div class="line"><span class="comment">tee: 18</span></div>
+<div class="line"><span class="comment">end: 9</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->

@@ -18,3 +18,7 @@ int main (){
     res >>= sink::print(' ');
     std::cout << '\n';
 }
+
+/* ./fork
+5 2 1 0 7 3 3 1 7 3 1 0 37 18 81 40 
+*/

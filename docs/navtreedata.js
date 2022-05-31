@@ -25,9 +25,6 @@
 var NAVTREE =
 [
   [ "Data Flow Library", "index.html", [
-    [ "High level library for creating data flows on low power IoT devices", "index.html", [
-      [ "DFL", "index.html#autotoc_md1", null ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

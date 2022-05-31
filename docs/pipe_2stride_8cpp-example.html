@@ -93,12 +93,19 @@ $(document).ready(function(){initNavTree('pipe_2stride_8cpp-example.html',''); i
 <div class="line"><span class="keyword">using namespace </span>dfl;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main () {</div>
-<div class="line">    <span class="keyword">auto</span> range_gen = gen::range(100);</div>
+<div class="line">    <span class="keyword">auto</span> range_gen = gen::range(20);</div>
 <div class="line"> </div>
 <div class="line">    range_gen</div>
 <div class="line">    &gt;&gt;= pipe::stride(5)</div>
 <div class="line">    &gt;&gt;= sink::print(<span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* ./stride</span></div>
+<div class="line"><span class="comment">0</span></div>
+<div class="line"><span class="comment">5</span></div>
+<div class="line"><span class="comment">10</span></div>
+<div class="line"><span class="comment">15</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->

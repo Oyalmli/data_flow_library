@@ -9,3 +9,11 @@ int main () {
     >>= pipe::take(5)
     >>= sink::print('\n');
 }
+
+/* ./take
+0
+1
+2
+3
+4
+*/

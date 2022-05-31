@@ -8,3 +8,16 @@ int main (){
     >>= sink::for_each([](auto i){ printf("%d\n", i); });
     generator >>= pipeline;
 }
+
+/* ./for_each
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+*/

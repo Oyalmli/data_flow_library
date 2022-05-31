@@ -6,3 +6,6 @@ int main (){
 
     range_gen >>= sink::hole();
 }
+
+/* ./hole
+*/

@@ -10,3 +10,12 @@ int main (){
     gen:mux(counter, nums) 
     >>= sink::printf("[%d]: %d\n");
 }
+
+/* ./mux
+[0]: 1
+[1]: 5
+[2]: 2
+[3]: 7
+[4]: 4
+[5]: 2
+*/

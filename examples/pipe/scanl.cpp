@@ -15,3 +15,14 @@ int main () {
     
     std::cout << std::max(0LL, -min_found);
 }
+
+/* input.txt
+3
+3
+-5
+3
+*/
+
+/* ./parti
+2
+*/
