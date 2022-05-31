@@ -58,7 +58,7 @@ if(BUILD_TESTING)
   find_package(benchmark REQUIRED)
 
   # MAIN
-  add_executable(main src/main.cpp)
+  add_executable(main benchmark/main.cpp)
   target_link_libraries(main PRIVATE dfl)
   target_link_libraries(main PRIVATE benchmark::benchmark)
   target_compile_features(main PRIVATE cxx_std_17)
