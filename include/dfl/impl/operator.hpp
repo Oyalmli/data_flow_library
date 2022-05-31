@@ -2,7 +2,6 @@
 #define OPERATOR_HPP
 
 #include <type_traits>
-
 #include "dfl/impl/concepts.hpp"
 #include "dfl/impl/pipes_assembly.hpp"
 
@@ -25,10 +24,10 @@ template <
     detail::IsARange<Range> = true,
     detail::IsAPipeline<Pipeline> = true>
 std::enable_if_t<!std::is_lvalue_reference_v<Range>>
-operator>>=(Range&& range, Pipeline&& pipeline) {
+operator>>=(const Range&& range, const Pipeline&& pipeline) {
     std::copy(
-        std::make_move_iterator(std::begin(range)),
-        std::make_move_iterator(std::end(range)),
+        std::make_move_iterator(range.begin()),
+        std::make_move_iterator(range.end()),
         pipeline);
 }
 

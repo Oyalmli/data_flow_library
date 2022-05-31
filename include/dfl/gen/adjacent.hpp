@@ -17,17 +17,12 @@
 namespace dfl::gen {
 template <typename Range>
 struct adjacent_range {
-  Range const& range;
-  explicit adjacent_range(Range const& range) : range(range) {}
+  Range& range;
+  explicit adjacent_range(Range& range) : range(range) {}
 };
 
 /**
  * @brief Generator sending pairs of values
- *
- * EXAMPLE:
- * arr = {1,2,3,4};
- * auto adjacent(arr) -> [](auto v1, auto v2){ x + y }
- * = 3 5 7
  *
  * @tparam Range
  * @param range
@@ -35,29 +30,25 @@ struct adjacent_range {
  */
 template <typename Range>
 auto adjacent(Range&& range) {
-  return adjacent_range<std::decay_t<Range>>(FWD(range));
+  return adjacent_range<Range>(FWD(range));
 }
 
 template <typename Range, typename Pipeline,
           detail::IsAPipeline<Pipeline> = true>
 void operator>>=(adjacent_range<Range> rangesHolder, Pipeline&& pipeline) {
   auto& range = rangesHolder.range;
+  auto it = range.begin();
+  auto end = range.end();
+  
+  if (it == end){ return; }
 
-  using std::begin;
-  using std::end;
-
-  auto first = begin(range);
-  auto second = begin(range);
-
-  if (second != end(range)) {
-    second++;
-  }
-
-  while (second != end(range)) {
-    send(*first, *second, pipeline);
-
-    first++;
-    second++;
+  auto a = *(++it);
+  if (it == end) return;
+  auto b = *(++it);
+  while (it != end) {
+    send(a, b, pipeline);
+    a = b;
+    b = *(++it);
   }
 }
 }  // namespace dfl::gen

@@ -47,7 +47,6 @@
 #include "dfl/pipe/tee.hpp"
 #include "dfl/pipe/transform.hpp"
 #include "dfl/pipe/transform_s.hpp"
-#include "dfl/pipe/transform_t.hpp"
 #include "dfl/sink/for_each.hpp"
 #include "dfl/sink/hole.hpp"
 #include "dfl/sink/print.hpp"

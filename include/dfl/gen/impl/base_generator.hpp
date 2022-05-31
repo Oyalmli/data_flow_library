@@ -12,7 +12,6 @@
 #define DFL_GENERATOR_HPP
 
 #include <iterator>
-#include <thread>
 
 #define IT(ITER_CLASS, TYPE)                                                  \
   typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator begin() {    \
@@ -52,10 +51,6 @@ class base_generator {
   T next();
   virtual iterator begin() = 0;
   virtual iterator end() = 0;
-
-  constexpr void wait(int delay) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(delay));
-  }
 };
 }  // namespace dfl::gen
 
