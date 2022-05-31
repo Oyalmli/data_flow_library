@@ -95,8 +95,10 @@ int main() {
     
     auto sensor_idx_gen = gen::mux(sine_gen, count_gen);
 
+    using std::chrono_literals;
+    
     sensor_idx_gen
-    >>= sleep_pipe(std::chrono::milliseconds(500))
+    >>= sleep_pipe(500ms)
     >>= pipe::set_state(set_min_max, maxMin_state)
     >>= pipe::transform_t(adjust_with_state, adjust_state)
     >>= sink::send_with_mqtt();
