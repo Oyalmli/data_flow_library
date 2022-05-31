@@ -16,7 +16,7 @@ var examples =
     [ "pipe/drop_while.cpp", "pipe_2drop_while_8cpp-example.html", null ],
     [ "pipe/filter.cpp", "pipe_2filter_8cpp-example.html", null ],
     [ "pipe/fork.cpp", "pipe_2fork_8cpp-example.html", null ],
-    [ "intersperse.cpp", "intersperse_8cpp-example.html", null ],
+    [ "pipe/intersperse.cpp", "pipe_2intersperse_8cpp-example.html", null ],
     [ "pipe/moving_avg.cpp", "pipe_2moving_avg_8cpp-example.html", null ],
     [ "pipe/partition.cpp", "pipe_2partition_8cpp-example.html", null ],
     [ "pipe/scanl.cpp", "pipe_2scanl_8cpp-example.html", null ],
