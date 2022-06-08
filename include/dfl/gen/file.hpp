@@ -14,12 +14,12 @@
 #include "../util/IO.hpp"
 
 namespace dfl::gen {
-template <typename T, bool word = true>
-class file : public base_generator<file<T, word>, T> {
-  using iterator = GenIterator<file<T, word>, T>;
+template <typename T, bool word = true, size_t BUF_SIZE=128>
+class file : public base_generator<file<T, word, BUF_SIZE>, T> {
+  using class_type = file<T, word, BUF_SIZE>;
 
  private:
-  Reader<128> _reader;
+  Reader<BUF_SIZE> _reader;
   bool more = true;
   T _curr;
 
@@ -30,24 +30,20 @@ class file : public base_generator<file<T, word>, T> {
    * @param f FILE*
    */
   file(FILE* f = stdin) : _reader{f} { _curr = next(); };
+  IT(class_type, T);
 
   bool hasNext() {
-    if (!_reader.hasNext() && more) {
-      more = false;
-      return true;
-    }
-    return more;
+    bool temp = more;
+    more &= _reader.hasNext();
+    return temp;
   }
 
   T next() {
-    _curr = _reader.next<T, word>();
+    _curr = _reader.template next<T, word>();
     return _curr;
   }
 
   T curr() { return _curr; }
-
-  iterator begin() { return iterator(this); }
-  iterator end() { return iterator(nullptr); }
 };
 }  // namespace dfl::gen
 

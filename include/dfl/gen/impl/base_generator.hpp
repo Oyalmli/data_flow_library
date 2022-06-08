@@ -13,14 +13,14 @@
 
 #include <iterator>
 
-#define IT(ITER_CLASS, TYPE)                                                  \
+#define IT(ITER_CLASS, TYPE)                                                 \
   typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator begin() {    \
-    return                                                                    \
+    return                                                                   \
         typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator(this); \
-  };                                                                          \
+  };                                                                         \
   typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator end() {      \
     return typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator(    \
-        nullptr);                                                             \
+        nullptr);                                                            \
   };
 
 namespace dfl::gen {
@@ -38,7 +38,7 @@ class GenIterator
   }
   bool operator!=(GenIterator& other) { return _gen->hasNext(); }
   bool operator==(GenIterator& other) { return !(_gen->hasNext()); }
-  T operator*() { return _gen->curr(); }
+  const T operator*() { return _gen->curr(); }
 };
 
 template <class Gen, typename T>
@@ -49,8 +49,8 @@ class base_generator {
   bool hasNext();
   T curr();
   T next();
-  virtual iterator begin() = 0;
-  virtual iterator end() = 0;
+  iterator begin();
+  iterator end();
 };
 }  // namespace dfl::gen
 
