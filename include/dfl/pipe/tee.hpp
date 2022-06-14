@@ -15,10 +15,10 @@ namespace dfl::pipe {
 template <typename TeeBranch>
 class tee_pipe : public dfl_base {
    public:
-    template <typename Value, typename TailPipeline>
-    void onReceive(Value&& value, TailPipeline&& tailPipeline) {
-        send(value, teeBranch_);
-        send(FWD(value), tailPipeline);
+    template <typename... Values, typename TailPipeline>
+    void onReceive(Values&&... values, TailPipeline&& tailPipeline) {
+        send(values..., teeBranch_);
+        send(FWD(values)..., tailPipeline);
     }
 
     explicit tee_pipe(TeeBranch teeBranch) : teeBranch_(teeBranch) {}

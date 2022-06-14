@@ -52,9 +52,7 @@ int main() {
     Moving_avg<double, 5> ma(0.5, 1);
 
     for (auto reading : gen::file<double>(stdin)) {
-        if (reading < 14 || reading > 30) {
-            state.moving_avg = ma.update(reading);
-        }
+        state.moving_avg = ma.update(reading);
         state.diff = state.prev > state.moving_avg 
             ? state.prev - state.moving_avg
             : state.moving_avg - state.prev;

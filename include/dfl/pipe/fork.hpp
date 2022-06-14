@@ -18,9 +18,9 @@ namespace pipe {
 template <typename... TailPipelines>
 class fork_pipeline : public pipeline_base<fork_pipeline<TailPipelines...>> {
    public:
-    template <typename T>
-    void onReceive(T&& value) {
-        detail::for_each(tailPipelines_, [&value](auto&& tailPipeline) { send(FWD(value), tailPipeline); });
+    template <typename... T>
+    void onReceive(T&&... values) {
+        detail::for_each(tailPipelines_, [&values...](auto&& tailPipeline) { send(FWD(values)..., tailPipeline); });
     }
 
     /**
