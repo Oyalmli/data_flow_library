@@ -32,7 +32,7 @@ class moving_avg : public dfl_base {
     size_t _num_samples{0};
     T _total;
 
-    float get_avg(T sample) {
+    double get_avg(T sample) {
         _total += sample;
         if (_num_samples < N)
             _samples[_num_samples++] = sample;

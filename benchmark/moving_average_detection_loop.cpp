@@ -23,7 +23,7 @@ class Moving_avg {
   size_t _skippable;
     T diff(T a, T b) { return a > b ? a - b : b - a; }
 
-  float get_avg(T sample) {
+double get_avg(T sample) {
     T avg = _total / static_cast<double>(std::min(_num_samples, N));
     if (diff(sample, avg) > _delta && _skipped < _skippable) {
       _skipped++;

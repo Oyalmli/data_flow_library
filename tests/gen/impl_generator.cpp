@@ -6,7 +6,7 @@
 using namespace dfl;
 
 template <typename T>
-class range_gen : public dfl::gen::base_generator<range_gen<T>, T> {
+class range_gen : public dfl::gen::base_generator<T> {
    private:
     T _min, _max, _step, _curr;
 

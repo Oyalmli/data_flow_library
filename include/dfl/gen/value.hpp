@@ -14,7 +14,7 @@
 namespace dfl::gen {
 
 template <typename T>
-class value : public base_generator<value<T>, T> {
+class value : public base_generator<T> {
  private:
   T _curr;
 
@@ -25,23 +25,12 @@ class value : public base_generator<value<T>, T> {
    * @param value to be repeated
    */
   value(T value = 0) : _curr{value} {};
-  IT(value<T>, T);
 
-  /**
-   * @brief Returns true if the generator has more values
-   *
-   * @return true
-   */
-  bool hasNext() { return true; }
-
-  /**
-   * @brief The next value from the iterator
-   *
-   * @return T
-   */
-  T next() { return _curr; }
-
-  T curr() { return _curr; }
+  bool hasNext() const { return true; }
+  T curr() const { return _curr; }
+  void next() { }
+  
+  MAKE_ITER(value, T);
 };
 }  // namespace dfl::gen
 

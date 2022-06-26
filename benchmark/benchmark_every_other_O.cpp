@@ -7,7 +7,7 @@ using namespace dfl;
 class bool_cycle : public gen::base_generator<bool_cycle, bool>{
     bool _b{true};
     public:
-    IT(bool_cycle, bool);
+    MAKE_ITER(bool_cycle, bool);
     bool hasNext(){ return true; }
     bool next() { _b = !_b; return _b; }
     bool curr() { return _b; }

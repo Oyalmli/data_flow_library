@@ -14,7 +14,7 @@
 
 namespace dfl::gen {
 template <typename T>
-class counter : public base_generator<counter<T>, T> {
+class counter : public base_generator<T> {
   T _curr;
 
  public:
@@ -24,11 +24,11 @@ class counter : public base_generator<counter<T>, T> {
    * @param max 
    */
   counter() : _curr{0} {}
-  IT(counter<T>, T);
+  bool hasNext() const { return true; }
+  T curr() const { return _curr; }
+  void next() { _curr++; }
 
-  bool hasNext() { return true; }
-  T next() { return _curr++; }
-  T curr() { return _curr; }
+  MAKE_ITER(counter, T);
 };
 } // namespace dfl::gen
 

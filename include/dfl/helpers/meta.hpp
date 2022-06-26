@@ -39,13 +39,13 @@ constexpr decltype(auto) for_each2(Tuple1&& t1, Tuple2&& t2, F&& f) {
 }
 
 template <typename... Ts, typename Function, size_t... Is>
-auto transform_impl(std::tuple<Ts...>& inputs, Function function,
+auto transform_impl(std::tuple<Ts...>const& inputs, Function function,
                     std::index_sequence<Is...>) {
   return std::make_tuple(function(std::get<Is>(inputs))...);
 }
 
 template <typename... Ts, typename Function>
-auto transform(std::tuple<Ts...>& inputs, Function function) {
+auto transform(std::tuple<Ts...>const& inputs, Function function) {
   return transform_impl(inputs, function,
                         std::make_index_sequence<sizeof...(Ts)>{});
 }
@@ -83,7 +83,7 @@ void perform(Tuple&& tuple, size_t index, Action action) {
 }
 
 template <typename... Ts>
-auto dereference(std::tuple<Ts...>& tuple) {
+auto dereference(std::tuple<Ts...> const& tuple) {
   return transform(tuple,
                    [](auto&& element) -> decltype(auto) { return *element; });
 }

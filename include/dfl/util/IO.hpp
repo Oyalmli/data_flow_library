@@ -54,6 +54,10 @@ class Writer {
         _flushBuffer();
     }
 
+    void write(std::string& s) {
+        _writeStr(s.c_str(), s.size());
+    }
+
     template <typename T>
     void write(T val) {
         if constexpr (std::is_same_v<T, char>) {
@@ -72,10 +76,6 @@ class Writer {
             std::string s = std::to_string(val);
             _writeStr(s.c_str(), s.size());
             return;
-        } else {
-            //DEFAULT
-            std::string s = std::to_string(val);
-            _writeStr(s.c_str(), s.size()); 
         }     
     }
 

@@ -13,7 +13,7 @@
 
 namespace dfl::mod {
 template <class Gen>
-class noise : public gen::base_generator<noise<Gen>, typename Gen::value_type> {
+class noise : public gen::base_generator<typename Gen::value_type> {
   using T = typename Gen::value_type;
 
  private:
@@ -40,17 +40,16 @@ class noise : public gen::base_generator<noise<Gen>, typename Gen::value_type> {
       : _gen{generator}, _noise{noise} {
     srand(static_cast<unsigned>(seed));
   }
-  IT(noise<Gen>, T);
 
-  bool hasNext() { return _gen.hasNext(); }
-
-  T next() {
+  bool hasNext() const { return _gen.hasNext(); }
+  T curr() const { return _curr; }
+  void next() {
     T offset = -_noise + (r() * 2 * _noise);
-    _curr = _gen.next() + offset;
-    return _curr;
+    _gen.next();
+    _curr = _gen.curr() + offset;
   }
 
-  T curr() { return _curr; }
+  MAKE_ITER(noise, T);
 };
 }  // namespace dfl::gen
 

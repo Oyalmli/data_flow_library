@@ -13,7 +13,7 @@
 
 namespace dfl::mod {
 template <class Gen>
-class random_err : public gen::base_generator<random_err<Gen>, typename Gen::value_type> {
+class random_err : public gen::base_generator<typename Gen::value_type> {
   using T = typename Gen::value_type;
 
  private:
@@ -35,21 +35,21 @@ class random_err : public gen::base_generator<random_err<Gen>, typename Gen::val
       : _gen{generator}, _chance{chance}, _err{err} {
     srand(static_cast<unsigned>(seed));
   }
-  IT(random_err<Gen>, T);
 
   double r() {
     return static_cast<double>(rand()) / static_cast<double>(RAND_MAX);
   }
 
-  bool hasNext() { return _gen.hasNext(); }
+  bool hasNext() const { return _gen.hasNext(); }
+  T curr() const { return _curr; }
 
-  T next() {
-    T curr = _gen.next();
+  void next() {
+    _gen.next();
+    T curr = _gen.curr();
     _curr = (_chance > r()) ? _err : curr;
-    return _curr;
   }
 
-  T curr() { return _curr; }
+  MAKE_ITER(random_err, T);  
 };
 }  // namespace dfl::gen
 

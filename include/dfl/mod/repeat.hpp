@@ -13,7 +13,7 @@
 
 namespace dfl::mod {
 template <class Gen>
-class repeat : public gen::base_generator<repeat<Gen>, typename Gen::value_type> {
+class repeat : public gen::base_generator<typename Gen::value_type> {
   using T = typename Gen::value_type;
 
  private:
@@ -24,25 +24,18 @@ class repeat : public gen::base_generator<repeat<Gen>, typename Gen::value_type>
   T _curr = _gen.curr();
 
   repeat(Gen generator) : _gen_init{generator}, _gen{generator} {}
-  IT(repeat<Gen>, T);
 
-  /**
-   * @brief Repeats the generator
-   *
-   * @return bool
-   */
-  bool hasNext() { return true; }
+  bool hasNext() const { return true; }
+  T curr() const { return _curr; }
 
-  T next() {
+  void next() {
     _gen.next();
     if (!_gen.hasNext()) {
       _gen = _gen_init;
     }
     _curr = _gen.curr();
-    return _curr;
   }
-
-  T curr() { return _curr; }
+  MAKE_ITER(repeat, T);
 };
 }  // namespace dfl::gen
 

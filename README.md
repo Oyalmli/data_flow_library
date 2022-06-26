@@ -24,7 +24,7 @@ int main() {
 DFL also comes with the tools to be able to create your own generators and pipes.  
 For creating a generator the user only has to:  
 * Inherit dfl::gen::base_generator<CLASS_TYPE, RETURN TYPE>
-* Use macro IT(CLASS_TYPE, RETURN_TYPE);
+* Use macro MAKE_ITER(CLASS_NAME, RETURN_TYPE);
 * Implement:
   - hasNext() *-tell the iterator if more values exist*
   - next()    *-next() returns the generators next value*
@@ -53,7 +53,7 @@ class sensor_generator
   sensor_generator(pin_t sensor_pin) : _sensor_pin{sensor_pin} {
     _curr = sensor_read(sensor_pin);
   };
-  IT(sensor_generator, int);
+  MAKE_ITER(sensor_generator, int);
 
   bool hasNext(){ return true; }
   int curr() {return _curr; }

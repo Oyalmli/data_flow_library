@@ -13,44 +13,51 @@
 
 #include <iterator>
 
-#define IT(ITER_CLASS, TYPE)                                                 \
-  typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator begin() {    \
-    return                                                                   \
-        typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator(this); \
-  };                                                                         \
-  typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator end() {      \
-    return typename dfl::gen::base_generator<ITER_CLASS, TYPE>::iterator(    \
-        nullptr);                                                            \
-  };
+#define MAKE_ITER(CLASS, TP)                                 \
+  const CLASS& begin() const { return *this; }               \
+  const CLASS& end() const { return *this; }                 \
+  bool operator!=(const CLASS&) const { return hasNext(); }  \
+  bool operator==(const CLASS&) const { return !hasNext(); } \
+  CLASS& operator++() {                                      \
+    next();                                                  \
+    return *this;                                            \
+  }                                                          \
+  TP operator*() const { return curr(); }
 
 namespace dfl::gen {
 template <typename Gen, typename T>
 class GenIterator
     : public std::iterator<std::input_iterator_tag, T, bool, T*, T&> {
-  Gen* _gen;
+  Gen const* _gen;
 
  public:
-  GenIterator(Gen* gen) : _gen{gen} {};
+  GenIterator(Gen const* gen) : _gen{gen} {};
 
-  GenIterator& operator++() {
-    _gen->next();
-    return *this;
-  }
-  bool operator!=(GenIterator& other) { return _gen->hasNext(); }
-  bool operator==(GenIterator& other) { return !(_gen->hasNext()); }
-  const T operator*() { return _gen->curr(); }
+  void operator++() { _gen->next(); }
+  bool operator!=(const GenIterator&) const { return _gen->hasNext(); }
+  bool operator==(const GenIterator&) const { return !(_gen->hasNext()); }
+  T operator*() const { return _gen->curr(); }
 };
 
-template <class Gen, typename T>
-class base_generator {
- public:
-  using iterator = GenIterator<Gen, T>;
-  using value_type = T;
-  bool hasNext();
-  T curr();
-  T next();
-  iterator begin();
-  iterator end();
+template <typename T>
+struct base_generator {
+  struct iterator {
+    typedef T                        value_type;
+    typedef bool                     difference_type;
+    typedef T*                       pointer;
+    typedef T&                       reference;
+    typedef std::input_iterator_tag  iterator_category;
+  };
+
+  using iterator_category = std::input_iterator_tag;
+  using difference_type   = bool;
+  using value_type        = T;
+  using pointer           = T*;
+  using reference         = T&;
+
+  bool hasNext() const;
+  T curr() const;
+  void next();
 };
 }  // namespace dfl::gen
 

@@ -13,7 +13,7 @@
 
 namespace dfl::mod {
 template <class Gen>
-class take : public gen::base_generator<take<Gen>, typename Gen::value_type> {
+class take : public gen::base_generator<typename Gen::value_type> {
   using T = typename Gen::value_type;
   //using iterator = GenIterator<take<Gen>, T>;
 
@@ -24,28 +24,18 @@ class take : public gen::base_generator<take<Gen>, typename Gen::value_type> {
   T _curr = _gen.curr();
 
  public:
-  take(size_t num, Gen generator) : _gen{generator}, _num{num} {}
-  IT(take<Gen>, T);
+  take(size_t num, const Gen generator) : _gen{generator}, _num{num} {}
 
-  /**
-   * @brief Return true of the generator has more values, and not enough values
-   * have been taken
-   *
-   * @return bool
-   */
-  bool hasNext() { return _gen.hasNext() && (_taken < _num); }
+  bool hasNext() const { return _gen.hasNext() && (_taken < _num); }
+  T curr() const { return _curr; }
 
-  T next() {
+  void next() {
     _taken++;
     _gen.next();
     _curr = _gen.curr();
-    return _curr;
   }
-
-  T curr() { return _curr; }
-
-  //iterator begin() { return iterator(this); }
-  //iterator end() { return iterator(nullptr); }
+  
+  MAKE_ITER(take, T);
 };
 }  // namespace dfl::gen
 

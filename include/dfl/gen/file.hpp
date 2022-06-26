@@ -15,12 +15,10 @@
 
 namespace dfl::gen {
 template <typename T, bool word = true, size_t BUF_SIZE=128>
-class file : public base_generator<file<T, word, BUF_SIZE>, T> {
-  using class_type = file<T, word, BUF_SIZE>;
-
+class file : public base_generator<T> {
  private:
   Reader<BUF_SIZE> _reader;
-  bool more = true;
+  int more = 1;
   T _curr;
 
  public:
@@ -29,21 +27,20 @@ class file : public base_generator<file<T, word, BUF_SIZE>, T> {
    *
    * @param f FILE*
    */
-  file(FILE* f = stdin) : _reader{f} { _curr = next(); };
-  IT(class_type, T);
+  file(FILE* f = stdin) : _reader{f} { next(); };
 
-  bool hasNext() {
-    bool temp = more;
-    more &= _reader.hasNext();
-    return temp;
+  bool hasNext() const {
+    return more > -1;
   }
 
-  T next() {
+  T curr() const { return _curr; }
+
+  void next() {
     _curr = _reader.template next<T, word>();
-    return _curr;
+    more += _reader.hasNext() -1;
   }
 
-  T curr() { return _curr; }
+  MAKE_ITER(file, T);
 };
 }  // namespace dfl::gen
 

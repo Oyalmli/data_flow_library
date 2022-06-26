@@ -10,22 +10,21 @@
 using namespace dfl;
 
 template <typename T>
-class file_fstream_gen : public gen::base_generator<file_fstream_gen<T>, T> {
+class file_fstream_gen : public gen::base_generator<T> {
   std::fstream _stream;
   T _curr;
 
  public:
   file_fstream_gen(const char* path) : _stream{path} { _stream >> _curr; }
-  IT(file_fstream_gen<T>, T);
-  bool hasNext() { return !_stream.eof(); }
-  T next() {
-    _stream >> _curr;
-    return _curr;
-  }
-  T curr() { return _curr; }
+
+  bool hasNext() const { return !_stream.eof(); }
+  T curr() const { return _curr; }
+  void next() { _stream >> _curr; }
+
+  MAKE_ITER(file_fstream_gen, T);
 };
 
-class file_fscanf_gen : public gen::base_generator<file_fscanf_gen, int64_t> {
+class file_fscanf_gen : public gen::base_generator<int64_t> {
   FILE* _fp;
   int64_t _curr;
   bool _more = true;
@@ -35,13 +34,13 @@ class file_fscanf_gen : public gen::base_generator<file_fscanf_gen, int64_t> {
     _fp = fopen(path, "r");
     fscanf(_fp, "%lld", &_curr);
   }
-  IT(file_fscanf_gen, int64_t);
-  bool hasNext() { return _more; }
-  int64_t next() {
+  bool hasNext() const { return _more; }
+  int64_t curr() const { return _curr; }
+  void next() {
     _more = (fscanf(_fp, "%lld", &_curr) != EOF);
-    return _curr;
   }
-  int64_t curr() { return _curr; }
+  
+  MAKE_ITER(file_fscanf_gen, int64_t);
 };
 
 /////////////////////////
@@ -125,23 +124,21 @@ int const_val() { return 42; }
 int random_val() { return rand(); }
 
 class sensor_gen
-    : public gen::base_generator<sensor_gen, decltype(const_val())> {
+    : public gen::base_generator<decltype(const_val())> {
   using T = decltype(const_val());
   T _curr;
 
  public:
   sensor_gen() { _curr = const_val(); }
-  IT(sensor_gen, T);
-  bool hasNext() { return true; }
-  T curr() { return _curr; }
-  T next() {
-    _curr = const_val();
-    return _curr;
-  }
+  
+  bool hasNext() const { return true; }
+  T curr() const { return _curr; }
+  void next() { _curr = const_val(); }
+  MAKE_ITER(sensor_gen, T);
 };
 
 class random_gen
-    : public gen::base_generator<random_gen, decltype(random_val())> {
+    : public gen::base_generator<decltype(random_val())> {
   using T = decltype(random_val());
 
  private:
@@ -149,10 +146,13 @@ class random_gen
 
  public:
   random_gen() { _curr = random_val(); }
-  IT(random_gen, T);
-  bool hasNext() { return true; }
-  T curr() { return _curr; }
-  T next() { _curr = random_val(); return _curr; }
+  
+  bool hasNext() const { return true; }
+  T curr() const { return _curr; }
+
+  void next() { _curr = random_val(); }
+  
+  MAKE_ITER(random_gen, T);
 };
 static void GENERATOR_setvalue(benchmark::State& state) {
   for (auto _ : state) {

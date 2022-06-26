@@ -17,8 +17,8 @@
 namespace dfl::gen {
 template <typename Range>
 struct adjacent_range {
-  Range& range;
-  explicit adjacent_range(Range& range) : range(range) {}
+  const Range& range;
+  explicit adjacent_range(Range const& range) : range(range) {}
 };
 
 /**
@@ -36,7 +36,7 @@ auto adjacent(Range&& range) {
 template <typename Range, typename Pipeline,
           detail::IsAPipeline<Pipeline> = true>
 void operator>>=(adjacent_range<Range> rangesHolder, Pipeline&& pipeline) {
-  auto& range = rangesHolder.range;
+  auto range = rangesHolder.range;
   auto it = range.begin();
   auto end = range.end();
   
@@ -44,11 +44,11 @@ void operator>>=(adjacent_range<Range> rangesHolder, Pipeline&& pipeline) {
 
   auto a = *it;
   if (it == end) return;
-  auto b = *(++it);
+  ++it; auto b = *it;
   while (it != end) {
     send(a, b, pipeline);
     a = b;
-    b = *(++it);
+    ++it; b = *it;
   }
 }
 }  // namespace dfl::gen

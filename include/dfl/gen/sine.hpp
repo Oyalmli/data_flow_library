@@ -17,12 +17,12 @@ namespace dfl::gen {
 
 template <typename T,
           typename = typename std::enable_if_t<std::is_floating_point_v<T>>>
-class sine : public base_generator<sine<T>, T> {
+class sine : public base_generator<T> {
  private:
   T _freq, _ampl, _yOffset, _curr;
   long long _cnt = 0;
 
-  float getSine() {
+  double getSine() {
     return (_ampl * sin(2 * M_PI * _freq * (_cnt++) + 0) + _yOffset);
   }
 
@@ -37,18 +37,14 @@ class sine : public base_generator<sine<T>, T> {
    */
   sine(T freq = 0.0, T ampl = 1.0, T yOffset = 0.0)
       : _freq{freq}, _ampl{ampl}, _yOffset{yOffset} {
-    _curr = next();
+    next();
   };
-  IT(sine<T>, T);
 
-  bool hasNext() { return true; }
-
-  T next() {
-    _curr = getSine();
-    return _curr;
-  }
-
-  T curr() { return _curr; }
+  bool hasNext() const { return true; }
+  T curr() const { return _curr; }
+  void next() { _curr = getSine();}
+  
+  MAKE_ITER(sine, T);
 };
 }  // namespace dfl::gen
 

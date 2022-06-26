@@ -15,8 +15,8 @@ class range2 : public gen::base_generator<range2<T, MIN, MAX, STEP>, T> {
    *
    */
   range2() : _curr{0} {};
-  using class_type = range2<T, MIN, MAX, STEP>;
-  IT(class_type, T);
+  using class_type = range2;
+  MAKE_ITER(class_type, T);
 
   bool hasNext() { return _curr < MAX; }
 

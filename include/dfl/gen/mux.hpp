@@ -13,6 +13,7 @@
 
 #include <tuple>
 #include <type_traits>
+#include <iostream>
 
 #include "dfl/impl/concepts.hpp"
 
@@ -21,8 +22,8 @@ namespace gen {
 
 template <typename... Ranges>
 struct muxer {
-    std::tuple<Ranges&...> inputs;
-    explicit muxer(Ranges&... inputs) : inputs(inputs...) {}
+    std::tuple<Ranges const&...> inputs;
+    explicit muxer(Ranges const&... inputs) : inputs(inputs...) {}
 };
 
 /**
@@ -41,15 +42,26 @@ auto mux(Ranges&&... ranges) {
 }  // namespace gen
 
 namespace detail {
+    /*
 template <typename... Ts>
-bool match_on_any(std::tuple<Ts...>& tuple1, std::tuple<Ts...>& tuple2) {
+bool match_on_any(std::tuple<Ts...> const& tuple1, std::tuple<Ts...> const& tuple2) {
     auto matchOnAny = false;
     detail::for_each2(tuple1, tuple2, [&matchOnAny](auto&& element1, auto&& element2) {
-        if (!matchOnAny && element1 == element2) {
+        //if (!matchOnAny && (element1 == element2)) {
+            std::cout << "element1: " << element1 << '\n';
             matchOnAny = true;
-        }
+        //}
     });
     return matchOnAny;
+}*/
+
+template <typename... Ts>
+bool match_on_any(std::tuple<Ts...> const& tuple1, std::tuple<Ts...> const& tuple2) {
+    auto done = false;
+    detail::for_each2(tuple1, tuple2, [&done](auto&& begin, auto&& end) {
+        done |= (begin == end);
+    });
+    return done;
 }
 
 template <typename... Ts>
@@ -68,8 +80,8 @@ void increment(std::tuple<Ts...>& tuple) {
  */
 template <typename... Ranges, typename Pipeline, detail::IsAPipeline<Pipeline> = true>
 void operator>>=(gen::muxer<Ranges...> inputsMuxer, Pipeline&& pipeline) {
-    auto beginIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return range.begin(); });
-    auto endIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return range.end(); });
+    auto const beginIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return range.begin(); });
+    auto const endIterators = detail::transform(inputsMuxer.inputs, [](auto&& range) { return range.end(); });
 
     for (auto iterators = beginIterators;
          !detail::match_on_any(iterators, endIterators);

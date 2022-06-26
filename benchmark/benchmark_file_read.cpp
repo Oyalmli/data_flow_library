@@ -16,12 +16,12 @@ class file_fstream_gen : public gen::base_generator<file_fstream_gen<T>, T>{
     file_fstream_gen(const char* path) : _stream {path} {
       _stream >> _curr;
     }
-    IT(file_fstream_gen<T>, T);
-    bool hasNext(){ return !_stream.eof(); }
-    T next() {
+    MAKE_ITER(file_fstream_gen, T);
+    bool hasNext() const { return !_stream.eof(); }
+    T curr() const { return _curr; }
+    void next() {
         _stream >> _curr;
-        return _curr; }
-    T curr() { return _curr; }
+    }
 };
 
 class file_fscanf_gen : public gen::base_generator<file_fscanf_gen, int64_t>{
@@ -34,7 +34,7 @@ class file_fscanf_gen : public gen::base_generator<file_fscanf_gen, int64_t>{
         _fp = fopen(path, "r");
         fscanf(_fp, "%lld", &_curr);
     }
-    IT(file_fscanf_gen, int64_t);
+    MAKE_ITER(file_fscanf_gen, int64_t);
     bool hasNext(){ return _more; }
     int64_t next() {
         _more = (fscanf(_fp, "%lld", &_curr) != EOF);
