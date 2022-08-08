@@ -3,18 +3,12 @@
 
 using namespace dfl;
 
+auto add_value = [](auto i){ return i + 0; };
+
 int main (){
-    auto gen42
-    =   mod::take(10,
-        gen::range(1, 100));
-
-    gen42 >>= sink::print('\n');
-
-    std::cout << "\n";
-
-    for (auto i : mod::take(10, gen::value(10))) {
-        std::cout << i << '\n';
-    }
+    mod::take(50, gen::range(0,10,1))
+    >>= pipe::transform(add_value)
+    >>= sink::printf("%d\n");
 }
 
 /* ./take

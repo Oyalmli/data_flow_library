@@ -72,11 +72,10 @@ class Writer {
             _writeStr(val.c_str(), val.size());
             return;
         } else
-        if constexpr (std::is_integral_v<T>) {
+        if constexpr (true) {
             std::string s = std::to_string(val);
             _writeStr(s.c_str(), s.size());
-            return;
-        }     
+        } 
     }
 
     template <typename T>

@@ -17,7 +17,7 @@ class set_state_pipe : public dfl_base {
    public:
     template <typename... Values, typename TailPipeline>
     void onReceive(Values&&... values, TailPipeline&& tailPipeline) {
-        function_(values..., state_);
+        state_ = function_(values..., state_);
         send(FWD(values)..., tailPipeline);
     }
 

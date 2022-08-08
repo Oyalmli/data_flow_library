@@ -12,10 +12,11 @@ struct State {
 };
 
 template<typename T>
-void max(T i, State& state){ 
-    if (i > state.val) {
-        state.val = i;
+T max(T i, T state){ 
+    if (i > state) {
+        return i;
     }
+    return state;
 }
 
 TEST_CASE(prefix + "able to set part of state")
@@ -24,7 +25,7 @@ TEST_CASE(prefix + "able to set part of state")
     State init_state = { .val=0 };
     State expected_state = { .val=10 };
     input 
-    >>= pipe::set_state(max<int>, init_state)
+    >>= pipe::set_state(max<int>, init_state.val)
     >>= sink::hole();
     REQUIRE(init_state.val == expected_state.val);
 }
@@ -53,8 +54,8 @@ TEST_CASE(prefix + "able to use state in transform")
     State state = { .val=0 };
 
     input 
-    >>= pipe::set_state(max<int>, state)
-    >>= pipe::transform_s([](int i, State state){ return i + state.val; }, state)
+    >>= pipe::set_state(max<int>, state.val)
+    >>= pipe::transform_s([](int i, int state){ return i + state; }, state.val)
     >>= sink::push_back(result);
     
     REQUIRE(result == expected);

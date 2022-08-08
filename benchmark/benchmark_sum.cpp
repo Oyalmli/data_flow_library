@@ -31,7 +31,7 @@ static void CONST_RANGE_SET_STATE(benchmark::State& state) {
   for (auto _ : state) {
     int64_t sum = 0;
     auto range_gen = gen::range(1000000LL);
-    auto sum_range = pipe::set_state([](auto i, auto& _sum) { _sum += i; },
+    auto sum_range = pipe::set_state([](auto i, auto _sum) { return _sum + i; },
                                      sum) >>= sink::hole();
     range_gen >>= sum_range;
     assert(sum == 499999500000);
@@ -86,7 +86,7 @@ static void VAR_RANGE_SET_STATE(benchmark::State& state) {
   for (auto _ : state) {
     int64_t sum = 0;
     auto range_gen = gen::range(state.range(0));
-    auto sum_range = pipe::set_state([](auto i, auto& _sum) { _sum += i; },
+    auto sum_range = pipe::set_state([](auto i, auto _sum) { return _sum + i; },
                                      sum) >>= sink::hole();
     range_gen >>= sum_range;
     assert(sum == 499999500000);

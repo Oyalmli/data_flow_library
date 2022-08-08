@@ -12,7 +12,7 @@ int main() {
   >>= pipe::transform([](auto str){
     uint32_t hashAddress = 5381;
     str 
-    >>= pipe::set_state([](auto c, auto& ha) { ha = ((ha << 5) + ha) ^ c; }, hashAddress) 
+    >>= pipe::set_state([](auto c, auto ha) { return ((ha << 5) + ha) ^ c; }, hashAddress) 
     >>= sink::hole();
     return hashAddress; })
   >>= sink::print('\n');

@@ -85,7 +85,7 @@ int main() {
 
   auto set_moving_avg 
   =   restricted_avg<double, 4>(0.5, 1) 
-  >>= pipe::set_state([](auto f, State& state) { state.moving_avg = f; }, state) 
+  >>= pipe::set_state([](auto f, auto state) { return f; }, state.moving_avg) 
   >>= sink::hole();
 
   file_gen 

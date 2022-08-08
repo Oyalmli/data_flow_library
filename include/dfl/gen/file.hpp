@@ -28,6 +28,7 @@ class file : public base_generator<T> {
    * @param f FILE*
    */
   file(FILE* f = stdin) : _reader{f} { next(); };
+  file(const char* file_path) : _reader{fopen(file_path, "r")} { next(); };
 
   bool hasNext() const {
     return more > -1;

@@ -14,7 +14,7 @@ static void CONST_RANGE_many_ops(benchmark::State& state) {
     
     auto transform_pipeline 
     =   pipe::transform([](auto i){ return i%13; })
-    >>= pipe::set_state([](auto i, auto& _state){ _state = i + (_state%9); }, acc)
+    >>= pipe::set_state([](auto i, auto _state){ return i + (_state%9); }, acc)
     >>= pipe::transform_s([](auto i, auto& _state){ return i + _state; }, acc);
     
     auto pipeline
