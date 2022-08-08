@@ -3,10 +3,7 @@
 
 using namespace dfl; 
 int main() {
-	auto accum = 0;
-
-	gen::file<int64_t>(stdin)
-	>>= pipe::drop(10)
-	>>= sink::sum(accum);
-	std::cerr << accum << '\n';
+	gen::range(0,10,1)
+	>>= pipe::tap(_print_(_addValue(10)))
+	>>= sink::printf("%d\n");
 }

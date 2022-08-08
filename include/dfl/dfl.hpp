@@ -60,4 +60,7 @@
 
 #include "dfl/gen/mux.hpp"
 
+#include "dfl/helpers/functions.hpp"
+
+
 #endif /* DFL_HPP */
