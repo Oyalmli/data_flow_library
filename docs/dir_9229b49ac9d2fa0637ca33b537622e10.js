@@ -7,9 +7,9 @@ var dir_9229b49ac9d2fa0637ca33b537622e10 =
       [ "dfl::mod::random_err< Gen >", "classdfl_1_1mod_1_1random__err.html", "classdfl_1_1mod_1_1random__err" ]
     ] ],
     [ "repeat.hpp", "repeat_8hpp.html", [
-      [ "dfl::mod::repeat< Gen >", "classdfl_1_1mod_1_1repeat.html", "classdfl_1_1mod_1_1repeat" ]
+      [ "dfl::mod::repeat< Gen >", "classdfl_1_1mod_1_1repeat.html", null ]
     ] ],
     [ "take.hpp", "mod_2take_8hpp.html", [
-      [ "dfl::mod::take< Gen >", "classdfl_1_1mod_1_1take.html", "classdfl_1_1mod_1_1take" ]
+      [ "dfl::mod::take< Gen >", "classdfl_1_1mod_1_1take.html", null ]
     ] ]
 ];

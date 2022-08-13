@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('mux_8hpp.html',''); initResizable(); }
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &quot;dfl/impl/concepts.hpp&quot;</code><br />
 </div>
 <p><a href="mux_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -111,9 +112,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab614e8fe4ac233ca079ed86287cc28c5"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#ab614e8fe4ac233ca079ed86287cc28c5">dfl::gen::mux</a> (Ranges &amp;&amp;... ranges)</td></tr>
 <tr class="memdesc:ab614e8fe4ac233ca079ed86287cc28c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates conjoined tuples from the ranges supplied.  <a href="mux_8hpp.html#ab614e8fe4ac233ca079ed86287cc28c5">More...</a><br /></td></tr>
 <tr class="separator:ab614e8fe4ac233ca079ed86287cc28c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64ebd9b0b2023fc1e1811741584ba155"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a64ebd9b0b2023fc1e1811741584ba155"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#a64ebd9b0b2023fc1e1811741584ba155">dfl::detail::match_on_any</a> (std::tuple&lt; Ts... &gt; &amp;tuple1, std::tuple&lt; Ts... &gt; &amp;tuple2)</td></tr>
-<tr class="separator:a64ebd9b0b2023fc1e1811741584ba155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a851988036e4942008ef1ef0c3624b311"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a851988036e4942008ef1ef0c3624b311"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#a851988036e4942008ef1ef0c3624b311">dfl::detail::match_on_any</a> (std::tuple&lt; Ts... &gt; const &amp;tuple1, std::tuple&lt; Ts... &gt; const &amp;tuple2)</td></tr>
+<tr class="separator:a851988036e4942008ef1ef0c3624b311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ad93a8e067cdb17c25531fe65cce032"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:a5ad93a8e067cdb17c25531fe65cce032"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mux_8hpp.html#a5ad93a8e067cdb17c25531fe65cce032">dfl::detail::increment</a> (std::tuple&lt; Ts... &gt; &amp;tuple)</td></tr>
 <tr class="separator:a5ad93a8e067cdb17c25531fe65cce032"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,12 +150,12 @@ template&lt;typename... Ts&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00056">56</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00068">68</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a64ebd9b0b2023fc1e1811741584ba155" name="a64ebd9b0b2023fc1e1811741584ba155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64ebd9b0b2023fc1e1811741584ba155">&#9670;&nbsp;</a></span>match_on_any()</h2>
+<a id="a851988036e4942008ef1ef0c3624b311" name="a851988036e4942008ef1ef0c3624b311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851988036e4942008ef1ef0c3624b311">&#9670;&nbsp;</a></span>match_on_any()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,13 +165,13 @@ template&lt;typename... Ts&gt; </div>
         <tr>
           <td class="memname">bool dfl::detail::match_on_any </td>
           <td>(</td>
-          <td class="paramtype">std::tuple&lt; Ts... &gt; &amp;&#160;</td>
+          <td class="paramtype">std::tuple&lt; Ts... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>tuple1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::tuple&lt; Ts... &gt; &amp;&#160;</td>
+          <td class="paramtype">std::tuple&lt; Ts... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>tuple2</em>&#160;</td>
         </tr>
         <tr>
@@ -181,7 +182,7 @@ template&lt;typename... Ts&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00045">45</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00059">59</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
 
 </div>
 </div>
@@ -220,7 +221,7 @@ template&lt;typename... Ranges&gt; </div>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="gen_2counter_8cpp-example.html#a0">gen/counter.cpp</a>, <a class="el" href="gen_2mux_8cpp-example.html#a0">gen/mux.cpp</a>, and <a class="el" href="sink_2printf_8cpp-example.html#a0">sink/printf.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00036">36</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00037">37</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
 
 </div>
 </div>
@@ -268,7 +269,7 @@ template&lt;typename... Ranges, typename Pipeline , detail::IsAPipeline&lt; Pipe
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00070">70</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mux_8hpp_source.html#l00082">82</a> of file <a class="el" href="mux_8hpp_source.html">mux.hpp</a>.</p>
 
 </div>
 </div>

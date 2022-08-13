@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('moving__avg_8hpp_source.html',''); ini
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">size_t</span> _num_samples{0};</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    T _total;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">float</span> get_avg(T sample) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">double</span> get_avg(T sample) {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        _total += sample;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (_num_samples &lt; N)</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            _samples[_num_samples++] = sample;</div>

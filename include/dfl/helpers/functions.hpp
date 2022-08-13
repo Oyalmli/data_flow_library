@@ -2,11 +2,16 @@
 #define HELPER_FUNCTIONS_HPP
 
 namespace dfl {
-    auto _not_ = [](auto a) { return !a; };
-    auto _not__ = [](auto g) { return [=](auto x) { return !g(x); }; };
-    auto _even = [](auto a) { return (a%2)==0; };
-    auto _even_ = [](auto g) { return [=](auto x) { return (g(x)%2)==0; }; };
-
+    auto _not = [](auto a) { return !a; };
+    auto _not_ = [](auto g) { return [=](auto x) { return !g(x); }; };
+    auto _equal = [](auto n) { return [=](auto x) { return x == n; }; };
+    auto _equal_ = [](auto n) { return [=](auto f) { return [=](auto x) { return (f(x) == n); }; }; };
+    
+    auto _even = [](auto a) { return (a&1) == 0; };
+    auto _even_ = [](auto g) { return [=](auto x) { return (g(x)&1) == 0; }; };
+    auto _odd = [](auto a) { return (a&1) == 1; };
+    auto _odd_ = [](auto g) { return [=](auto x) { return (g(x)&1) == 1; }; };
+    
     auto _greater_than = [](auto n) { return [=](auto x) { return x > n; }; };
     auto _greater_than_ = [](auto n) { return [=](auto f) { return [=](auto x) { return (f(x) > n); }; }; };
     auto _greater_than_equal = [](auto n) { return [=](auto f) { return [=](auto x) { return (f(x) > n); }; }; };

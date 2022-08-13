@@ -1,33 +1,18 @@
 var hierarchy =
 [
     [ "dfl::gen::adjacent_range< Range >", "structdfl_1_1gen_1_1adjacent__range.html", null ],
-    [ "dfl::gen::base_generator< Gen, T >", "classdfl_1_1gen_1_1base__generator.html", null ],
-    [ "dfl::gen::base_generator< counter< T >, T >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::counter< T >", "classdfl_1_1gen_1_1counter.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< file< T, true >, T >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::file< T, word >", "classdfl_1_1gen_1_1file.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< noise< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::mod::noise< Gen >", "classdfl_1_1mod_1_1noise.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< random_err< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::mod::random_err< Gen >", "classdfl_1_1mod_1_1random__err.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< range< T >, T >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::range< T >", "classdfl_1_1gen_1_1range.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< repeat< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::mod::repeat< Gen >", "classdfl_1_1mod_1_1repeat.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< sine< T >, T >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::gen::sine< T, typename >", "classdfl_1_1gen_1_1sine.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< take< Gen >, Gen::value_type >", "classdfl_1_1gen_1_1base__generator.html", [
-      [ "dfl::mod::take< Gen >", "classdfl_1_1mod_1_1take.html", null ]
-    ] ],
-    [ "dfl::gen::base_generator< value< T >, T >", "classdfl_1_1gen_1_1base__generator.html", [
+    [ "dfl::gen::base_generator< T >", "structdfl_1_1gen_1_1base__generator.html", [
+      [ "dfl::gen::counter< T >", "classdfl_1_1gen_1_1counter.html", null ],
+      [ "dfl::gen::file< T, word, BUF_SIZE >", "classdfl_1_1gen_1_1file.html", null ],
+      [ "dfl::gen::range< T >", "classdfl_1_1gen_1_1range.html", null ],
+      [ "dfl::gen::sine< T, typename >", "classdfl_1_1gen_1_1sine.html", null ],
       [ "dfl::gen::value< T >", "classdfl_1_1gen_1_1value.html", null ]
+    ] ],
+    [ "dfl::gen::base_generator< Gen::value_type >", "structdfl_1_1gen_1_1base__generator.html", [
+      [ "dfl::mod::noise< Gen >", "classdfl_1_1mod_1_1noise.html", null ],
+      [ "dfl::mod::random_err< Gen >", "classdfl_1_1mod_1_1random__err.html", null ],
+      [ "dfl::mod::repeat< Gen >", "classdfl_1_1mod_1_1repeat.html", null ],
+      [ "dfl::mod::take< Gen >", "classdfl_1_1mod_1_1take.html", null ]
     ] ],
     [ "dfl_base", null, [
       [ "dfl::pipe::chunks< T, N >", "classdfl_1_1pipe_1_1chunks.html", null ],
@@ -47,6 +32,7 @@ var hierarchy =
       [ "dfl::pipe::transform_s_pipe< Function, State >", "classdfl_1_1pipe_1_1transform__s__pipe.html", null ]
     ] ],
     [ "IO< R_BUF, W_BUF >", "class_i_o.html", null ],
+    [ "dfl::gen::base_generator< T >::iterator", "structdfl_1_1gen_1_1base__generator_1_1iterator.html", null ],
     [ "std::iterator", null, [
       [ "dfl::gen::GenIterator< Gen, T >", "classdfl_1_1gen_1_1_gen_iterator.html", null ]
     ] ],
@@ -55,6 +41,7 @@ var hierarchy =
       [ "dfl::pipe::fork_pipeline< TailPipelines >", "classdfl_1_1pipe_1_1fork__pipeline.html", null ],
       [ "dfl::pipe::partition_pipe< OutputPipeTrue, OutputPipeFalse, Predicate >", "classdfl_1_1pipe_1_1partition__pipe.html", null ],
       [ "dfl::sink::for_each_pipeline< Function >", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],
+      [ "dfl::sink::histogram_pipeline< T >", "classdfl_1_1sink_1_1histogram__pipeline.html", null ],
       [ "dfl::sink::hole", "classdfl_1_1sink_1_1hole.html", null ],
       [ "dfl::sink::max_pipeline< T >", "classdfl_1_1sink_1_1max__pipeline.html", null ],
       [ "dfl::sink::min_pipeline< T >", "classdfl_1_1sink_1_1min__pipeline.html", null ],

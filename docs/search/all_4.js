@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['file_0',['file',['../classdfl_1_1gen_1_1file.html',1,'dfl::gen::file&lt; T, word &gt;'],['../classdfl_1_1gen_1_1file.html#a377611012617fc150643e4c089592506',1,'dfl::gen::file::file()']]],
+  ['file_0',['file',['../classdfl_1_1gen_1_1file.html',1,'dfl::gen::file&lt; T, word, BUF_SIZE &gt;'],['../classdfl_1_1gen_1_1file.html#a6dd8090e11b29af131f8619a47e5b496',1,'dfl::gen::file::file()']]],
   ['file_2ehpp_1',['file.hpp',['../file_8hpp.html',1,'']]],
   ['filter_2ehpp_2',['filter.hpp',['../filter_8hpp.html',1,'']]],
   ['filter_5fpipe_3',['filter_pipe',['../classdfl_1_1pipe_1_1filter__pipe.html',1,'dfl::pipe']]],

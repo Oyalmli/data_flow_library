@@ -102,13 +102,15 @@ $(document).ready(function(){initNavTree('base__generator_8hpp.html',''); initRe
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1gen_1_1_gen_iterator.html">dfl::gen::GenIterator&lt; Gen, T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1gen_1_1base__generator.html">dfl::gen::base_generator&lt; Gen, T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdfl_1_1gen_1_1base__generator.html">dfl::gen::base_generator&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdfl_1_1gen_1_1base__generator_1_1iterator.html">dfl::gen::base_generator&lt; T &gt;::iterator</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a43984b83e71ed0d478d276c825b86319"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__generator_8hpp.html#a43984b83e71ed0d478d276c825b86319">IT</a>(ITER_CLASS,  TYPE)</td></tr>
-<tr class="separator:a43984b83e71ed0d478d276c825b86319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b48daf15a838b6a3785674cefd10e34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__generator_8hpp.html#a3b48daf15a838b6a3785674cefd10e34">MAKE_ITER</a>(CLASS,  TP)</td></tr>
+<tr class="separator:a3b48daf15a838b6a3785674cefd10e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >abstract base class for the generators </p>
@@ -119,23 +121,23 @@ Macros</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="base__generator_8hpp_source.html">base_generator.hpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a43984b83e71ed0d478d276c825b86319" name="a43984b83e71ed0d478d276c825b86319"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43984b83e71ed0d478d276c825b86319">&#9670;&nbsp;</a></span>IT</h2>
+<a id="a3b48daf15a838b6a3785674cefd10e34" name="a3b48daf15a838b6a3785674cefd10e34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b48daf15a838b6a3785674cefd10e34">&#9670;&nbsp;</a></span>MAKE_ITER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IT</td>
+          <td class="memname">#define MAKE_ITER</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">ITER_CLASS, </td>
+          <td class="paramname">CLASS, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">TYPE&#160;</td>
+          <td class="paramname">TP&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -144,15 +146,15 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">typename</span> <a class="code hl_class" href="classdfl_1_1gen_1_1_gen_iterator.html">dfl::gen::base_generator&lt;ITER_CLASS, TYPE&gt;::iterator</a> begin() {    \</div>
-<div class="line">    return                                                                    \</div>
-<div class="line">        typename <a class="code hl_class" href="classdfl_1_1gen_1_1_gen_iterator.html">dfl::gen::base_generator&lt;ITER_CLASS, TYPE&gt;::iterator</a>(<span class="keyword">this</span>); \</div>
-<div class="line">  };                                                                          \</div>
-<div class="line">  typename <a class="code hl_class" href="classdfl_1_1gen_1_1_gen_iterator.html">dfl::gen::base_generator&lt;ITER_CLASS, TYPE&gt;::iterator</a> end() {      \</div>
-<div class="line">    return <span class="keyword">typename</span> <a class="code hl_class" href="classdfl_1_1gen_1_1_gen_iterator.html">dfl::gen::base_generator&lt;ITER_CLASS, TYPE&gt;::iterator</a>(    \</div>
-<div class="line">        <span class="keyword">nullptr</span>);                                                             \</div>
-<div class="line">  };</div>
-<div class="ttc" id="aclassdfl_1_1gen_1_1_gen_iterator_html"><div class="ttname"><a href="classdfl_1_1gen_1_1_gen_iterator.html">dfl::gen::GenIterator</a></div><div class="ttdef"><b>Definition:</b> <a href="base__generator_8hpp_source.html#l00028">base_generator.hpp:29</a></div></div>
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">const</span> CLASS&amp; begin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *<span class="keyword">this</span>; }               \</div>
+<div class="line">  const CLASS&amp; end()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *<span class="keyword">this</span>; }                 \</div>
+<div class="line">  bool operator!=(<span class="keyword">const</span> CLASS&amp;)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> hasNext(); }  \</div>
+<div class="line">  bool operator==(<span class="keyword">const</span> CLASS&amp;)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !hasNext(); } \</div>
+<div class="line">  CLASS&amp; operator++() {                                      \</div>
+<div class="line">    next();                                                  \</div>
+<div class="line">    return *<span class="keyword">this</span>;                                            \</div>
+<div class="line">  }                                                          \</div>
+<div class="line">  TP operator*()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> curr(); }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="base__generator_8hpp_source.html#l00016">16</a> of file <a class="el" href="base__generator_8hpp_source.html">base_generator.hpp</a>.</p>
 

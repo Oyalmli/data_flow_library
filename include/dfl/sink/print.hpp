@@ -16,23 +16,31 @@
 
 namespace dfl::sink {
 
-template <typename Sep>
+template <char Sep = '\0'>
 class print : public pipeline_base<print<Sep>> {
     using OutWriter = Writer<128>;
    public:
     template <typename T>
-    void onReceive(T&& value) {
-        (*_writer) < value < _sep;
+    constexpr void onReceive(T&& value) {
+        if constexpr (Sep == '\0') {
+            (*_writer) < value;
+        } else {
+            (*_writer) < value < Sep;
+        }
         _writer->flush();
     }
 
-    print(Sep sep, FILE* fp=stdout) : _sep{sep} {
+    /**
+     * @brief Prints the incoming value separated by the char template argument
+     * 
+     * @param fp 
+     */
+    print(FILE* fp=stdout) {
         _writer = new OutWriter(fp);
     }
 
    private:
     OutWriter* _writer;
-    Sep _sep;
 };
 }  // namespace dfl::sink
 

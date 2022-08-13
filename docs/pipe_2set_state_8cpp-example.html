@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('pipe_2set_state_8cpp-example.html','')
 <div class="line">  &gt;&gt;= <a id="a0" name="a0"></a>pipe::transform([](<span class="keyword">auto</span> str){</div>
 <div class="line">    uint32_t hashAddress = 5381;</div>
 <div class="line">    str </div>
-<div class="line">    &gt;&gt;= <a id="a1" name="a1"></a>pipe::set_state([](<span class="keyword">auto</span> c, <span class="keyword">auto</span>&amp; ha) { ha = ((ha &lt;&lt; 5) + ha) ^ c; }, hashAddress) </div>
+<div class="line">    &gt;&gt;= <a id="a1" name="a1"></a>pipe::set_state([](<span class="keyword">auto</span> c, <span class="keyword">auto</span> ha) { <span class="keywordflow">return</span> ((ha &lt;&lt; 5) + ha) ^ c; }, hashAddress) </div>
 <div class="line">    &gt;&gt;= sink::hole();</div>
 <div class="line">    <span class="keywordflow">return</span> hashAddress; })</div>
 <div class="line">  &gt;&gt;= sink::print(<span class="charliteral">&#39;\n&#39;</span>);</div>

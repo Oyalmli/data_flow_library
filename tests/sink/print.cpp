@@ -8,7 +8,7 @@ const std::string prefix = "[PRINT]: ";
 TEST_CASE(prefix + "print compiles")
 {
     auto const input = std::vector<int>{};
-    input >>= sink::print("%d");
+    input >>= sink::print();
 
     REQUIRE(true);
 }

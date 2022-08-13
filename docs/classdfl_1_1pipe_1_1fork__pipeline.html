@@ -100,9 +100,9 @@ Inheritance diagram for dfl::pipe::fork_pipeline&lt; TailPipelines &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab5ed3dc47fb1ba1c8deb07d18a3845f4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab5ed3dc47fb1ba1c8deb07d18a3845f4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html#ab5ed3dc47fb1ba1c8deb07d18a3845f4">onReceive</a> (T &amp;&amp;value)</td></tr>
-<tr class="separator:ab5ed3dc47fb1ba1c8deb07d18a3845f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e5a63e061057982ff99b507adfe5751"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
+<tr class="memitem:a9e5a63e061057982ff99b507adfe5751"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html#a9e5a63e061057982ff99b507adfe5751">onReceive</a> (T &amp;&amp;... values)</td></tr>
+<tr class="separator:a9e5a63e061057982ff99b507adfe5751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a183f2378fa3d96d374892f62fd11ab0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html#a183f2378fa3d96d374892f62fd11ab0f">fork_pipeline</a> (TailPipelines const &amp;... tailPipelines)</td></tr>
 <tr class="memdesc:a183f2378fa3d96d374892f62fd11ab0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards the same value to all pipelines defined in it.  <a href="classdfl_1_1pipe_1_1fork__pipeline.html#a183f2378fa3d96d374892f62fd11ab0f">More...</a><br /></td></tr>
 <tr class="separator:a183f2378fa3d96d374892f62fd11ab0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,15 +151,15 @@ template&lt;typename... TailPipelines&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab5ed3dc47fb1ba1c8deb07d18a3845f4" name="ab5ed3dc47fb1ba1c8deb07d18a3845f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5ed3dc47fb1ba1c8deb07d18a3845f4">&#9670;&nbsp;</a></span>onReceive()</h2>
+<a id="a9e5a63e061057982ff99b507adfe5751" name="a9e5a63e061057982ff99b507adfe5751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e5a63e061057982ff99b507adfe5751">&#9670;&nbsp;</a></span>onReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename... TailPipelines&gt; </div>
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename... T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -167,8 +167,8 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html">dfl::pipe::fork_pipeline</a>&lt; TailPipelines &gt;::onReceive </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype">T &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

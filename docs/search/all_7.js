@@ -4,5 +4,6 @@ var searchData=
   ['intersperse_2ehpp_1',['intersperse.hpp',['../intersperse_8hpp.html',1,'']]],
   ['intersperse_5fpipe_2',['intersperse_pipe',['../classdfl_1_1pipe_1_1intersperse__pipe.html',1,'dfl::pipe']]],
   ['io_3',['IO',['../class_i_o.html',1,'']]],
-  ['io_2ehpp_4',['IO.hpp',['../_i_o_8hpp.html',1,'']]]
+  ['io_2ehpp_4',['IO.hpp',['../_i_o_8hpp.html',1,'']]],
+  ['iterator_5',['iterator',['../structdfl_1_1gen_1_1base__generator_1_1iterator.html',1,'dfl::gen::base_generator']]]
 ];

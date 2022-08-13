@@ -11,8 +11,9 @@
 #ifndef DFL_ADJACENT_HPP
 #define DFL_ADJACENT_HPP
 
-#include <dfl/impl/concepts.hpp>
 #include <iterator>
+
+#include "dfl/impl/concepts.hpp"
 
 namespace dfl::gen {
 template <typename Range>
@@ -39,16 +40,20 @@ void operator>>=(adjacent_range<Range> rangesHolder, Pipeline&& pipeline) {
   auto range = rangesHolder.range;
   auto it = range.begin();
   auto end = range.end();
-  
-  if (it == end){ return; }
+
+  if (it == end) {
+    return;
+  }
 
   auto a = *it;
   if (it == end) return;
-  ++it; auto b = *it;
+  ++it;
+  auto b = *it;
   while (it != end) {
     send(a, b, pipeline);
     a = b;
-    ++it; b = *it;
+    ++it;
+    b = *it;
   }
 }
 }  // namespace dfl::gen

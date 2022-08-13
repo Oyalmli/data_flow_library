@@ -1,5 +1,6 @@
 #!/bin/sh
 cd ..
+~/Library/Python/3.9/bin/quom dfl/dfl.hpp dfl.hpp -s "~> stitch <~" -g DFL_+_HPP -I include/
 mkdir -p docs
 cd docs
 rm -rf *

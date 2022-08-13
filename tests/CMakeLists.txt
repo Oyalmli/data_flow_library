@@ -36,6 +36,7 @@ add_executable(
   pipe/transform_s.cpp
 
   sink/hole.cpp
+  sink/histogram.cpp
   sink/for_each.cpp
   sink/max.cpp
   sink/min.cpp

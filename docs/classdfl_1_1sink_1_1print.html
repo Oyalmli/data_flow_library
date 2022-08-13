@@ -100,24 +100,25 @@ Inheritance diagram for dfl::sink::print&lt; Sep &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afa6b84fa216994a95f622d060f64363f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afa6b84fa216994a95f622d060f64363f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1print.html#afa6b84fa216994a95f622d060f64363f">onReceive</a> (T &amp;&amp;value)</td></tr>
-<tr class="separator:afa6b84fa216994a95f622d060f64363f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a034c78f2343c1bd2dec1a57264bd9d9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1print.html#a034c78f2343c1bd2dec1a57264bd9d9e">print</a> (Sep sep, FILE *fp=stdout)</td></tr>
-<tr class="separator:a034c78f2343c1bd2dec1a57264bd9d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e5afa71fb0707f387a255bf94290621"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0e5afa71fb0707f387a255bf94290621"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1print.html#a0e5afa71fb0707f387a255bf94290621">onReceive</a> (T &amp;&amp;value)</td></tr>
+<tr class="separator:a0e5afa71fb0707f387a255bf94290621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246b23633f0b9a49239030c9ca4c5f33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1print.html#a246b23633f0b9a49239030c9ca4c5f33">print</a> (FILE *fp=stdout)</td></tr>
+<tr class="memdesc:a246b23633f0b9a49239030c9ca4c5f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the incoming value separated by the char template argument.  <a href="classdfl_1_1sink_1_1print.html#a246b23633f0b9a49239030c9ca4c5f33">More...</a><br /></td></tr>
+<tr class="separator:a246b23633f0b9a49239030c9ca4c5f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename Sep&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;char Sep = '\0'&gt;<br />
 class dfl::sink::print&lt; Sep &gt;</div>
 <p class="definition">Definition at line <a class="el" href="print_8hpp_source.html#l00020">20</a> of file <a class="el" href="print_8hpp_source.html">print.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a034c78f2343c1bd2dec1a57264bd9d9e" name="a034c78f2343c1bd2dec1a57264bd9d9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a034c78f2343c1bd2dec1a57264bd9d9e">&#9670;&nbsp;</a></span>print()</h2>
+<a id="a246b23633f0b9a49239030c9ca4c5f33" name="a246b23633f0b9a49239030c9ca4c5f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246b23633f0b9a49239030c9ca4c5f33">&#9670;&nbsp;</a></span>print()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Sep &gt; </div>
+template&lt;char Sep = '\0'&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -125,19 +126,9 @@ template&lt;typename Sep &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classdfl_1_1sink_1_1print.html">dfl::sink::print</a>&lt; Sep &gt;::print </td>
           <td>(</td>
-          <td class="paramtype">Sep&#160;</td>
-          <td class="paramname"><em>sep</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>fp</em> = <code>stdout</code>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>fp</em> = <code>stdout</code></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -147,18 +138,26 @@ template&lt;typename Sep &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="print_8hpp_source.html#l00029">29</a> of file <a class="el" href="print_8hpp_source.html">print.hpp</a>.</p>
+<p>Prints the incoming value separated by the char template argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="print_8hpp_source.html#l00038">38</a> of file <a class="el" href="print_8hpp_source.html">print.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afa6b84fa216994a95f622d060f64363f" name="afa6b84fa216994a95f622d060f64363f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa6b84fa216994a95f622d060f64363f">&#9670;&nbsp;</a></span>onReceive()</h2>
+<a id="a0e5afa71fb0707f387a255bf94290621" name="a0e5afa71fb0707f387a255bf94290621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e5afa71fb0707f387a255bf94290621">&#9670;&nbsp;</a></span>onReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Sep &gt; </div>
+template&lt;char Sep = '\0'&gt; </div>
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
 <table class="mlabels">
@@ -166,7 +165,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classdfl_1_1sink_1_1print.html">dfl::sink::print</a>&lt; Sep &gt;::onReceive </td>
+          <td class="memname">constexpr void <a class="el" href="classdfl_1_1sink_1_1print.html">dfl::sink::print</a>&lt; Sep &gt;::onReceive </td>
           <td>(</td>
           <td class="paramtype">T &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -175,7 +174,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -6,7 +6,7 @@ var dir_b157fe9b241659444948dbd68636c824 =
       [ "dfl::gen::counter< T >", "classdfl_1_1gen_1_1counter.html", "classdfl_1_1gen_1_1counter" ]
     ] ],
     [ "file.hpp", "file_8hpp.html", [
-      [ "dfl::gen::file< T, word >", "classdfl_1_1gen_1_1file.html", "classdfl_1_1gen_1_1file" ]
+      [ "dfl::gen::file< T, word, BUF_SIZE >", "classdfl_1_1gen_1_1file.html", "classdfl_1_1gen_1_1file" ]
     ] ],
     [ "mux.hpp", "mux_8hpp.html", "mux_8hpp" ],
     [ "range.hpp", "range_8hpp.html", [

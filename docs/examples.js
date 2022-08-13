@@ -29,6 +29,7 @@ var examples =
     [ "pipe/transform.cpp", "pipe_2transform_8cpp-example.html", null ],
     [ "pipe/transform_s.cpp", "pipe_2transform_s_8cpp-example.html", null ],
     [ "sink/for_each.cpp", "sink_2for_each_8cpp-example.html", null ],
+    [ "sink/histogram.cpp", "sink_2histogram_8cpp-example.html", null ],
     [ "sink/hole.cpp", "sink_2hole_8cpp-example.html", null ],
     [ "sink/max.cpp", "sink_2max_8cpp-example.html", null ],
     [ "sink/min.cpp", "sink_2min_8cpp-example.html", null ],

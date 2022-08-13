@@ -96,10 +96,10 @@ $(document).ready(function(){initNavTree('tee_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TeeBranch&gt;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classdfl_1_1pipe_1_1tee__pipe.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classdfl_1_1pipe_1_1tee__pipe.html">tee_pipe</a> : <span class="keyword">public</span> dfl_base {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>   <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Value, <span class="keyword">typename</span> TailPipeline&gt;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> onReceive(Value&amp;&amp; value, TailPipeline&amp;&amp; tailPipeline) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        send(value, teeBranch_);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        send(FWD(value), tailPipeline);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Values, <span class="keyword">typename</span> TailPipeline&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> onReceive(Values&amp;&amp;... values, TailPipeline&amp;&amp; tailPipeline) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        send(values..., teeBranch_);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        send(FWD(values)..., tailPipeline);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classdfl_1_1pipe_1_1tee__pipe.html">tee_pipe</a>(TeeBranch teeBranch) : teeBranch_(teeBranch) {}</div>

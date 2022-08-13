@@ -3,7 +3,7 @@ var annotated_dup =
     [ "dfl", null, [
       [ "gen", null, [
         [ "adjacent_range", "structdfl_1_1gen_1_1adjacent__range.html", null ],
-        [ "base_generator", "classdfl_1_1gen_1_1base__generator.html", null ],
+        [ "base_generator", "structdfl_1_1gen_1_1base__generator.html", "structdfl_1_1gen_1_1base__generator" ],
         [ "counter", "classdfl_1_1gen_1_1counter.html", "classdfl_1_1gen_1_1counter" ],
         [ "file", "classdfl_1_1gen_1_1file.html", "classdfl_1_1gen_1_1file" ],
         [ "GenIterator", "classdfl_1_1gen_1_1_gen_iterator.html", null ],
@@ -15,8 +15,8 @@ var annotated_dup =
       [ "mod", null, [
         [ "noise", "classdfl_1_1mod_1_1noise.html", "classdfl_1_1mod_1_1noise" ],
         [ "random_err", "classdfl_1_1mod_1_1random__err.html", "classdfl_1_1mod_1_1random__err" ],
-        [ "repeat", "classdfl_1_1mod_1_1repeat.html", "classdfl_1_1mod_1_1repeat" ],
-        [ "take", "classdfl_1_1mod_1_1take.html", "classdfl_1_1mod_1_1take" ]
+        [ "repeat", "classdfl_1_1mod_1_1repeat.html", null ],
+        [ "take", "classdfl_1_1mod_1_1take.html", null ]
       ] ],
       [ "pipe", null, [
         [ "chunks", "classdfl_1_1pipe_1_1chunks.html", "classdfl_1_1pipe_1_1chunks" ],
@@ -39,10 +39,11 @@ var annotated_dup =
       ] ],
       [ "sink", null, [
         [ "for_each_pipeline", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],
+        [ "histogram_pipeline", "classdfl_1_1sink_1_1histogram__pipeline.html", null ],
         [ "hole", "classdfl_1_1sink_1_1hole.html", "classdfl_1_1sink_1_1hole" ],
         [ "max_pipeline", "classdfl_1_1sink_1_1max__pipeline.html", null ],
         [ "min_pipeline", "classdfl_1_1sink_1_1min__pipeline.html", null ],
-        [ "print", "classdfl_1_1sink_1_1print.html", null ],
+        [ "print", "classdfl_1_1sink_1_1print.html", "classdfl_1_1sink_1_1print" ],
         [ "printf_pipeline", "classdfl_1_1sink_1_1printf__pipeline.html", null ],
         [ "push_back_pipeline", "classdfl_1_1sink_1_1push__back__pipeline.html", null ],
         [ "sum_pipeline", "classdfl_1_1sink_1_1sum__pipeline.html", null ],

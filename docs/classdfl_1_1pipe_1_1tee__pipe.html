@@ -100,9 +100,9 @@ Inheritance diagram for dfl::pipe::tee_pipe&lt; TeeBranch &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0427d62e69f2cfa50ad37b415d4bd271"><td class="memTemplParams" colspan="2">template&lt;typename Value , typename TailPipeline &gt; </td></tr>
-<tr class="memitem:a0427d62e69f2cfa50ad37b415d4bd271"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1tee__pipe.html#a0427d62e69f2cfa50ad37b415d4bd271">onReceive</a> (Value &amp;&amp;value, TailPipeline &amp;&amp;tailPipeline)</td></tr>
-<tr class="separator:a0427d62e69f2cfa50ad37b415d4bd271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b81665202803f8c9946447f8b5d923"><td class="memTemplParams" colspan="2">template&lt;typename... Values, typename TailPipeline &gt; </td></tr>
+<tr class="memitem:a93b81665202803f8c9946447f8b5d923"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1tee__pipe.html#a93b81665202803f8c9946447f8b5d923">onReceive</a> (Values &amp;&amp;... values, TailPipeline &amp;&amp;tailPipeline)</td></tr>
+<tr class="separator:a93b81665202803f8c9946447f8b5d923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae76cb974fef2001ceae05e6d909363ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1tee__pipe.html#ae76cb974fef2001ceae05e6d909363ae">tee_pipe</a> (TeeBranch teeBranch)</td></tr>
 <tr class="separator:ae76cb974fef2001ceae05e6d909363ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -142,15 +142,15 @@ template&lt;typename TeeBranch &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0427d62e69f2cfa50ad37b415d4bd271" name="a0427d62e69f2cfa50ad37b415d4bd271"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0427d62e69f2cfa50ad37b415d4bd271">&#9670;&nbsp;</a></span>onReceive()</h2>
+<a id="a93b81665202803f8c9946447f8b5d923" name="a93b81665202803f8c9946447f8b5d923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93b81665202803f8c9946447f8b5d923">&#9670;&nbsp;</a></span>onReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TeeBranch &gt; </div>
 <div class="memtemplate">
-template&lt;typename Value , typename TailPipeline &gt; </div>
+template&lt;typename... Values, typename TailPipeline &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -158,8 +158,8 @@ template&lt;typename Value , typename TailPipeline &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classdfl_1_1pipe_1_1tee__pipe.html">dfl::pipe::tee_pipe</a>&lt; TeeBranch &gt;::onReceive </td>
           <td>(</td>
-          <td class="paramtype">Value &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype">Values &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
