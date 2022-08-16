@@ -40,6 +40,7 @@
 #include "dfl/pipe/partition.hpp"
 #include "dfl/pipe/scanl.hpp"
 #include "dfl/pipe/set_state.hpp"
+#include "dfl/pipe/set_var.hpp"
 #include "dfl/pipe/side_effect.hpp"
 #include "dfl/pipe/stride.hpp"
 #include "dfl/pipe/take.hpp"
@@ -56,6 +57,7 @@
 #include "dfl/sink/printf.hpp"
 #include "dfl/sink/push_back.hpp"
 #include "dfl/sink/to_out_stream.hpp"
+#include "dfl/sink/set_var.hpp"
 #include "dfl/sink/sum.hpp"
 #include "dfl/util/IO.hpp"
 

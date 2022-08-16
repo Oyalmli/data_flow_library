@@ -13,7 +13,7 @@ int main () {
     >>= pipe::transform([](auto i){ return i-15; })
     >>= pipe::transform([](auto i){ return i/3; })
     >>= pipe::transform([](auto i){ return i-1; })
-    >>= sink::print('\n');
+    >>= sink::print<'\n'>();
 }
 
 /* ./transform

@@ -25,10 +25,10 @@ class range : public base_generator<T> {
    *
    */
 
-  range(T max=0) 
+  constexpr range(T max=0) 
     : _min{0}, _max(max), _step(1), _curr(0) 
     {};
-  range(T min, T max, T step=1)
+  constexpr range(T min, T max, T step=1)
     : _min(min), _max(max), _step(step), _curr(min) 
     {};
   

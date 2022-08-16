@@ -29,6 +29,7 @@ var annotated_dup =
         [ "partition_pipe", "classdfl_1_1pipe_1_1partition__pipe.html", null ],
         [ "scanl_pipe", "classdfl_1_1pipe_1_1scanl__pipe.html", null ],
         [ "set_state_pipe", "classdfl_1_1pipe_1_1set__state__pipe.html", null ],
+        [ "set_var_pipe", "classdfl_1_1pipe_1_1set__var__pipe.html", "classdfl_1_1pipe_1_1set__var__pipe" ],
         [ "side_effect_pipe", "classdfl_1_1pipe_1_1side__effect__pipe.html", null ],
         [ "stride", "classdfl_1_1pipe_1_1stride.html", null ],
         [ "take", "classdfl_1_1pipe_1_1take.html", "classdfl_1_1pipe_1_1take" ],
@@ -46,6 +47,7 @@ var annotated_dup =
         [ "print", "classdfl_1_1sink_1_1print.html", "classdfl_1_1sink_1_1print" ],
         [ "printf_pipeline", "classdfl_1_1sink_1_1printf__pipeline.html", null ],
         [ "push_back_pipeline", "classdfl_1_1sink_1_1push__back__pipeline.html", null ],
+        [ "set_var_pipe", "classdfl_1_1sink_1_1set__var__pipe.html", "classdfl_1_1sink_1_1set__var__pipe" ],
         [ "sum_pipeline", "classdfl_1_1sink_1_1sum__pipeline.html", null ],
         [ "to_out_stream_pipeline", "classdfl_1_1sink_1_1to__out__stream__pipeline.html", null ]
       ] ]

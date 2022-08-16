@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('gen_2file_8cpp-example.html',''); init
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main (){</div>
 <div class="line">    <span class="keyword">auto</span> file_gen = gen::file&lt;int&gt;(stdin);</div>
-<div class="line">    file_gen &gt;&gt;= sink::print(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line">    file_gen &gt;&gt;= sink::print&lt;&#39;\n&#39;&gt;();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* input.txt</span></div>

@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('pipe_2side_effect_8cpp-example.html','
 <div class="line"> </div>
 <div class="line">    range_gen</div>
 <div class="line">    &gt;&gt;= <a id="a0" name="a0"></a>pipe::side_effect([](){ std::this_thread::sleep_for(500ms); })</div>
-<div class="line">    &gt;&gt;= sink::print(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line">    &gt;&gt;= sink::print&lt;&#39;\n&#39;&gt;();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//every print is separated by a 500ms wait</span></div>

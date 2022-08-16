@@ -10,7 +10,7 @@ int main () {
 
     range_gen
     >>= pipe::side_effect([](){ std::this_thread::sleep_for(500ms); })
-    >>= sink::print('\n');
+    >>= sink::print<'\n'>();
 }
 
 //every print is separated by a 500ms wait

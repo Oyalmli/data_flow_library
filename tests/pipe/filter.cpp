@@ -12,7 +12,7 @@ TEST_CASE(prefix + "filters out odd numbers") {
     std::vector<int> res;
 
     input 
-    >>= pipe::filter([](int i) { return i % 2 == 0; }) 
+    >>= pipe::filter(_even) 
     >>= sink::push_back(res);
 
     REQUIRE(res == expected);

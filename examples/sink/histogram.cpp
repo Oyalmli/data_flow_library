@@ -1,15 +1,27 @@
 #include "dfl/dfl.hpp"
-#include <unordered_map>
+#include <map>
 
 using namespace dfl;
 int main (){
-    std::unordered_map<int, int> hist;
+    std::map<int, int> hist;
     mod::noise(5, 
     mod::take(100,
-    gen::value(0)))
+    gen::value(5)))
     >>= sink::histogram(hist);
+
+	for (auto const [k,v] : hist) {
+		printf("%d: %d\n", k, v);
+	}
 }
 
 /*
-map of [value, number of times the value occurred]
+1: 12
+2: 9
+3: 12
+4: 7
+5: 21
+6: 12
+7: 10
+8: 9
+9: 8
 */

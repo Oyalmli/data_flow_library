@@ -101,23 +101,23 @@ $(document).ready(function(){initNavTree('range_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classdfl_1_1gen_1_1range.html#a0d9291ab60e672edff5ffdb242a6e96c">   28</a></span>  <a class="code hl_function" href="classdfl_1_1gen_1_1range.html#a0d9291ab60e672edff5ffdb242a6e96c">range</a>(T max=0) </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classdfl_1_1gen_1_1range.html#af685e44fb7de33c642b3e56b1b4044b9">   28</a></span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="classdfl_1_1gen_1_1range.html#af685e44fb7de33c642b3e56b1b4044b9">range</a>(T max=0) </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    : _min{0}, _max(max), _step(1), _curr(0) </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {};</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_function" href="classdfl_1_1gen_1_1range.html#a0d9291ab60e672edff5ffdb242a6e96c">range</a>(T min, T max, T step=1)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">constexpr</span> <a class="code hl_function" href="classdfl_1_1gen_1_1range.html#af685e44fb7de33c642b3e56b1b4044b9">range</a>(T min, T max, T step=1)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    : _min(min), _max(max), _step(step), _curr(min) </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {};</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">bool</span> hasNext()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _max &gt; _curr; };</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  T curr()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _curr; }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> next() { _curr += _step; }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  MAKE_ITER(<a class="code hl_function" href="classdfl_1_1gen_1_1range.html#a0d9291ab60e672edff5ffdb242a6e96c">range</a>, T);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  MAKE_ITER(<a class="code hl_function" href="classdfl_1_1gen_1_1range.html#af685e44fb7de33c642b3e56b1b4044b9">range</a>, T);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}  <span class="comment">// namespace dfl::gen</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif  </span><span class="comment">// DFL_GEN_RANGE_HPP</span></div>
 <div class="ttc" id="aclassdfl_1_1gen_1_1range_html"><div class="ttname"><a href="classdfl_1_1gen_1_1range.html">dfl::gen::range</a></div><div class="ttdef"><b>Definition:</b> <a href="range_8hpp_source.html#l00016">range.hpp:16</a></div></div>
-<div class="ttc" id="aclassdfl_1_1gen_1_1range_html_a0d9291ab60e672edff5ffdb242a6e96c"><div class="ttname"><a href="classdfl_1_1gen_1_1range.html#a0d9291ab60e672edff5ffdb242a6e96c">dfl::gen::range::range</a></div><div class="ttdeci">range(T max=0)</div><div class="ttdoc">Construct a range generator.</div><div class="ttdef"><b>Definition:</b> <a href="range_8hpp_source.html#l00028">range.hpp:28</a></div></div>
+<div class="ttc" id="aclassdfl_1_1gen_1_1range_html_af685e44fb7de33c642b3e56b1b4044b9"><div class="ttname"><a href="classdfl_1_1gen_1_1range.html#af685e44fb7de33c642b3e56b1b4044b9">dfl::gen::range::range</a></div><div class="ttdeci">constexpr range(T max=0)</div><div class="ttdoc">Construct a range generator.</div><div class="ttdef"><b>Definition:</b> <a href="range_8hpp_source.html#l00028">range.hpp:28</a></div></div>
 <div class="ttc" id="astructdfl_1_1gen_1_1base__generator_html"><div class="ttname"><a href="structdfl_1_1gen_1_1base__generator.html">dfl::gen::base_generator</a></div><div class="ttdef"><b>Definition:</b> <a href="base__generator_8hpp_source.html#l00043">base_generator.hpp:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

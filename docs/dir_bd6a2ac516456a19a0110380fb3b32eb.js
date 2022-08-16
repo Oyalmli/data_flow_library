@@ -12,6 +12,7 @@ var dir_bd6a2ac516456a19a0110380fb3b32eb =
     ] ],
     [ "printf.hpp", "printf_8hpp.html", "printf_8hpp" ],
     [ "push_back.hpp", "push__back_8hpp.html", "push__back_8hpp" ],
+    [ "set_var.hpp", "sink_2set__var_8hpp_source.html", null ],
     [ "sum.hpp", "sum_8hpp_source.html", null ],
     [ "to_out_stream.hpp", "to__out__stream_8hpp.html", "to__out__stream_8hpp" ]
 ];

@@ -7,7 +7,7 @@ int main (){
 
     range_gen
     >>= pipe::drop(90)
-    >>= sink::print('\n');
+    >>= sink::print<'\n'>();
 }
 
 /* ./drop

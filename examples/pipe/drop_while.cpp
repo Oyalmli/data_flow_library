@@ -7,7 +7,7 @@ int main (){
 
     range_gen
     >>= pipe::drop_while([](auto i){ return i < 90; })
-    >>= sink::print('\n');
+    >>= sink::print<'\n'>();
 }
 
 /* ./drop_while

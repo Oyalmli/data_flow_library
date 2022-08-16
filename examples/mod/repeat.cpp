@@ -10,7 +10,7 @@ int main (){
         gen::range(100))));
 
     inf_gen  
-    >>= sink::print('\n'); 
+    >>= sink::print<'\n'>(); 
 }
 
 /* ./repeat

@@ -15,7 +15,7 @@ int main (){
         >>= sink::push_back(res)
     );
 
-    res >>= sink::print(' ');
+    res >>= sink::print<' '>();
     std::cout << '\n';
 }
 

@@ -7,7 +7,7 @@ int main () {
 
     range_gen
     >>= pipe::stride(5)
-    >>= sink::print('\n');
+    >>= sink::print<'\n'>();
 }
 
 /* ./stride

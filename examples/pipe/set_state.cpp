@@ -15,7 +15,7 @@ int main() {
     >>= pipe::set_state([](auto c, auto ha) { return ((ha << 5) + ha) ^ c; }, hashAddress) 
     >>= sink::hole();
     return hashAddress; })
-  >>= sink::print('\n');
+  >>= sink::print<'\n'>();
 }
 
 /* input.txt

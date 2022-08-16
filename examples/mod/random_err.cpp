@@ -9,7 +9,7 @@ int main (){
         gen::range(20));
 
     noisy_range_gen 
-    >>= sink::print('\n'); 
+    >>= sink::print<'\n'>(); 
 }
 
 /* ./random_err

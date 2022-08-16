@@ -9,7 +9,7 @@ int main (){
     }
     std::cout << "\n--------------\n\n";
     auto range = gen::range(1,20,3); 
-    range >>= sink::print('\n');
+    range >>= sink::print<'\n'>();
 }
 
 /* ./range
