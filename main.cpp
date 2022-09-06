@@ -27,7 +27,6 @@ int main (){
     {
         int64_t even_sum = 0;
         int64_t odd_sum = 0;
-
         auto start = std::chrono::high_resolution_clock::now();
         
         gen::range(1'000'000'000)

@@ -7,9 +7,9 @@ namespace dfl {
 // In function, State = State of class, O = the other incoming variable
 #define MK(NAME, FUNC)                                 \
   template <typename State>                            \
-  class _##NAME {                                      \
+  class f##NAME {                                      \
    public:                                             \
-    _##NAME(State&& state) : _state(state) {}          \
+    f##NAME(State&& state) : _state(state) {}          \
                                                        \
     template <typename O>                              \
     auto operator()(O o) const {                       \
@@ -18,10 +18,10 @@ namespace dfl {
     State _state;                                      \
   };                                                   \
   template <typename State>                            \
-  _##NAME<State> NAME(State&& state) {                 \
-    return _##NAME<State>{std::forward<State>(state)}; \
+  f##NAME<State> NAME(State&& state) {                 \
+    return f##NAME<State>{std::forward<State>(state)}; \
   }
-
+auto _id = [](auto x){ return x; };
 auto _not = [](auto x) { return !x; };
 auto _not_ = [](auto g) { return [=](auto x) { return !g(x); }; };
 auto _even = [](auto x) { return (x & 1) == 0; };
@@ -33,7 +33,7 @@ auto _negate_ = [](auto g) { return [=](auto x) { return -g(x); }; };
 MK(_equal, o == _state);
 MK(_equal_, [=](auto x) { return (f(x) == _state); });
 MK(_greater_than, o > _state);
-MK(_greater_than_, [=](auto x) { return o(x) > _state; });
+MK(_greater_than_, [=](auto x) { auto r = o(x); return r > _state; });
 MK(_greater_than_equal, o >= _state);
 MK(_greater_than_equal_, [=](auto x) { return (o(x) >= _state); });
 MK(_less_than, o < _state);
@@ -42,10 +42,20 @@ MK(_less_than_equal, o <= _state);
 MK(_less_than_equal_, [=](auto x) { return (o(x) <= _state); });
 MK(_addValue, o + _state);
 MK(_addValue_, [=](auto x) { return o(x) + _state; });
-MK(_mult, o * _state);
+MK(_subValue, o - _state);
+MK(_subValue_, [=](auto x) { return o(x) - _state; });
+MK(_mult, o* _state);
 MK(_mult_, [=](auto x) { return o(x) * _state; });
 MK(_mod, o % _state);
 MK(_mod_, [=](auto x) { return o(x) % _state; });
+MK(_constant, _state);
+
+auto _between = [](auto a, auto b) {
+  return [=](auto x) { return a <= x && x <= b; };
+};
+auto _outside = [](auto a, auto b) {
+  return [=](auto i) { return i < a || i > b; };
+};
 
 auto _add = [](auto a, auto b) { return a + b; };
 auto _add_ = [](auto g) { return [=](auto a, auto b) { return g(a) + b; }; };

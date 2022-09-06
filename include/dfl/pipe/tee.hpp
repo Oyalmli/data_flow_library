@@ -17,7 +17,7 @@ class tee_pipe : public dfl_base {
    public:
     template <typename... Values, typename TailPipeline>
     void onReceive(Values&&... values, TailPipeline&& tailPipeline) {
-        send(values..., teeBranch_);
+        send(FWD(values)..., teeBranch_);
         send(FWD(values)..., tailPipeline);
     }
 
