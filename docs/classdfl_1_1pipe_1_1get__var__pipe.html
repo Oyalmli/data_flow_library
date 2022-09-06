@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Flow Library: dfl::pipe::fork_pipeline&lt; TailPipelines &gt; Class Template Reference</title>
+<title>Data Flow Library: dfl::pipe::get_var_pipe&lt; State &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classdfl_1_1pipe_1_1fork__pipeline.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classdfl_1_1pipe_1_1get__var__pipe.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -87,47 +87,47 @@ $(document).ready(function(){initNavTree('classdfl_1_1pipe_1_1fork__pipeline.htm
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classdfl_1_1pipe_1_1fork__pipeline-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">dfl::pipe::fork_pipeline&lt; TailPipelines &gt; Class Template Reference</div></div>
+<a href="classdfl_1_1pipe_1_1get__var__pipe-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">dfl::pipe::get_var_pipe&lt; State &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for dfl::pipe::fork_pipeline&lt; TailPipelines &gt;:</div>
+Inheritance diagram for dfl::pipe::get_var_pipe&lt; State &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classdfl_1_1pipe_1_1fork__pipeline.png" alt=""/>
+  <img src="classdfl_1_1pipe_1_1get__var__pipe.png" alt=""/>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9e5a63e061057982ff99b507adfe5751"><td class="memTemplParams" colspan="2">template&lt;typename... T&gt; </td></tr>
-<tr class="memitem:a9e5a63e061057982ff99b507adfe5751"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html#a9e5a63e061057982ff99b507adfe5751">onReceive</a> (T &amp;&amp;... values)</td></tr>
-<tr class="separator:a9e5a63e061057982ff99b507adfe5751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a183f2378fa3d96d374892f62fd11ab0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html#a183f2378fa3d96d374892f62fd11ab0f">fork_pipeline</a> (TailPipelines const &amp;... tailPipelines)</td></tr>
-<tr class="memdesc:a183f2378fa3d96d374892f62fd11ab0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards the same value to all pipelines defined in it.  <a href="classdfl_1_1pipe_1_1fork__pipeline.html#a183f2378fa3d96d374892f62fd11ab0f">More...</a><br /></td></tr>
-<tr class="separator:a183f2378fa3d96d374892f62fd11ab0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83f991d5111f08f2ee5d70cc38a06e8"><td class="memTemplParams" colspan="2">template&lt;typename Value , typename TailPipeline &gt; </td></tr>
+<tr class="memitem:ab83f991d5111f08f2ee5d70cc38a06e8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1get__var__pipe.html#ab83f991d5111f08f2ee5d70cc38a06e8">onReceive</a> (Value &amp;&amp;value, TailPipeline &amp;&amp;tailPipeline)</td></tr>
+<tr class="separator:ab83f991d5111f08f2ee5d70cc38a06e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5f19a22f44b54a4c4dc19ec50f7a57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1get__var__pipe.html#a6c5f19a22f44b54a4c4dc19ec50f7a57">get_var_pipe</a> (State state)</td></tr>
+<tr class="memdesc:a6c5f19a22f44b54a4c4dc19ec50f7a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state of the given variable.  <a href="classdfl_1_1pipe_1_1get__var__pipe.html#a6c5f19a22f44b54a4c4dc19ec50f7a57">More...</a><br /></td></tr>
+<tr class="separator:a6c5f19a22f44b54a4c4dc19ec50f7a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename... TailPipelines&gt;<br />
-class dfl::pipe::fork_pipeline&lt; TailPipelines &gt;</div>
-<p class="definition">Definition at line <a class="el" href="fork_8hpp_source.html#l00019">19</a> of file <a class="el" href="fork_8hpp_source.html">fork.hpp</a>.</p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename State&gt;<br />
+class dfl::pipe::get_var_pipe&lt; State &gt;</div>
+<p class="definition">Definition at line <a class="el" href="get__var_8hpp_source.html#l00016">16</a> of file <a class="el" href="get__var_8hpp_source.html">get_var.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a183f2378fa3d96d374892f62fd11ab0f" name="a183f2378fa3d96d374892f62fd11ab0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a183f2378fa3d96d374892f62fd11ab0f">&#9670;&nbsp;</a></span>fork_pipeline()</h2>
+<a id="a6c5f19a22f44b54a4c4dc19ec50f7a57" name="a6c5f19a22f44b54a4c4dc19ec50f7a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5f19a22f44b54a4c4dc19ec50f7a57">&#9670;&nbsp;</a></span>get_var_pipe()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... TailPipelines&gt; </div>
+template&lt;typename State &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html">dfl::pipe::fork_pipeline</a>&lt; TailPipelines &gt;::fork_pipeline </td>
+          <td class="memname"><a class="el" href="classdfl_1_1pipe_1_1get__var__pipe.html">dfl::pipe::get_var_pipe</a>&lt; State &gt;::get_var_pipe </td>
           <td>(</td>
-          <td class="paramtype">TailPipelines const &amp;...&#160;</td>
-          <td class="paramname"><em>tailPipelines</em></td><td>)</td>
+          <td class="paramtype">State&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -138,38 +138,58 @@ template&lt;typename... TailPipelines&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Forwards the same value to all pipelines defined in it. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tailPipelines</td><td></td></tr>
+<p>Sets the state of the given variable. </p>
+<p >EXAMPLE: int last = 0; gen::range(100) </p><blockquote class="doxtable">
+<p >&zwj;&gt;= pipe::set_var(last) &gt;&gt;= sink::hole(); printf("%d\n", max); </p>
+</blockquote>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">State</td><td></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>set_var_pipe&lt;State&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="fork_8hpp_source.html#l00031">31</a> of file <a class="el" href="fork_8hpp_source.html">fork.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="get__var_8hpp_source.html#l00035">35</a> of file <a class="el" href="get__var_8hpp_source.html">get_var.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9e5a63e061057982ff99b507adfe5751" name="a9e5a63e061057982ff99b507adfe5751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e5a63e061057982ff99b507adfe5751">&#9670;&nbsp;</a></span>onReceive()</h2>
+<a id="ab83f991d5111f08f2ee5d70cc38a06e8" name="ab83f991d5111f08f2ee5d70cc38a06e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83f991d5111f08f2ee5d70cc38a06e8">&#9670;&nbsp;</a></span>onReceive()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename... TailPipelines&gt; </div>
+template&lt;typename State &gt; </div>
 <div class="memtemplate">
-template&lt;typename... T&gt; </div>
+template&lt;typename Value , typename TailPipeline &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html">dfl::pipe::fork_pipeline</a>&lt; TailPipelines &gt;::onReceive </td>
+          <td class="memname">void <a class="el" href="classdfl_1_1pipe_1_1get__var__pipe.html">dfl::pipe::get_var_pipe</a>&lt; State &gt;::onReceive </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>values</em></td><td>)</td>
+          <td class="paramtype">Value &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">TailPipeline &amp;&amp;&#160;</td>
+          <td class="paramname"><em>tailPipeline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -179,19 +199,19 @@ template&lt;typename... T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="fork_8hpp_source.html#l00022">22</a> of file <a class="el" href="fork_8hpp_source.html">fork.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="get__var_8hpp_source.html#l00019">19</a> of file <a class="el" href="get__var_8hpp_source.html">get_var.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/dfl/pipe/<a class="el" href="fork_8hpp_source.html">fork.hpp</a></li>
+<li>include/dfl/pipe/<a class="el" href="get__var_8hpp_source.html">get_var.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>dfl</b></li><li class="navelem"><b>pipe</b></li><li class="navelem"><a class="el" href="classdfl_1_1pipe_1_1fork__pipeline.html">fork_pipeline</a></li>
+    <li class="navelem"><b>dfl</b></li><li class="navelem"><b>pipe</b></li><li class="navelem"><a class="el" href="classdfl_1_1pipe_1_1get__var__pipe.html">get_var_pipe</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

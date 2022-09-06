@@ -9,6 +9,7 @@ var hierarchy =
       [ "dfl::gen::value< T >", "classdfl_1_1gen_1_1value.html", null ]
     ] ],
     [ "dfl::gen::base_generator< Gen::value_type >", "structdfl_1_1gen_1_1base__generator.html", [
+      [ "dfl::mod::flag_mod< _flagTp, Gen >", "classdfl_1_1mod_1_1flag__mod.html", null ],
       [ "dfl::mod::noise< Gen >", "classdfl_1_1mod_1_1noise.html", null ],
       [ "dfl::mod::random_err< Gen >", "classdfl_1_1mod_1_1random__err.html", null ],
       [ "dfl::mod::repeat< Gen >", "classdfl_1_1mod_1_1repeat.html", null ],
@@ -19,6 +20,7 @@ var hierarchy =
       [ "dfl::pipe::drop", "classdfl_1_1pipe_1_1drop.html", null ],
       [ "dfl::pipe::drop_while_pipe< Predicate >", "classdfl_1_1pipe_1_1drop__while__pipe.html", null ],
       [ "dfl::pipe::filter_pipe< Predicate >", "classdfl_1_1pipe_1_1filter__pipe.html", null ],
+      [ "dfl::pipe::get_var_pipe< State >", "classdfl_1_1pipe_1_1get__var__pipe.html", null ],
       [ "dfl::pipe::intersperse_pipe< Delimiter >", "classdfl_1_1pipe_1_1intersperse__pipe.html", null ],
       [ "dfl::pipe::moving_avg< T, N >", "classdfl_1_1pipe_1_1moving__avg.html", null ],
       [ "dfl::pipe::scanl_pipe< Function, State >", "classdfl_1_1pipe_1_1scanl__pipe.html", null ],
@@ -39,8 +41,8 @@ var hierarchy =
     ] ],
     [ "dfl::gen::muxer< Ranges >", "structdfl_1_1gen_1_1muxer.html", null ],
     [ "pipeline_base", null, [
-      [ "dfl::pipe::fork_pipeline< TailPipelines >", "classdfl_1_1pipe_1_1fork__pipeline.html", null ],
-      [ "dfl::pipe::partition_pipe< OutputPipeTrue, OutputPipeFalse, Predicate >", "classdfl_1_1pipe_1_1partition__pipe.html", null ],
+      [ "dfl::red::fork_pipeline< TailPipelines >", "classdfl_1_1red_1_1fork__pipeline.html", null ],
+      [ "dfl::red::partition_pipe< OutputPipeTrue, OutputPipeFalse, Predicate >", "classdfl_1_1red_1_1partition__pipe.html", null ],
       [ "dfl::sink::for_each_pipeline< Function >", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],
       [ "dfl::sink::histogram_pipeline< T >", "classdfl_1_1sink_1_1histogram__pipeline.html", null ],
       [ "dfl::sink::hole", "classdfl_1_1sink_1_1hole.html", null ],

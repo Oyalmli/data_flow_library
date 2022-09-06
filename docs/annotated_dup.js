@@ -13,6 +13,7 @@ var annotated_dup =
         [ "value", "classdfl_1_1gen_1_1value.html", "classdfl_1_1gen_1_1value" ]
       ] ],
       [ "mod", null, [
+        [ "flag_mod", "classdfl_1_1mod_1_1flag__mod.html", null ],
         [ "noise", "classdfl_1_1mod_1_1noise.html", "classdfl_1_1mod_1_1noise" ],
         [ "random_err", "classdfl_1_1mod_1_1random__err.html", "classdfl_1_1mod_1_1random__err" ],
         [ "repeat", "classdfl_1_1mod_1_1repeat.html", null ],
@@ -23,10 +24,9 @@ var annotated_dup =
         [ "drop", "classdfl_1_1pipe_1_1drop.html", null ],
         [ "drop_while_pipe", "classdfl_1_1pipe_1_1drop__while__pipe.html", null ],
         [ "filter_pipe", "classdfl_1_1pipe_1_1filter__pipe.html", null ],
-        [ "fork_pipeline", "classdfl_1_1pipe_1_1fork__pipeline.html", "classdfl_1_1pipe_1_1fork__pipeline" ],
+        [ "get_var_pipe", "classdfl_1_1pipe_1_1get__var__pipe.html", "classdfl_1_1pipe_1_1get__var__pipe" ],
         [ "intersperse_pipe", "classdfl_1_1pipe_1_1intersperse__pipe.html", null ],
         [ "moving_avg", "classdfl_1_1pipe_1_1moving__avg.html", "classdfl_1_1pipe_1_1moving__avg" ],
-        [ "partition_pipe", "classdfl_1_1pipe_1_1partition__pipe.html", null ],
         [ "scanl_pipe", "classdfl_1_1pipe_1_1scanl__pipe.html", null ],
         [ "set_state_pipe", "classdfl_1_1pipe_1_1set__state__pipe.html", null ],
         [ "set_var_pipe", "classdfl_1_1pipe_1_1set__var__pipe.html", "classdfl_1_1pipe_1_1set__var__pipe" ],
@@ -37,6 +37,10 @@ var annotated_dup =
         [ "tee_pipe", "classdfl_1_1pipe_1_1tee__pipe.html", null ],
         [ "transform_pipe", "classdfl_1_1pipe_1_1transform__pipe.html", null ],
         [ "transform_s_pipe", "classdfl_1_1pipe_1_1transform__s__pipe.html", null ]
+      ] ],
+      [ "red", null, [
+        [ "fork_pipeline", "classdfl_1_1red_1_1fork__pipeline.html", "classdfl_1_1red_1_1fork__pipeline" ],
+        [ "partition_pipe", "classdfl_1_1red_1_1partition__pipe.html", null ]
       ] ],
       [ "sink", null, [
         [ "for_each_pipeline", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],

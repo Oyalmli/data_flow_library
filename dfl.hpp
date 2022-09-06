@@ -884,6 +884,51 @@ class noise : public gen::base_generator<typename Gen::value_type> {
 #endif  // GEN_MOD_NOISE_HPP
 
 /**
+ * @file take.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Take generator modifyier class
+ * @version 0.1
+ * @date 2022-04-28
+ *
+ * @copyright Copyright (c) 2022
+ * @example mod/take.cpp
+ */
+#ifndef GEN_FLAG_HPP
+#define GEN_FLAG_HPP
+
+namespace dfl::mod {
+template <typename _flagTp, class Gen>
+class flag_mod : public gen::base_generator<typename Gen::value_type> {
+  using T = typename Gen::value_type;
+
+ private:
+  Gen _gen;
+  _flagTp _flag;
+  T _curr = _gen.curr();
+
+ public:
+  flag_mod(_flagTp flag, const Gen generator) : _gen{generator}, _flag(flag) {}
+
+  bool hasNext() const { return _gen.hasNext() && _flag; }
+  T curr() const { return _curr; }
+
+  void next() {
+    _gen.next();
+    _curr = _gen.curr();
+  }
+  
+  MAKE_ITER(flag_mod, T);
+};
+
+template<typename _flagTp, typename Gen>
+flag_mod<_flagTp, Gen> flag(_flagTp&& continue_flag, const Gen generator) {
+    return flag_mod<_flagTp, Gen>{continue_flag, generator};
+}
+}  // namespace dfl::gen
+
+#endif  // GEN_MOD_TAKE_HPP
+
+/**
  * @file random_err.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
  * @brief Random Error generator modifyier class
@@ -1425,7 +1470,7 @@ auto filter(Predicate&& predicate) {
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * @example pipe/fork.cpp
+ * @example red/fork.cpp
  */
 #ifndef DFL_FORK_HPP
 #define DFL_FORK_HPP
@@ -1524,8 +1569,7 @@ auto dereference(std::tuple<Ts...> const& tuple) {
 
 #endif /* DFL_META_HPP */
 
-namespace dfl {
-namespace pipe {
+namespace dfl::red {
 template <typename... TailPipelines>
 class fork_pipeline : public pipeline_base<fork_pipeline<TailPipelines...>> {
    public:
@@ -1549,10 +1593,55 @@ template <typename... TailPipelines>
 fork_pipeline<TailPipelines...> fork(TailPipelines const&... tailPipelines) {
     return fork_pipeline<TailPipelines...>(tailPipelines...);
 }
-}  // namespace pipe
-}  // namespace dfl
+}  // namespace dfl::pipe
 
 #endif /* DFL_FORK_HPP */
+/**
+ * @file get_var.hpp
+ * @author Øyvind Almli (oyvind.almli@gmail.com)
+ * @brief Set state pipeline class
+ * @version 0.1
+ * @date 2022-04-28
+ * 
+ * @copyright Copyright (c) 2022
+ * @example pipe/get_var.cpp
+ */
+#ifndef DFL_PIPE_GET_VAR_HPP
+#define DFL_PIPE_GET_VAR_HPP
+
+namespace dfl::pipe {
+template <typename State>
+class get_var_pipe : public dfl_base {
+   public:
+    template <typename Value, typename TailPipeline>
+    void onReceive(Value&& value, TailPipeline&& tailPipeline) {
+        send(FWD(state_), tailPipeline);
+    }
+    /**
+     * @brief Sets the state of the given variable
+     * 
+     * EXAMPLE:
+     * int last = 0;
+     * gen::range(100)
+     * >>= pipe::set_var(last) >>= sink::hole();
+     * printf("%d\n", max);
+
+    * @tparam State 
+    * @param state 
+    * @return set_var_pipe<State> 
+    */
+    explicit get_var_pipe(State state) : state_(state) {}
+
+   private:
+    State state_;
+};
+template <typename State>
+get_var_pipe<State> get_var(State&& state) {
+    return get_var_pipe<State>{state};
+}
+}  // namespace dfl::pipe
+
+#endif /* DFL_PIPE_GET_STATE_HPP */
 /**
  * @file intersperse.hpp
  * @author Jonathan Boccara
@@ -1659,12 +1748,12 @@ class moving_avg : public dfl_base {
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * @example pipe/partition.cpp
+ * @example red/partition.cpp
  */
 #ifndef DFL_PARTITION_HPP
 #define DFL_PARTITION_HPP
 
-namespace dfl::pipe {
+namespace dfl::red {
 template <typename OutputPipeTrue, typename OutputPipeFalse, typename Predicate>
 class partition_pipe : public pipeline_base<partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate>> {
    public:
@@ -2035,7 +2124,7 @@ class tee_pipe : public dfl_base {
    public:
     template <typename... Values, typename TailPipeline>
     void onReceive(Values&&... values, TailPipeline&& tailPipeline) {
-        send(values..., teeBranch_);
+        send(FWD(values)..., teeBranch_);
         send(FWD(values)..., tailPipeline);
     }
 
@@ -2733,9 +2822,9 @@ namespace dfl {
 // In function, State = State of class, O = the other incoming variable
 #define MK(NAME, FUNC)                                 \
   template <typename State>                            \
-  class _##NAME {                                      \
+  class f##NAME {                                      \
    public:                                             \
-    _##NAME(State&& state) : _state(state) {}          \
+    f##NAME(State&& state) : _state(state) {}          \
                                                        \
     template <typename O>                              \
     auto operator()(O o) const {                       \
@@ -2744,10 +2833,10 @@ namespace dfl {
     State _state;                                      \
   };                                                   \
   template <typename State>                            \
-  _##NAME<State> NAME(State&& state) {                 \
-    return _##NAME<State>{std::forward<State>(state)}; \
+  f##NAME<State> NAME(State&& state) {                 \
+    return f##NAME<State>{std::forward<State>(state)}; \
   }
-
+auto _id = [](auto x){ return x; };
 auto _not = [](auto x) { return !x; };
 auto _not_ = [](auto g) { return [=](auto x) { return !g(x); }; };
 auto _even = [](auto x) { return (x & 1) == 0; };
@@ -2759,7 +2848,7 @@ auto _negate_ = [](auto g) { return [=](auto x) { return -g(x); }; };
 MK(_equal, o == _state);
 MK(_equal_, [=](auto x) { return (f(x) == _state); });
 MK(_greater_than, o > _state);
-MK(_greater_than_, [=](auto x) { return o(x) > _state; });
+MK(_greater_than_, [=](auto x) { auto r = o(x); return r > _state; });
 MK(_greater_than_equal, o >= _state);
 MK(_greater_than_equal_, [=](auto x) { return (o(x) >= _state); });
 MK(_less_than, o < _state);
@@ -2768,10 +2857,20 @@ MK(_less_than_equal, o <= _state);
 MK(_less_than_equal_, [=](auto x) { return (o(x) <= _state); });
 MK(_addValue, o + _state);
 MK(_addValue_, [=](auto x) { return o(x) + _state; });
-MK(_mult, o * _state);
+MK(_subValue, o - _state);
+MK(_subValue_, [=](auto x) { return o(x) - _state; });
+MK(_mult, o* _state);
 MK(_mult_, [=](auto x) { return o(x) * _state; });
 MK(_mod, o % _state);
 MK(_mod_, [=](auto x) { return o(x) % _state; });
+MK(_constant, _state);
+
+auto _between = [](auto a, auto b) {
+  return [=](auto x) { return a <= x && x <= b; };
+};
+auto _outside = [](auto a, auto b) {
+  return [=](auto i) { return i < a || i > b; };
+};
 
 auto _add = [](auto a, auto b) { return a + b; };
 auto _add_ = [](auto g) { return [=](auto a, auto b) { return g(a) + b; }; };
@@ -2824,5 +2923,4 @@ auto _print_ = [](auto g) { return [=](auto a) { std::cout << g(a) << "\n"; };
 */
 }  // namespace dfl
 #endif
-
 #endif /* DFL_HPP */

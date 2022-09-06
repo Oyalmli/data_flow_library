@@ -6,12 +6,12 @@
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * @example pipe/partition.cpp
+ * @example red/partition.cpp
  */
 #ifndef DFL_PARTITION_HPP
 #define DFL_PARTITION_HPP
 
-namespace dfl::pipe {
+namespace dfl::red {
 template <typename OutputPipeTrue, typename OutputPipeFalse, typename Predicate>
 class partition_pipe : public pipeline_base<partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate>> {
    public:

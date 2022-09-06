@@ -9,7 +9,7 @@ int main (){
     std::vector<int> res;
 
     nums 
-    >>= pipe::fork(
+    >>= red::fork(
         sink::push_back(res),
         pipe::transform([](auto i){ return i/2; }) 
         >>= sink::push_back(res)

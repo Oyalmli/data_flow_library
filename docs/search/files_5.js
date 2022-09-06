@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['histogram_2ehpp_0',['histogram.hpp',['../histogram_8hpp.html',1,'']]],
-  ['hole_2ehpp_1',['hole.hpp',['../hole_8hpp.html',1,'']]]
+  ['get_5fvar_2ehpp_0',['get_var.hpp',['../get__var_8hpp.html',1,'']]]
 ];

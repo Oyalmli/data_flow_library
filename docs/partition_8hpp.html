@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Flow Library: include/dfl/pipe/partition.hpp File Reference</title>
+<title>Data Flow Library: include/dfl/red/partition.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,15 +99,15 @@ $(document).ready(function(){initNavTree('partition_8hpp.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1partition__pipe.html">dfl::pipe::partition_pipe&lt; OutputPipeTrue, OutputPipeFalse, Predicate &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1red_1_1partition__pipe.html">dfl::red::partition_pipe&lt; OutputPipeTrue, OutputPipeFalse, Predicate &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aac3bc7f2a2d92c0a459b3c637dfef370"><td class="memTemplParams" colspan="2">template&lt;typename Predicate , typename OutputPipeTrue , typename OutputPipeFalse &gt; </td></tr>
-<tr class="memitem:aac3bc7f2a2d92c0a459b3c637dfef370"><td class="memTemplItemLeft" align="right" valign="top">partition_pipe&lt; OutputPipeTrue, OutputPipeFalse, Predicate &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="partition_8hpp.html#aac3bc7f2a2d92c0a459b3c637dfef370">dfl::pipe::partition</a> (Predicate predicate, OutputPipeTrue &amp;&amp;outputPipeTrue, OutputPipeFalse &amp;&amp;outputPipeFalse)</td></tr>
-<tr class="memdesc:aac3bc7f2a2d92c0a459b3c637dfef370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a predicate function a value will be sent to the first pipleine if true the other if not.  <a href="partition_8hpp.html#aac3bc7f2a2d92c0a459b3c637dfef370">More...</a><br /></td></tr>
-<tr class="separator:aac3bc7f2a2d92c0a459b3c637dfef370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06618a2c478b016b6975cf4e11fb093"><td class="memTemplParams" colspan="2">template&lt;typename Predicate , typename OutputPipeTrue , typename OutputPipeFalse &gt; </td></tr>
+<tr class="memitem:ac06618a2c478b016b6975cf4e11fb093"><td class="memTemplItemLeft" align="right" valign="top">partition_pipe&lt; OutputPipeTrue, OutputPipeFalse, Predicate &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="partition_8hpp.html#ac06618a2c478b016b6975cf4e11fb093">dfl::red::partition</a> (Predicate predicate, OutputPipeTrue &amp;&amp;outputPipeTrue, OutputPipeFalse &amp;&amp;outputPipeFalse)</td></tr>
+<tr class="memdesc:ac06618a2c478b016b6975cf4e11fb093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a predicate function a value will be sent to the first pipleine if true the other if not.  <a href="partition_8hpp.html#ac06618a2c478b016b6975cf4e11fb093">More...</a><br /></td></tr>
+<tr class="separator:ac06618a2c478b016b6975cf4e11fb093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Partition pipeline class. </p>
@@ -118,8 +118,8 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="partition_8hpp_source.html">partition.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aac3bc7f2a2d92c0a459b3c637dfef370" name="aac3bc7f2a2d92c0a459b3c637dfef370"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac3bc7f2a2d92c0a459b3c637dfef370">&#9670;&nbsp;</a></span>partition()</h2>
+<a id="ac06618a2c478b016b6975cf4e11fb093" name="ac06618a2c478b016b6975cf4e11fb093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06618a2c478b016b6975cf4e11fb093">&#9670;&nbsp;</a></span>partition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ Functions</h2></td></tr>
 template&lt;typename Predicate , typename OutputPipeTrue , typename OutputPipeFalse &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">partition_pipe&lt; OutputPipeTrue, OutputPipeFalse, Predicate &gt; dfl::pipe::partition </td>
+          <td class="memname">partition_pipe&lt; OutputPipeTrue, OutputPipeFalse, Predicate &gt; dfl::red::partition </td>
           <td>(</td>
           <td class="paramtype">Predicate&#160;</td>
           <td class="paramname"><em>predicate</em>, </td>
@@ -170,7 +170,7 @@ template&lt;typename Predicate , typename OutputPipeTrue , typename OutputPipeFa
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>partition_pipe&lt;OutputPipeTrue, OutputPipeFalse, Predicate&gt; </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="pipe_2partition_8cpp-example.html#a0">pipe/partition.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="red_2partition_8cpp-example.html#a0">red/partition.cpp</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="partition_8hpp_source.html#l00047">47</a> of file <a class="el" href="partition_8hpp_source.html">partition.hpp</a>.</p>
@@ -182,7 +182,7 @@ template&lt;typename Predicate , typename OutputPipeTrue , typename OutputPipeFa
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c2f8c49cf0b16735b4dd33782c136130.html">dfl</a></li><li class="navelem"><a class="el" href="dir_5e68270a9fe58834eb97b67b7ba1bfe4.html">pipe</a></li><li class="navelem"><a class="el" href="partition_8hpp.html">partition.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c2f8c49cf0b16735b4dd33782c136130.html">dfl</a></li><li class="navelem"><a class="el" href="dir_c0870ccddae024be1b8e17a09541b36c.html">red</a></li><li class="navelem"><a class="el" href="partition_8hpp.html">partition.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

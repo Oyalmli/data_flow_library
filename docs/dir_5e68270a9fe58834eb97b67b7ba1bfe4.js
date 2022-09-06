@@ -8,12 +8,11 @@ var dir_5e68270a9fe58834eb97b67b7ba1bfe4 =
     ] ],
     [ "drop_while.hpp", "drop__while_8hpp.html", "drop__while_8hpp" ],
     [ "filter.hpp", "filter_8hpp.html", "filter_8hpp" ],
-    [ "fork.hpp", "fork_8hpp.html", "fork_8hpp" ],
+    [ "get_var.hpp", "get__var_8hpp.html", "get__var_8hpp" ],
     [ "intersperse.hpp", "intersperse_8hpp.html", "intersperse_8hpp" ],
     [ "moving_avg.hpp", "moving__avg_8hpp.html", [
       [ "dfl::pipe::moving_avg< T, N >", "classdfl_1_1pipe_1_1moving__avg.html", "classdfl_1_1pipe_1_1moving__avg" ]
     ] ],
-    [ "partition.hpp", "partition_8hpp.html", "partition_8hpp" ],
     [ "scanl.hpp", "scanl_8hpp.html", "scanl_8hpp" ],
     [ "set_state.hpp", "set__state_8hpp.html", "set__state_8hpp" ],
     [ "set_var.hpp", "pipe_2set__var_8hpp_source.html", null ],

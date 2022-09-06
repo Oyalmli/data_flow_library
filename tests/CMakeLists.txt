@@ -26,14 +26,15 @@ add_executable(
   pipe/filter.cpp
   pipe/set_state.cpp
   pipe/tee.cpp
-  pipe/fork.cpp
   pipe/transform.cpp
   pipe/intersperse.cpp
-  pipe/partition.cpp
   pipe/side_effect.cpp
   pipe/stride.cpp
   pipe/tap.cpp
   pipe/transform_s.cpp
+
+  red/fork.cpp
+  red/partition.cpp
 
   sink/hole.cpp
   sink/histogram.cpp

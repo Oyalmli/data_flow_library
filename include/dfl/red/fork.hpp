@@ -6,15 +6,14 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * @example pipe/fork.cpp
+ * @example red/fork.cpp
  */
 #ifndef DFL_FORK_HPP
 #define DFL_FORK_HPP
 
 #include "dfl/helpers/meta.hpp"
 
-namespace dfl {
-namespace pipe {
+namespace dfl::red {
 template <typename... TailPipelines>
 class fork_pipeline : public pipeline_base<fork_pipeline<TailPipelines...>> {
    public:
@@ -38,7 +37,6 @@ template <typename... TailPipelines>
 fork_pipeline<TailPipelines...> fork(TailPipelines const&... tailPipelines) {
     return fork_pipeline<TailPipelines...>(tailPipelines...);
 }
-}  // namespace pipe
-}  // namespace dfl
+}  // namespace dfl::pipe
 
 #endif /* DFL_FORK_HPP */

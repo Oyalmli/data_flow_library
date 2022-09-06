@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['noise_0',['noise',['../classdfl_1_1mod_1_1noise.html#a7db632f096a6df4ec2fd355ed5d15e0e',1,'dfl::mod::noise::noise()=default'],['../classdfl_1_1mod_1_1noise.html#a20aa0ecbe18a97cc14a56f8ed1648432',1,'dfl::mod::noise::noise(T noise, Gen generator, int seed=time(0))']]]
+  ['moving_5favg_0',['moving_avg',['../classdfl_1_1pipe_1_1moving__avg.html#a4265716691b97f2d6a81d9c669e9f753',1,'dfl::pipe::moving_avg']]],
+  ['mux_1',['mux',['../mux_8hpp.html#ab614e8fe4ac233ca079ed86287cc28c5',1,'dfl::gen']]]
 ];
