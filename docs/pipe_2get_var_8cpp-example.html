@@ -88,7 +88,33 @@ $(document).ready(function(){initNavTree('pipe_2get_var_8cpp-example.html',''); 
   <div class="headertitle"><div class="title">pipe/get_var.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dfl_8hpp.html">dfl/dfl.hpp</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>dfl;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (){</div>
+<div class="line">    <span class="keywordtype">int</span> curr;</div>
+<div class="line">    gen::range(10)</div>
+<div class="line">    &gt;&gt;= rdir::fork(</div>
+<div class="line">      <a id="a0" name="a0"></a>pipe::transform([](<span class="keywordtype">int</span> i){<span class="keywordflow">return</span> i * 10;}) &gt;&gt;= pipe::set_var(curr) &gt;&gt;= sink::hole(),</div>
+<div class="line">      pipe::get_var(curr) &gt;&gt;= sink::printf(<span class="stringliteral">&quot;%d\n&quot;</span>)</div>
+<div class="line">    );</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/*</span></div>
+<div class="line"><span class="comment">0 </span></div>
+<div class="line"><span class="comment">10</span></div>
+<div class="line"><span class="comment">20</span></div>
+<div class="line"><span class="comment">30</span></div>
+<div class="line"><span class="comment">40</span></div>
+<div class="line"><span class="comment">50</span></div>
+<div class="line"><span class="comment">60</span></div>
+<div class="line"><span class="comment">70</span></div>
+<div class="line"><span class="comment">80</span></div>
+<div class="line"><span class="comment">90</span></div>
+<div class="line"><span class="comment">*/</span></div>
+<div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

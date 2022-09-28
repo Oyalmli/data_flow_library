@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Flow Library: pipe/transform_s.cpp</title>
+<title>Data Flow Library: pipe/set_var.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('pipe_2transform_s_8cpp-example.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('pipe_2set_var_8cpp-example.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,48 +85,33 @@ $(document).ready(function(){initNavTree('pipe_2transform_s_8cpp-example.html','
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">pipe/transform_s.cpp</div></div>
+  <div class="headertitle"><div class="title">pipe/set_var.cpp</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dfl_8hpp.html">dfl/dfl.hpp</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>dfl;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main () {</div>
-<div class="line">    <span class="keyword">auto</span> noisy_value </div>
-<div class="line">    =   mod::take(20, </div>
-<div class="line">        mod::noise(1000, </div>
-<div class="line">        gen::value(0)));</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span> floor = 0;</div>
-<div class="line"> </div>
-<div class="line">    noisy_value </div>
-<div class="line">    &gt;&gt;= <a id="a0" name="a0"></a>pipe::set_state([](<span class="keyword">auto</span> i, <span class="keyword">auto</span> floor){ <span class="keywordflow">return</span> <a id="a1" name="a1"></a>std::max(i, floor); }, floor)</div>
-<div class="line">    &gt;&gt;= <a id="a2" name="a2"></a>pipe::transform_s([](<span class="keyword">auto</span> i, <span class="keyword">auto</span>&amp; floor){ <span class="keywordflow">return</span> i + floor; } , floor)</div>
-<div class="line">    &gt;&gt;= sink::print&lt;&#39;\n&#39;&gt;();</div>
+<div class="line"><span class="keywordtype">int</span> main (){</div>
+<div class="line">    <span class="keywordtype">int</span> curr;</div>
+<div class="line">    gen::range(10)</div>
+<div class="line">    &gt;&gt;= rdir::fork(</div>
+<div class="line">      <a id="a0" name="a0"></a>pipe::transform([](<span class="keywordtype">int</span> i){<span class="keywordflow">return</span> i * 10;}) &gt;&gt;= pipe::set_var(curr) &gt;&gt;= sink::hole(),</div>
+<div class="line">      pipe::get_var(curr) &gt;&gt;= sink::printf(<span class="stringliteral">&quot;%d\n&quot;</span>)</div>
+<div class="line">    );</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment">0</span></div>
-<div class="line"><span class="comment">1506</span></div>
-<div class="line"><span class="comment">1119</span></div>
-<div class="line"><span class="comment">1474</span></div>
-<div class="line"><span class="comment">347</span></div>
-<div class="line"><span class="comment">800</span></div>
-<div class="line"><span class="comment">819</span></div>
-<div class="line"><span class="comment">319</span></div>
-<div class="line"><span class="comment">-52</span></div>
-<div class="line"><span class="comment">-98</span></div>
-<div class="line"><span class="comment">-245</span></div>
-<div class="line"><span class="comment">433</span></div>
-<div class="line"><span class="comment">498</span></div>
-<div class="line"><span class="comment">-196</span></div>
-<div class="line"><span class="comment">1876</span></div>
-<div class="line"><span class="comment">567</span></div>
-<div class="line"><span class="comment">536</span></div>
-<div class="line"><span class="comment">895</span></div>
-<div class="line"><span class="comment">18</span></div>
-<div class="line"><span class="comment">1607</span></div>
+<div class="line"><span class="comment">0 </span></div>
+<div class="line"><span class="comment">10</span></div>
+<div class="line"><span class="comment">20</span></div>
+<div class="line"><span class="comment">30</span></div>
+<div class="line"><span class="comment">40</span></div>
+<div class="line"><span class="comment">50</span></div>
+<div class="line"><span class="comment">60</span></div>
+<div class="line"><span class="comment">70</span></div>
+<div class="line"><span class="comment">80</span></div>
+<div class="line"><span class="comment">90</span></div>
 <div class="line"><span class="comment">*/</span></div>
 <div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
 </div><!-- fragment --> </div><!-- contents -->

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Data Flow Library: include/dfl/pipe/transform.hpp File Reference</title>
+<title>Data Flow Library: include/dfl/sink/sum.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('transform_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('sum_8hpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -88,73 +88,63 @@ $(document).ready(function(){initNavTree('transform_8hpp.html',''); initResizabl
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">transform.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">sum.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Transform pipeline class.  
+<p>Sum sink class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;dfl/helpers/invoke.hpp&quot;</code><br />
-</div>
-<p><a href="transform_8hpp_source.html">Go to the source code of this file.</a></p>
+
+<p><a href="sum_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1pipe_1_1transform__pipe.html">dfl::pipe::transform_pipe&lt; Function &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfl_1_1sink_1_1sum__pipeline.html">dfl::sink::sum_pipeline&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a47ebd08786ed077ff4b918a8efcc8257"><td class="memTemplParams" colspan="2">template&lt;typename Function &gt; </td></tr>
-<tr class="memitem:a47ebd08786ed077ff4b918a8efcc8257"><td class="memTemplItemLeft" align="right" valign="top">transform_pipe&lt; Function &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="transform_8hpp.html#a47ebd08786ed077ff4b918a8efcc8257">dfl::pipe::transform</a> (Function &amp;&amp;function)</td></tr>
-<tr class="memdesc:a47ebd08786ed077ff4b918a8efcc8257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms the value using the function and forwards the returned value.  <a href="transform_8hpp.html#a47ebd08786ed077ff4b918a8efcc8257">More...</a><br /></td></tr>
-<tr class="separator:a47ebd08786ed077ff4b918a8efcc8257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9de5c52d23b1d85486f5a270c89fa40"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad9de5c52d23b1d85486f5a270c89fa40"><td class="memTemplItemLeft" align="right" valign="top">sum_pipeline&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="sum_8hpp.html#ad9de5c52d23b1d85486f5a270c89fa40">dfl::sink::sum</a> (T &amp;&amp;val)</td></tr>
+<tr class="separator:ad9de5c52d23b1d85486f5a270c89fa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Transform pipeline class. </p>
-<dl class="section author"><dt>Author</dt><dd>Jonathan Boccara </dd></dl>
+<div class="textblock"><p >Sum sink class. </p>
+<dl class="section author"><dt>Author</dt><dd>Øyvind Almli (<a href="#" onclick="location.href='mai'+'lto:'+'oyv'+'in'+'d.a'+'lm'+'li@'+'gm'+'ail'+'.c'+'om'; return false;">oyvin<span class="obfuscator">.nosp@m.</span>d.al<span class="obfuscator">.nosp@m.</span>mli@g<span class="obfuscator">.nosp@m.</span>mail<span class="obfuscator">.nosp@m.</span>.com</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-04-28</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
 
-<p class="definition">Definition in file <a class="el" href="transform_8hpp_source.html">transform.hpp</a>.</p>
+<p class="definition">Definition in file <a class="el" href="sum_8hpp_source.html">sum.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a47ebd08786ed077ff4b918a8efcc8257" name="a47ebd08786ed077ff4b918a8efcc8257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47ebd08786ed077ff4b918a8efcc8257">&#9670;&nbsp;</a></span>transform()</h2>
+<a id="ad9de5c52d23b1d85486f5a270c89fa40" name="ad9de5c52d23b1d85486f5a270c89fa40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9de5c52d23b1d85486f5a270c89fa40">&#9670;&nbsp;</a></span>sum()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Function &gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">transform_pipe&lt; Function &gt; dfl::pipe::transform </td>
+          <td class="memname">sum_pipeline&lt; T &gt; dfl::sink::sum </td>
           <td>(</td>
-          <td class="paramtype">Function &amp;&amp;&#160;</td>
-          <td class="paramname"><em>function</em></td><td>)</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Transforms the value using the function and forwards the returned value. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p >Pipe component for running a function for each element of a pipeline </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">function</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>transform_pipe&lt;Function&gt; </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="gen_2adjacent_8cpp-example.html#a1">gen/adjacent.cpp</a>, <a class="el" href="mod_2take_8cpp-example.html#a0">mod/take.cpp</a>, <a class="el" href="pipe_2filter_8cpp-example.html#a1">pipe/filter.cpp</a>, <a class="el" href="pipe_2get_var_8cpp-example.html#a0">pipe/get_var.cpp</a>, <a class="el" href="pipe_2set_state_8cpp-example.html#a0">pipe/set_state.cpp</a>, <a class="el" href="pipe_2set_var_8cpp-example.html#a0">pipe/set_var.cpp</a>, <a class="el" href="pipe_2tee_8cpp-example.html#a0">pipe/tee.cpp</a>, <a class="el" href="pipe_2transform_8cpp-example.html#a0">pipe/transform.cpp</a>, <a class="el" href="rdir_2fork_8cpp-example.html#a1">rdir/fork.cpp</a>, <a class="el" href="sink_2for_each_8cpp-example.html#a0">sink/for_each.cpp</a>, and <a class="el" href="sink_2to_out_stream_8cpp-example.html#a1">sink/to_out_stream.cpp</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>itself </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="gen_2value_8cpp-example.html#a0">gen/value.cpp</a>, and <a class="el" href="sink_2sum_8cpp-example.html#a0">sink/sum.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="transform_8hpp_source.html#l00038">38</a> of file <a class="el" href="transform_8hpp_source.html">transform.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sum_8hpp_source.html#l00035">35</a> of file <a class="el" href="sum_8hpp_source.html">sum.hpp</a>.</p>
 
 </div>
 </div>
@@ -163,7 +153,7 @@ template&lt;typename Function &gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c2f8c49cf0b16735b4dd33782c136130.html">dfl</a></li><li class="navelem"><a class="el" href="dir_5e68270a9fe58834eb97b67b7ba1bfe4.html">pipe</a></li><li class="navelem"><a class="el" href="transform_8hpp.html">transform.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_c2f8c49cf0b16735b4dd33782c136130.html">dfl</a></li><li class="navelem"><a class="el" href="dir_bd6a2ac516456a19a0110380fb3b32eb.html">sink</a></li><li class="navelem"><a class="el" href="sum_8hpp.html">sum.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
   </ul>
 </div>

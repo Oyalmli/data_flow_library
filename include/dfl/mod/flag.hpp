@@ -1,12 +1,12 @@
 /**
- * @file take.hpp
+ * @file flag.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief Take generator modifyier class
+ * @brief Flag Modifier class
  * @version 0.1
  * @date 2022-04-28
  *
  * @copyright Copyright (c) 2022
- * @example mod/take.cpp
+ * @example mod/flag.cpp
  */
 #ifndef GEN_FLAG_HPP
 #define GEN_FLAG_HPP

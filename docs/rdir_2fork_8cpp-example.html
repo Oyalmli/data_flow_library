@@ -88,7 +88,32 @@ $(document).ready(function(){initNavTree('rdir_2fork_8cpp-example.html',''); ini
   <div class="headertitle"><div class="title">rdir/fork.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"></div><!-- fragment --> </div><!-- contents -->
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="dfl_8hpp.html">dfl/dfl.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>dfl;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (){</div>
+<div class="line">    std::vector&lt;int&gt; nums = {5,1,7,3,7,1,37,81};</div>
+<div class="line">    std::vector&lt;int&gt; res;</div>
+<div class="line"> </div>
+<div class="line">    nums </div>
+<div class="line">    &gt;&gt;= rdir::fork(</div>
+<div class="line">        <a id="a0" name="a0"></a>sink::push_back(res),</div>
+<div class="line">        <a id="a1" name="a1"></a>pipe::transform([](<span class="keyword">auto</span> i){ <span class="keywordflow">return</span> i/2; }) </div>
+<div class="line">        &gt;&gt;= sink::push_back(res)</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    res &gt;&gt;= sink::print&lt;&#39; &#39;&gt;();</div>
+<div class="line">    std::cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* ./fork</span></div>
+<div class="line"><span class="comment">5 2 1 0 7 3 3 1 7 3 1 0 37 18 81 40 </span></div>
+<div class="line"><span class="comment">*/</span></div>
+<div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
+</div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

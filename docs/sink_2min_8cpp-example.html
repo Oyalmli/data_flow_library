@@ -93,19 +93,20 @@ $(document).ready(function(){initNavTree('sink_2min_8cpp-example.html',''); init
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span>dfl;</div>
 <div class="line"><span class="keywordtype">int</span> main (){</div>
-<div class="line">    <span class="keywordtype">int</span> min = INT32_MAX;</div>
+<div class="line">    <span class="keywordtype">int</span> <a id="a0" name="a0"></a><a class="code hl_function" href="min_8hpp.html#a46d9ba3d31a893f945a392ac092a5ff9">min</a> = INT32_MAX;</div>
 <div class="line">    <span class="keyword">auto</span> noisy_gen = mod::noise(100, gen::value(0));</div>
 <div class="line">    </div>
 <div class="line">    noisy_gen</div>
-<div class="line">    &gt;&gt;= sink::min(min);</div>
+<div class="line">    &gt;&gt;= sink::min(<a class="code hl_function" href="min_8hpp.html#a46d9ba3d31a893f945a392ac092a5ff9">min</a>);</div>
 <div class="line"> </div>
-<div class="line">    std::cout &lt;&lt; min &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">    std::cout &lt;&lt; <a class="code hl_function" href="min_8hpp.html#a46d9ba3d31a893f945a392ac092a5ff9">min</a> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* ./min</span></div>
 <div class="line"><span class="comment">-96</span></div>
 <div class="line"><span class="comment">*/</span></div>
 <div class="ttc" id="adfl_8hpp_html"><div class="ttname"><a href="dfl_8hpp.html">dfl.hpp</a></div><div class="ttdoc">Entry point for the library.</div></div>
+<div class="ttc" id="amin_8hpp_html_a46d9ba3d31a893f945a392ac092a5ff9"><div class="ttname"><a href="min_8hpp.html#a46d9ba3d31a893f945a392ac092a5ff9">dfl::sink::min</a></div><div class="ttdeci">min_pipeline&lt; T &gt; min(T &amp;&amp;val)</div><div class="ttdef"><b>Definition:</b> <a href="min_8hpp_source.html#l00044">min.hpp:44</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

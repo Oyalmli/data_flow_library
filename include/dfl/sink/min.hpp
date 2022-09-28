@@ -1,7 +1,7 @@
 /**
- * @file for_each.hpp
+ * @file min.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief For each sink class
+ * @brief Min sink class
  * @version 0.1
  * @date 2022-04-28
  *

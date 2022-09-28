@@ -1,7 +1,7 @@
 /**
- * @file for_each.hpp
+ * @file max.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief For each sink class
+ * @brief Max sink class
  * @version 0.1
  * @date 2022-04-28
  *

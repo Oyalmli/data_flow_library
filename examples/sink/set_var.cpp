@@ -10,3 +10,16 @@ int main (){
       pipe::get_var(curr) >>= sink::printf("%d\n")
     );
 }
+
+/*
+0 
+10
+20
+30
+40
+50
+60
+70
+80
+90
+*/

@@ -1,12 +1,12 @@
 /**
- * @file set_state.hpp
+ * @file set_var.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief Set state pipeline class
+ * @brief Set var pipeline class
  * @version 0.1
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * @example pipe/set_state.cpp
+ * @example pipe/set_var.cpp
  */
 #ifndef DFL_PIPE_SET_VAR_HPP
 #define DFL_PIPE_SET_VAR_HPP
@@ -22,17 +22,10 @@ class set_var_pipe : public dfl_base {
     }
     /**
      * @brief Sets the state of the given variable
-     * 
-     * EXAMPLE:
-     * int last = 0;
-     * gen::range(100)
-     * >>= pipe::set_var(last) >>= sink::hole();
-     * printf("%d\n", max);
-
-    * @tparam State 
-    * @param state 
-    * @return set_var_pipe<State> 
-    */
+     * @tparam State 
+     * @param state 
+     * @return set_var_pipe<State> 
+     */
     explicit set_var_pipe(State state) : state_(state) {}
 
    private:

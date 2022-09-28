@@ -15,7 +15,7 @@ var dir_5e68270a9fe58834eb97b67b7ba1bfe4 =
     ] ],
     [ "scanl.hpp", "scanl_8hpp.html", "scanl_8hpp" ],
     [ "set_state.hpp", "set__state_8hpp.html", "set__state_8hpp" ],
-    [ "set_var.hpp", "pipe_2set__var_8hpp_source.html", null ],
+    [ "set_var.hpp", "pipe_2set__var_8hpp.html", "pipe_2set__var_8hpp" ],
     [ "side_effect.hpp", "side__effect_8hpp.html", "side__effect_8hpp" ],
     [ "stride.hpp", "stride_8hpp.html", [
       [ "dfl::pipe::stride", "classdfl_1_1pipe_1_1stride.html", null ]

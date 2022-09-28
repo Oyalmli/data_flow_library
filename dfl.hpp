@@ -884,14 +884,14 @@ class noise : public gen::base_generator<typename Gen::value_type> {
 #endif  // GEN_MOD_NOISE_HPP
 
 /**
- * @file take.hpp
+ * @file flag.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief Take generator modifyier class
+ * @brief Flag Modifier class
  * @version 0.1
  * @date 2022-04-28
  *
  * @copyright Copyright (c) 2022
- * @example mod/take.cpp
+ * @example mod/flag.cpp
  */
 #ifndef GEN_FLAG_HPP
 #define GEN_FLAG_HPP
@@ -1896,14 +1896,14 @@ set_state_pipe<Function, State> set_state(Function&& function, State&& state) {
 
 #endif /* DFL_SET_STATE_HPP */
 /**
- * @file set_state.hpp
+ * @file set_var.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief Set state pipeline class
+ * @brief Set var pipeline class
  * @version 0.1
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * @example pipe/set_state.cpp
+ * @example pipe/set_var.cpp
  */
 #ifndef DFL_PIPE_SET_VAR_HPP
 #define DFL_PIPE_SET_VAR_HPP
@@ -1919,17 +1919,10 @@ class set_var_pipe : public dfl_base {
     }
     /**
      * @brief Sets the state of the given variable
-     * 
-     * EXAMPLE:
-     * int last = 0;
-     * gen::range(100)
-     * >>= pipe::set_var(last) >>= sink::hole();
-     * printf("%d\n", max);
-
-    * @tparam State 
-    * @param state 
-    * @return set_var_pipe<State> 
-    */
+     * @tparam State 
+     * @param state 
+     * @return set_var_pipe<State> 
+     */
     explicit set_var_pipe(State state) : state_(state) {}
 
    private:
@@ -2366,9 +2359,9 @@ histogram_pipeline<T> histogram(T &&val) {
 
 #endif /* DFL_HISTOGRAM_HPP */
 /**
- * @file for_each.hpp
+ * @file min.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief For each sink class
+ * @brief Min sink class
  * @version 0.1
  * @date 2022-04-28
  *
@@ -2416,9 +2409,9 @@ min_pipeline<T> min(T &&val) {
 
 #endif /* DFL_SINK_MIN_HPP */
 /**
- * @file for_each.hpp
+ * @file max.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief For each sink class
+ * @brief Max sink class
  * @version 0.1
  * @date 2022-04-28
  *
@@ -2633,14 +2626,14 @@ to_out_stream_pipeline<OutStream> to_out_stream(OutStream& outStream) {
 
 #endif /* TO_OUT_STREAM_HPP */
 /**
- * @file set_state.hpp
+ * @file set_var.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
  * @brief Set state pipeline class
  * @version 0.1
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * @example pipe/set_state.cpp
+ * @example pipe/set_var.cpp
  */
 #ifndef DFL_SINK_SET_VAR_HPP
 #define DFL_SINK_SET_VAR_HPP
@@ -2655,13 +2648,6 @@ class set_var_pipe : public pipeline_base<set_var_pipe<State>> {
     }
     /**
      * @brief Sets the state of the given variable
-     * 
-     * EXAMPLE:
-     * int last = 0;
-     * gen::range(100)
-     * >>= sink::set_var(last);
-     * printf("%d\n", max);
-
     * @tparam State 
     * @param state 
     * @return set_var_pipe<State> 
@@ -2679,9 +2665,9 @@ set_var_pipe<State> set_var(State&& state) {
 
 #endif /* DFL_SINK_SET_STATE_HPP */
 /**
- * @file for_each.hpp
+ * @file sum.hpp
  * @author Øyvind Almli (oyvind.almli@gmail.com)
- * @brief For each sink class
+ * @brief Sum sink class
  * @version 0.1
  * @date 2022-04-28
  * 
