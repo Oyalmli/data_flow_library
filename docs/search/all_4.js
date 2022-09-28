@@ -9,5 +9,5 @@ var searchData=
   ['for_5feach_2ehpp_6',['for_each.hpp',['../for__each_8hpp.html',1,'']]],
   ['for_5feach_5fpipeline_7',['for_each_pipeline',['../classdfl_1_1sink_1_1for__each__pipeline.html',1,'dfl::sink']]],
   ['fork_2ehpp_8',['fork.hpp',['../fork_8hpp.html',1,'']]],
-  ['fork_5fpipeline_9',['fork_pipeline',['../classdfl_1_1red_1_1fork__pipeline.html',1,'dfl::red::fork_pipeline&lt; TailPipelines &gt;'],['../classdfl_1_1red_1_1fork__pipeline.html#a41349471a6c24e4d1dd3292d686ea86f',1,'dfl::red::fork_pipeline::fork_pipeline()']]]
+  ['fork_5fpipeline_9',['fork_pipeline',['../classdfl_1_1rdir_1_1fork__pipeline.html',1,'dfl::rdir::fork_pipeline&lt; TailPipelines &gt;'],['../classdfl_1_1rdir_1_1fork__pipeline.html#aaabaf1ab133c62b5c3e470279636269b',1,'dfl::rdir::fork_pipeline::fork_pipeline()']]]
 ];

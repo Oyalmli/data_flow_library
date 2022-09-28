@@ -6,14 +6,14 @@
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * @example red/fork.cpp
+ * @example rdir/fork.cpp
  */
 #ifndef DFL_FORK_HPP
 #define DFL_FORK_HPP
 
 #include "dfl/helpers/meta.hpp"
 
-namespace dfl::red {
+namespace dfl::rdir {
 template <typename... TailPipelines>
 class fork_pipeline : public pipeline_base<fork_pipeline<TailPipelines...>> {
    public:

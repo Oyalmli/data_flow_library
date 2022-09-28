@@ -12,7 +12,7 @@ TEST_CASE(prefix + "Sends the incoming values into the the first pipeline if tru
     
     auto result = std::vector<int>{};
     input
-    >>= red::partition([](auto i){ return (i&1) == 1; },
+    >>= rdir::partition([](auto i){ return (i&1) == 1; },
             sink::push_back(result),
             sink::hole()
         );

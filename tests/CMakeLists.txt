@@ -33,8 +33,8 @@ add_executable(
   pipe/tap.cpp
   pipe/transform_s.cpp
 
-  red/fork.cpp
-  red/partition.cpp
+  rdir/fork.cpp
+  rdir/partition.cpp
 
   sink/hole.cpp
   sink/histogram.cpp

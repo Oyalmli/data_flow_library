@@ -38,9 +38,9 @@ var annotated_dup =
         [ "transform_pipe", "classdfl_1_1pipe_1_1transform__pipe.html", null ],
         [ "transform_s_pipe", "classdfl_1_1pipe_1_1transform__s__pipe.html", null ]
       ] ],
-      [ "red", null, [
-        [ "fork_pipeline", "classdfl_1_1red_1_1fork__pipeline.html", "classdfl_1_1red_1_1fork__pipeline" ],
-        [ "partition_pipe", "classdfl_1_1red_1_1partition__pipe.html", null ]
+      [ "rdir", null, [
+        [ "fork_pipeline", "classdfl_1_1rdir_1_1fork__pipeline.html", "classdfl_1_1rdir_1_1fork__pipeline" ],
+        [ "partition_pipe", "classdfl_1_1rdir_1_1partition__pipe.html", null ]
       ] ],
       [ "sink", null, [
         [ "for_each_pipeline", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],

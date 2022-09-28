@@ -41,8 +41,8 @@ var hierarchy =
     ] ],
     [ "dfl::gen::muxer< Ranges >", "structdfl_1_1gen_1_1muxer.html", null ],
     [ "pipeline_base", null, [
-      [ "dfl::red::fork_pipeline< TailPipelines >", "classdfl_1_1red_1_1fork__pipeline.html", null ],
-      [ "dfl::red::partition_pipe< OutputPipeTrue, OutputPipeFalse, Predicate >", "classdfl_1_1red_1_1partition__pipe.html", null ],
+      [ "dfl::rdir::fork_pipeline< TailPipelines >", "classdfl_1_1rdir_1_1fork__pipeline.html", null ],
+      [ "dfl::rdir::partition_pipe< OutputPipeTrue, OutputPipeFalse, Predicate >", "classdfl_1_1rdir_1_1partition__pipe.html", null ],
       [ "dfl::sink::for_each_pipeline< Function >", "classdfl_1_1sink_1_1for__each__pipeline.html", null ],
       [ "dfl::sink::histogram_pipeline< T >", "classdfl_1_1sink_1_1histogram__pipeline.html", null ],
       [ "dfl::sink::hole", "classdfl_1_1sink_1_1hole.html", null ],

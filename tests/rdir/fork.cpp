@@ -14,7 +14,7 @@ TEST_CASE(prefix + "fork dispatches an input to several destinations") {
 
     std::vector<int> results1, results2, results3;
 
-    numbers >>= red::fork(
+    numbers >>= rdir::fork(
         pipe::filter([](int i) { return (i & 1) == 0; }) >>= sink::push_back(results1),
         pipe::filter([](int i) { return (i & 1) == 1; }) >>= sink::push_back(results2),
         sink::push_back(results3));

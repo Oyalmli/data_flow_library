@@ -8,7 +8,7 @@ int main (){
     std::vector<int> odds;
 
     range_gen
-    >>= red::partition(_even,
+    >>= rdir::partition(_even,
         sink::push_back(evens),
         sink::push_back(odds)
     );

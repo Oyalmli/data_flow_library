@@ -11,7 +11,7 @@ int main (){
         
         gen::range(1'000'000'000)
         >>= pipe::transform(_mod_(13)(_mult(2)))
-        >>=  red::partition(_even,
+        >>=  rdir::partition(_even,
             sink::sum(even_sum),
             sink::sum(odd_sum)
         );

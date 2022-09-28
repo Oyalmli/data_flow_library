@@ -1470,7 +1470,7 @@ auto filter(Predicate&& predicate) {
  * @date 2022-04-27
  * 
  * @copyright Copyright (c) 2022
- * @example red/fork.cpp
+ * @example rdir/fork.cpp
  */
 #ifndef DFL_FORK_HPP
 #define DFL_FORK_HPP
@@ -1569,7 +1569,7 @@ auto dereference(std::tuple<Ts...> const& tuple) {
 
 #endif /* DFL_META_HPP */
 
-namespace dfl::red {
+namespace dfl::rdir {
 template <typename... TailPipelines>
 class fork_pipeline : public pipeline_base<fork_pipeline<TailPipelines...>> {
    public:
@@ -1748,12 +1748,12 @@ class moving_avg : public dfl_base {
  * @date 2022-04-28
  * 
  * @copyright Copyright (c) 2022
- * @example red/partition.cpp
+ * @example rdir/partition.cpp
  */
 #ifndef DFL_PARTITION_HPP
 #define DFL_PARTITION_HPP
 
-namespace dfl::red {
+namespace dfl::rdir {
 template <typename OutputPipeTrue, typename OutputPipeFalse, typename Predicate>
 class partition_pipe : public pipeline_base<partition_pipe<OutputPipeTrue, OutputPipeFalse, Predicate>> {
    public:
